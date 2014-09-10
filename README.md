@@ -5,6 +5,13 @@ Hamcrest gives you advanced matchers with better error messages for your Swift u
 
 Hamcrest was originally written in Java and is available for many [languages](http://hamcrest.org).
 
+Integration
+-----------
+
+Hamcrest requires Xcode 6.1 (Beta).
+
+While it is possible to use a compiled framework, for now I suggest to add Hamcrest as a project in your workspace. An OS X and an iOS demo project is included to demonstrate this. (Once CocoaPods supports Swift, a spec will be available.)
+
 Tutorial
 --------
 
