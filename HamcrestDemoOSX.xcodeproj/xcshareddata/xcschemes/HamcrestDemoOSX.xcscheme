@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0600"
+   LastUpgradeVersion = "0610"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2494840419B6067A007EEA3D"
-               BuildableName = "HamcrestDemo.app"
-               BlueprintName = "HamcrestDemo"
-               ReferencedContainer = "container:HamcrestDemo.xcodeproj">
+               BlueprintIdentifier = "24003EBD19C046BA000B9B0A"
+               BuildableName = "HamcrestDemoOSX.app"
+               BlueprintName = "HamcrestDemoOSX"
+               ReferencedContainer = "container:HamcrestDemoOSX.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2494841619B6067A007EEA3D"
-               BuildableName = "HamcrestDemoTests.xctest"
-               BlueprintName = "HamcrestDemoTests"
-               ReferencedContainer = "container:HamcrestDemo.xcodeproj">
+               BlueprintIdentifier = "24003ECF19C046BA000B9B0A"
+               BuildableName = "HamcrestDemoOSXTests.xctest"
+               BlueprintName = "HamcrestDemoOSXTests"
+               ReferencedContainer = "container:HamcrestDemoOSX.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2494841619B6067A007EEA3D"
-               BuildableName = "HamcrestDemoTests.xctest"
-               BlueprintName = "HamcrestDemoTests"
-               ReferencedContainer = "container:HamcrestDemo.xcodeproj">
+               BlueprintIdentifier = "24003ECF19C046BA000B9B0A"
+               BuildableName = "HamcrestDemoOSXTests.xctest"
+               BlueprintName = "HamcrestDemoOSXTests"
+               ReferencedContainer = "container:HamcrestDemoOSX.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2494840419B6067A007EEA3D"
-            BuildableName = "HamcrestDemo.app"
-            BlueprintName = "HamcrestDemo"
-            ReferencedContainer = "container:HamcrestDemo.xcodeproj">
+            BlueprintIdentifier = "24003EBD19C046BA000B9B0A"
+            BuildableName = "HamcrestDemoOSX.app"
+            BlueprintName = "HamcrestDemoOSX"
+            ReferencedContainer = "container:HamcrestDemoOSX.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -75,10 +75,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2494840419B6067A007EEA3D"
-            BuildableName = "HamcrestDemo.app"
-            BlueprintName = "HamcrestDemo"
-            ReferencedContainer = "container:HamcrestDemo.xcodeproj">
+            BlueprintIdentifier = "24003EBD19C046BA000B9B0A"
+            BuildableName = "HamcrestDemoOSX.app"
+            BlueprintName = "HamcrestDemoOSX"
+            ReferencedContainer = "container:HamcrestDemoOSX.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -93,10 +93,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2494840419B6067A007EEA3D"
-            BuildableName = "HamcrestDemo.app"
-            BlueprintName = "HamcrestDemo"
-            ReferencedContainer = "container:HamcrestDemo.xcodeproj">
+            BlueprintIdentifier = "24003EBD19C046BA000B9B0A"
+            BuildableName = "HamcrestDemoOSX.app"
+            BlueprintName = "HamcrestDemoOSX"
+            ReferencedContainer = "container:HamcrestDemoOSX.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
