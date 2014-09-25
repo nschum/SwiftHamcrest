@@ -77,6 +77,9 @@ assertThat(x, lessThanOrEqualTo(2)) // 👍
 assertThat(x, lessThanOrEqualTo(1))
 // GOT: 2, EXPECTED: greater than or equal to 1
 
+assertThat(x, inInterval(1...2)) // 👍
+assertThat(x, inInterval(1..<2)) // GOT: 2, EXPECTED: in interval 1..<2
+
 assertThat(o, sameInstance(o)) // 👍
 assertThat(o, sameInstance(Test()))
 // GOT: __lldb_expr_53.Test, EXPECTED: same instance as __lldb_expr_53.Test

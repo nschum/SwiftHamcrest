@@ -30,3 +30,7 @@ public func lessThan<T: Comparable>(expectedValue: T) -> Matcher<T> {
 public func lessThanOrEqualTo<T: Comparable>(expectedValue: T) -> Matcher<T> {
     return Matcher("greater than or equal to \(expectedValue)") {$0 <= expectedValue}
 }
+
+public func inInterval<T, I: IntervalType where I.Bound == T>(expectedInterval: I) -> Matcher<T> {
+    return Matcher("in interval \(expectedInterval)") {expectedInterval.contains($0)}
+}

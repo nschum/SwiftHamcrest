@@ -37,4 +37,9 @@ class ArithmeticMatcherTests: BaseTestCase {
         assertMatch(5.0, lessThanOrEqualTo(5))
         assertMismatch(5.001, lessThanOrEqualTo(5), "greater than or equal to 5.0")
     }
+
+    func testInInterval() {
+        assertMatch(5.0, inInterval(1.0...5.0))
+        assertMismatch(5.0, inInterval(1.0..<5.0), "in interval 1.0..<5.0")
+    }
 }
