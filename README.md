@@ -30,6 +30,8 @@ The following are very simply matchers. The matched expressions look like regula
 ```swift
 let x = 1 + 1
 
+// The comments show the human-readable error messages created by the assertions.
+
 assertThat(x == 2) // 👍
 assertThat(x == 3) // GOT: 2, EXPECTED: equal to 3
 
