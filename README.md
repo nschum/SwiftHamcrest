@@ -8,14 +8,12 @@ Hamcrest was originally written in Java and is available for many [languages](ht
 Integration
 -----------
 
-Hamcrest requires Xcode 6.1 (Beta).
-
 While it is possible to use a compiled framework, for now I suggest to add Hamcrest as a project in your workspace. An OS X and an iOS demo project is included to demonstrate this. (Once CocoaPods supports Swift, a spec will be available.)
 
 Tutorial
 --------
 
-**This tutorial is also available as a Playground in the Hamcrest workspace.**
+**This tutorial is also available as a Playground in the Hamcrest workspace on Xcode 6.1 (Beta).**
 
 Normally, you use these matchers in unit tests, where a mismatch will cause the test to fail, but they also work in Playgrounds, where a mismatch will simply print the error message.
 
