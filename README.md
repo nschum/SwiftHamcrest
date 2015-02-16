@@ -8,7 +8,13 @@ Hamcrest was originally written in Java and is available for many [languages](ht
 Integration
 -----------
 
-While it is possible to use a compiled framework, for now I suggest to add Hamcrest as a project in your workspace. An OS X and an iOS demo project is included to demonstrate this. (Once CocoaPods supports Swift, a spec will be available.)
+Using CocoaPods 0.36, it is possible to integrate SwiftHamcrest using a Podfile similar to this:
+
+```swift
+target 'HamcrestDemoTests' do
+  pod 'SwiftHamcrest'
+end
+```
 
 Tutorial
 --------
