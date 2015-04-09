@@ -3,7 +3,7 @@ public func hasProperty<T, U>(propertyMatcher: Matcher<String>, matcher: Matcher
         (value: T) -> MatchResult in
         if let propertyValue = getProperty(value, keyMatcher: propertyMatcher) {
             if propertyValue is U {
-                return delegateMatching(propertyValue as U, matcher) {
+                return delegateMatching(propertyValue as! U, matcher) {
                     return "property value " + describeActualValue(propertyValue, $0)
                 }
             } else {

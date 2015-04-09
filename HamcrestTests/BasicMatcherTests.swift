@@ -8,7 +8,7 @@ private class SampleClass: Printable {
 }
 
 private func address<T: AnyObject>(object: T) -> String {
-    return NSString(format: "%p", unsafeBitCast(object, Int.self))
+    return NSString(format: "%p", unsafeBitCast(object, Int.self)) as String
 }
 
 class BasicMatcherTests: BaseTestCase {

@@ -5,9 +5,9 @@ public func empty<T: CollectionType>() -> Matcher<T> {
 public func hasCount<T: CollectionType>(matcher: Matcher<T.Index.Distance>) -> Matcher<T> {
     return Matcher("has count " + matcher.description) {
         (value: T) -> MatchResult in
-        let count = countElements(value)
-        return delegateMatching(count, matcher) {
-            return "count " + describeActualValue(count, $0)
+        let n = count(value)
+        return delegateMatching(n, matcher) {
+            return "count " + describeActualValue(n, $0)
         }
     }
 }

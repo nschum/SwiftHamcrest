@@ -11,7 +11,7 @@ func describe<T>(value: T) -> String {
 }
 
 func describeAddress<T: AnyObject>(object: T) -> String {
-    return NSString(format: "%p", unsafeBitCast(object, Int.self))
+    return NSString(format: "%p", unsafeBitCast(object, Int.self)) as String
 }
 
 func describeMismatch<T>(value: T, description: String, mismatchDescription: String?) -> String {
