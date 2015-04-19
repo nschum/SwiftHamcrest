@@ -51,7 +51,7 @@ public func presentAnd<T>(matcher: Matcher<T>) -> Matcher<Optional<T>> {
 
 public func instanceOf<T: Any>(expectedType: T.Type) -> Matcher<Any> {
     // There seems to be no way to get the type name.
-    return Matcher("instance of expected type") {$0 is T}
+    return Matcher("instance of \(expectedType)") {$0 is T}
 }
 
 public func instanceOf<T: Any>(expectedType: T.Type, and matcher: Matcher<T>) -> Matcher<Any> {
@@ -59,7 +59,7 @@ public func instanceOf<T: Any>(expectedType: T.Type, and matcher: Matcher<T>) ->
 }
 
 public func instanceOfAnd<T: Any>(matcher: Matcher<T>) -> Matcher<Any> {
-    return Matcher("instance of and \(matcher.description)") {
+    return Matcher("instance of \(T.self) and \(matcher.description)") {
         (value: Any) -> MatchResult in
         if let value = value as? T {
             return matcher.matches(value)
