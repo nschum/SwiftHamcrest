@@ -24,7 +24,7 @@ class BasicMatcherTests: BaseTestCase {
 
     func testIsA() {
         assertMatch(5, isA(Int))
-        assertMismatch(5, isA(String), "is instance of expected type")
+        assertMismatch(5, isA(String), "is instance of Swift.String")
     }
 
     func testNot() {
@@ -43,7 +43,7 @@ class BasicMatcherTests: BaseTestCase {
 
     func testInstanceOf() {
         assertMatch(5, instanceOf(Int))
-        assertMismatch(5, instanceOf(String), "instance of expected type")
+        assertMismatch(5, instanceOf(String), "instance of Swift.String")
     }
 
     func testNilValue() {
