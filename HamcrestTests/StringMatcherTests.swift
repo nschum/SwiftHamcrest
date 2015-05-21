@@ -42,4 +42,12 @@ class StringTests: BaseTestCase {
 
         assertMismatch(string, hasSuffix("foo"), "has suffix \"foo\"")
     }
+
+    func testMatchesPattern() {
+        assertMatch(string, matchesPattern("\\bfo+bar\\b"))
+        assertMatch(string, matchesPattern("\\bFO+BAR\\b", options: .CaseInsensitive))
+
+        assertMismatch(string, matchesPattern("\\bFO+BAR\\b"), "matches \"\\bFO+BAR\\b\"")
+        assertMismatch(string, matchesPattern("x"), "matches \"x\"")
+    }
 }

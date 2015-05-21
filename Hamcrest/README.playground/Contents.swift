@@ -79,6 +79,10 @@ assertThat("foobarbaz", hasPrefix("oo")) // mismatch
 assertThat("foobarbaz", hasSuffix("baz"))
 assertThat("foobarbaz", hasSuffix("ba")) // mismatch
 
+assertThat("ac", matchesPattern("\\b(a|b)(c|d)\\b"))
+assertThat("BD", matchesPattern("\\b(a|b)(c|d)\\b", options: .CaseInsensitive))
+assertThat("aC", matchesPattern("\\b(a|b)(c|d)\\b"))
+
 assertThat(10.0, closeTo(10.0, 0.01))
 assertThat(10.0000001, closeTo(10, 0.01))
 assertThat(10.1, closeTo(10, 0.01)) // mismatch
