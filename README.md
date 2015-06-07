@@ -19,7 +19,7 @@ end
 Tutorial
 --------
 
-**This tutorial is also available as a Playground in the Hamcrest workspace on Xcode 6.1 (Beta).**
+**This tutorial is also available as a Playground in the Hamcrest workspace.**
 
 Normally, you use these matchers in unit tests, where a mismatch will cause the test to fail, but they also work in Playgrounds, where a mismatch will simply print the error message.
 
