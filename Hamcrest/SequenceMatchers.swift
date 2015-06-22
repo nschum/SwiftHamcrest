@@ -139,7 +139,7 @@ private func containsInAnyOrder<T, S: SequenceType where S.Generator.Element == 
                 }
                 unmatchedValues.append(value)
         }
-        var isMatch = remainingMatchers.isEmpty && unmatchedValues.isEmpty
+        let isMatch = remainingMatchers.isEmpty && unmatchedValues.isEmpty
         if !isMatch {
             return applyMatchers(remainingMatchers, values: unmatchedValues)
         } else {

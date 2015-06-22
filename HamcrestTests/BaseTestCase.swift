@@ -70,7 +70,7 @@ private func valueDescription(value: Any) -> String {
     if let stringArray = value as? [String] {
         return joinStrings(stringArray.map {valueDescription($0)})
     } else if let string = value as? String {
-        return "\"\(value)\""
+        return "\"\(string)\""
     } else {
         return toString(value)
     }
