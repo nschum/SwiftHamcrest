@@ -2,8 +2,8 @@ public func hasProperty<T, U>(propertyMatcher: Matcher<String>, matcher: Matcher
     return Matcher("has property \(propertyMatcher.description) with value \(matcher.description)") {
         (value: T) -> MatchResult in
         if let propertyValue = getProperty(value, keyMatcher: propertyMatcher) {
-            if propertyValue is U {
-                return delegateMatching(propertyValue as! U, matcher) {
+            if let propertyValue = propertyValue as? U {
+                return delegateMatching(propertyValue, matcher) {
                     return "property value " + describeActualValue(propertyValue, $0)
                 }
             } else {

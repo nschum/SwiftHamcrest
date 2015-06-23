@@ -42,14 +42,14 @@ public func && (lhs: MatchResultDescription, rhs: MatchResultDescription)
     -> MatchResultDescription {
 
     switch (lhs.result, rhs.result) {
-    case (nil, nil):
-        return MatchResultDescription(result: nil)
-    case let (result, nil):
+    case (.None, .None):
+        return MatchResultDescription(result: .None)
+    case let (.Some(result), .None):
         return MatchResultDescription(result: result)
-    case let (nil, result):
+    case let (.None, .Some(result)):
         return MatchResultDescription(result: result)
-    default:
-        let result = "\(lhs.result!) and \(rhs.result!)"
+    case let (.Some(lhsResult), .Some(rhsResult)):
+        let result = "\(lhsResult) and \(rhsResult)"
         return MatchResultDescription(result: result)
     }
 }

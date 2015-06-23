@@ -10,10 +10,12 @@ public func containsStringsInOrder(strings: String...) -> Matcher<String> {
         var range = Range(start: value.startIndex, end: value.endIndex)
         for string in strings {
             let r = value.rangeOfString(string, options: .CaseInsensitiveSearch, range: range)
-            if r == nil {
+            if let r = r {
+                range.startIndex = r.endIndex
+            } else {
                 return false
             }
-            range.startIndex = r!.endIndex
+
         }
         return true
     }

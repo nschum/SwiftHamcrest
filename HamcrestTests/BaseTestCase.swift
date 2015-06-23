@@ -24,8 +24,8 @@ class BaseTestCase: XCTestCase {
 
         reportedError = nil
         assertThat(value, matcher)
-        if (mismatchDescription != nil) {
-            assertReportsError(value, description, mismatchDescription: mismatchDescription!,
+        if let mismatchDescription = mismatchDescription {
+            assertReportsError(value, description, mismatchDescription: mismatchDescription,
                                file: file, line: line)
         } else {
             assertReportsError(value, description, file: file, line: line)
@@ -38,8 +38,8 @@ class BaseTestCase: XCTestCase {
 
         reportedError = nil
         assertThat(value, matcher)
-        if (mismatchDescription != nil) {
-            assertReportsError(value, description, mismatchDescription: mismatchDescription!,
+        if let mismatchDescription = mismatchDescription {
+            assertReportsError(value, description, mismatchDescription: mismatchDescription,
                                file: file, line: line)
         } else {
             assertReportsError(value, description, file: file, line: line)
@@ -62,7 +62,7 @@ class BaseTestCase: XCTestCase {
 private func expectedMessage(value: Any, description: String, # mismatchDescription: String?)
     -> String {
 
-    let inset = (mismatchDescription != nil ? " (\(mismatchDescription!))" : "")
+    let inset = (mismatchDescription.map{" (\($0))"} ?? "")
     return "GOT: \(valueDescription(value))\(inset), EXPECTED: \(description)"
 }
 

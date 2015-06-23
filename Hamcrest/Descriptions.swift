@@ -19,7 +19,7 @@ func describeMismatch<T>(value: T, description: String, mismatchDescription: Str
 }
 
 func describeActualValue<T>(value: T, mismatchDescription: String?) -> String {
-    return describe(value) + (mismatchDescription != nil ? " (\(mismatchDescription!))" : "")
+    return describe(value) + (mismatchDescription.map{" (\($0))"} ?? "")
 }
 
 func joinDescriptions(descriptions: [String]) -> String {

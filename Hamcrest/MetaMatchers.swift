@@ -18,7 +18,7 @@ public func allOf<T>(matchers: Matcher<T>...) -> Matcher<T> {
             switch delegateMatching(value, matcher, {
                 (mismatchDescription: String?) -> String? in
                 "mismatch: \(matcher.description)"
-                    + (mismatchDescription != nil ? " (\(mismatchDescription!))" : "")
+                    + (mismatchDescription.map{" (\($0))"} ?? "")
             }) {
             case let .Mismatch(mismatchDescription):
                 mismatchDescriptions.append(mismatchDescription)
