@@ -1,6 +1,6 @@
 public struct Matcher<T> {
 
-    let description: String
+    public let description: String
     let f: T -> MatchResult
 
     public init(_ description: String, _ f: T -> MatchResult) {
@@ -13,7 +13,7 @@ public struct Matcher<T> {
         self.f = {value in f(value) ? .Match : .Mismatch(nil)}
     }
 
-    func matches(value: T) -> MatchResult {
+    public func matches(value: T) -> MatchResult {
         return f(value)
     }
 }
