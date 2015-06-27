@@ -61,6 +61,6 @@ func reportResult(possibleResult: String?, file: String = __FILE__, line: UInt =
         return result
     } else {
         // The return value is just intended for Playgrounds.
-        return "👍"
+        return "✓"
     }
 }
