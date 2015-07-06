@@ -10,7 +10,7 @@ Integration
 
 Using CocoaPods 0.36, it is possible to integrate SwiftHamcrest using a Podfile similar to this:
 
-```swift
+```ruby
 target 'HamcrestDemoTests' do
   pod 'SwiftHamcrest'
 end
