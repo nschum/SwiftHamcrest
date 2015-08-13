@@ -1,4 +1,4 @@
-public func hasEntry<K: Hashable, V>(keyMatcher: Matcher<K>, valueMatcher: Matcher<V>)
+public func hasEntry<K: Hashable, V>(keyMatcher: Matcher<K>, _ valueMatcher: Matcher<V>)
     -> Matcher<Dictionary<K, V>> {
 
         return Matcher("a dictionary containing [\(keyMatcher.description) -> \(valueMatcher.description)]") {
@@ -13,7 +13,7 @@ public func hasEntry<K: Hashable, V>(keyMatcher: Matcher<K>, valueMatcher: Match
         }
 }
 
-public func hasEntry<K: Equatable, V: Equatable where K: Hashable>(expectedKey: K, expectedValue: V)
+public func hasEntry<K: Equatable, V: Equatable where K: Hashable>(expectedKey: K, _ expectedValue: V)
     -> Matcher<Dictionary<K, V>> {
 
         return hasEntry(equalToWithoutDescription(expectedKey), equalToWithoutDescription(expectedValue))

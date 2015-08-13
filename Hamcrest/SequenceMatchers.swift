@@ -5,7 +5,7 @@ public func empty<T: CollectionType>() -> Matcher<T> {
 public func hasCount<T: CollectionType>(matcher: Matcher<T.Index.Distance>) -> Matcher<T> {
     return Matcher("has count " + matcher.description) {
         (value: T) -> MatchResult in
-        let n = count(value)
+        let n = value.count
         return delegateMatching(n, matcher) {
             return "count " + describeActualValue(n, $0)
         }
@@ -51,7 +51,7 @@ public func hasItem<T, S: SequenceType where S.Generator.Element == T>(matcher: 
     -> Matcher<S> {
 
     return Matcher("a sequence containing \(matcher.description)") {
-        (values: S) -> Bool in hasItem(matcher, values)
+        (values: S) -> Bool in hasItem(matcher, values: values)
     }
 }
 
@@ -68,7 +68,7 @@ private func hasItems<T, S: SequenceType where S.Generator.Element == T>(matcher
         (values: S) -> MatchResult in
         var missingItems = [] as [Matcher<T>]
         for matcher in matchers {
-            if !hasItem(matcher, values) {
+            if !hasItem(matcher, values: values) {
                 missingItems.append(matcher)
             }
         }
@@ -139,7 +139,7 @@ private func containsInAnyOrder<T, S: SequenceType where S.Generator.Element == 
                 }
                 unmatchedValues.append(value)
         }
-        var isMatch = remainingMatchers.isEmpty && unmatchedValues.isEmpty
+        let isMatch = remainingMatchers.isEmpty && unmatchedValues.isEmpty
         if !isMatch {
             return applyMatchers(remainingMatchers, values: unmatchedValues)
         } else {
@@ -161,12 +161,12 @@ public func containsInAnyOrder<T: Equatable, S: SequenceType where S.Generator.E
 }
 
 func applyMatchers<T, S: SequenceType where S.Generator.Element == T>
-    (matchers: [Matcher<T>], # values: S) -> MatchResult {
+    (matchers: [Matcher<T>], values: S) -> MatchResult {
 
     var mismatchDescriptions: [String?] = []
 
     var i = 0
-    for (value, matcher) in Zip2(values, matchers) {
+    for (value, matcher) in Zip2Sequence(values, matchers) {
         switch delegateMatching(value, matcher, {
             "mismatch: " + describeMismatch(value, matcher.description, $0)
         }) {

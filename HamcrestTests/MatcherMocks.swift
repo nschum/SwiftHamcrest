@@ -25,5 +25,5 @@ func failingMatcher<T>(type: T.Type = T.self, description: String = "description
 
 func failingMatcherWithMismatchDescription<T>(type: T.Type = T.self,
                                               description: String = "description") -> Matcher<T> {
-    return failingMatcher(type: type, description: description, mismatchDescription: "mismatch description")
+    return failingMatcher(type, description: description, mismatchDescription: "mismatch description")
 }

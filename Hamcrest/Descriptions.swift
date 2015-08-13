@@ -7,18 +7,18 @@ func describe<T>(value: T) -> String {
     if let string = value as? String {
         return "\"\(string)\""
     }
-    return toString(value)
+    return String(value)
 }
 
 func describeAddress<T: AnyObject>(object: T) -> String {
     return NSString(format: "%p", unsafeBitCast(object, Int.self)) as String
 }
 
-func describeMismatch<T>(value: T, description: String, mismatchDescription: String?) -> String {
+func describeMismatch<T>(value: T, _ description: String, _ mismatchDescription: String?) -> String {
     return "GOT: " + describeActualValue(value, mismatchDescription) + ", EXPECTED: \(description)"
 }
 
-func describeActualValue<T>(value: T, mismatchDescription: String?) -> String {
+func describeActualValue<T>(value: T, _ mismatchDescription: String?) -> String {
     return describe(value) + (mismatchDescription.map{" (\($0))"} ?? "")
 }
 
@@ -46,6 +46,6 @@ private func joinStrings(strings: [String]) -> String {
     case 1:
         return strings[0]
     default:
-        return "[" + join(", ", strings) + "]"
+        return "[" + ", ".join(strings) + "]"
     }
 }
