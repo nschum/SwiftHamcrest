@@ -6,7 +6,7 @@ public func not<T: Equatable>(expectedValue: T) -> Matcher<T> {
     return not(equalToWithoutDescription(expectedValue))
 }
 
-public func describedAs<T>(description: String, matcher: Matcher<T>) -> Matcher<T> {
+public func describedAs<T>(description: String, _ matcher: Matcher<T>) -> Matcher<T> {
     return Matcher(description) {matcher.matches($0) as MatchResult}
 }
 

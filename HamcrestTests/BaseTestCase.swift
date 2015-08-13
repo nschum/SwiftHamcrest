@@ -6,7 +6,7 @@ class BaseTestCase: XCTestCase {
     var reportedError: String? = nil
 
     override func setUp() {
-        HamcrestReportFunction = {(message, # file, # line) in self.reportedError = message}
+        HamcrestReportFunction = {(message, file, line) in self.reportedError = message}
         super.setUp()
     }
 
@@ -15,7 +15,7 @@ class BaseTestCase: XCTestCase {
 
         reportedError = nil
         assertThat(value, matcher)
-        assertReportsNoError(file: file, line: line)
+        assertReportsNoError(file, line: line)
     }
 
     func assertMismatch<T>(value: T, _ matcher: Matcher<T>, _ description: String,
@@ -54,12 +54,12 @@ class BaseTestCase: XCTestCase {
                                file: String = __FILE__, line: UInt = __LINE__) {
 
        XCTAssertNotNil(reportedError, file: file, line: line)
-       let message = expectedMessage(value, description, mismatchDescription: mismatchDescription)
+       let message = expectedMessage(value, description, mismatchDescription)
        XCTAssertEqual((reportedError ?? ""), message, file: file, line: line)
     }
 }
 
-private func expectedMessage(value: Any, description: String, # mismatchDescription: String?)
+private func expectedMessage(value: Any, _ description: String, _ mismatchDescription: String?)
     -> String {
 
     let inset = (mismatchDescription.map{" (\($0))"} ?? "")
@@ -70,9 +70,9 @@ private func valueDescription(value: Any) -> String {
     if let stringArray = value as? [String] {
         return joinStrings(stringArray.map {valueDescription($0)})
     } else if let string = value as? String {
-        return "\"\(value)\""
+        return "\"\(string)\""
     } else {
-        return toString(value)
+        return String(value)
     }
 }
 
@@ -83,6 +83,6 @@ private func joinStrings(strings: [String]) -> String {
     case 1:
         return strings[0]
     default:
-        return "[" + join(", ", strings) + "]"
+        return "[" + ", ".join(strings) + "]"
     }
 }

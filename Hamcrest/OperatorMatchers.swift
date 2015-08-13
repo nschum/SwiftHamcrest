@@ -10,7 +10,7 @@ public struct MatchResultDescription {
         self.result = result
     }
     init<T>(value: T, matcher: Matcher<T>) {
-        self.result = applyMatcher(matcher, toValue: value)
+        self.result = applyMatcher(matcher, value)
     }
 }
 

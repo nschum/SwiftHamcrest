@@ -1,7 +1,7 @@
 import XCTest
 import Hamcrest
 
-private class SampleClass: Printable {
+private class SampleClass: CustomStringConvertible {
     var description: String {
         return "SampleClass instance"
     }
@@ -24,7 +24,7 @@ class BasicMatcherTests: BaseTestCase {
 
     func testIsA() {
         assertMatch(5, isA(Int))
-        assertMismatch(5, isA(String), "is instance of Swift.String")
+        assertMismatch(5, isA(String), "is instance of String")
     }
 
     func testNot() {
@@ -43,7 +43,7 @@ class BasicMatcherTests: BaseTestCase {
 
     func testInstanceOf() {
         assertMatch(5, instanceOf(Int))
-        assertMismatch(5, instanceOf(String), "instance of Swift.String")
+        assertMismatch(5, instanceOf(String), "instance of String")
     }
 
     func testNilValue() {
