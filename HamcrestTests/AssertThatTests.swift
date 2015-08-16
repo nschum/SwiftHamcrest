@@ -16,7 +16,7 @@ class AssertThatTests: BaseTestCase {
 
         assertThat(5, matcher)
 
-        assertReportsError(5, "description")
+        assertReportsMismatch(5, "description")
     }
 
     func testMatcherWithMatchResultReturningMatch() {
@@ -32,7 +32,7 @@ class AssertThatTests: BaseTestCase {
 
         assertThat(5, matcher)
 
-        assertReportsError(5, "description")
+        assertReportsMismatch(5, "description")
     }
 
     func testMatcherWithMatchResultReturningMismachWithDescription() {
@@ -40,6 +40,6 @@ class AssertThatTests: BaseTestCase {
 
         assertThat(5, matcher)
 
-        assertReportsError(5, "description", mismatchDescription: "mismatch description")
+        assertReportsMismatch(5, "description", mismatchDescription: "mismatch description")
     }
 }

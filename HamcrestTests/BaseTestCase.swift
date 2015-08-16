@@ -25,10 +25,9 @@ class BaseTestCase: XCTestCase {
         reportedError = nil
         assertThat(value, matcher)
         if let mismatchDescription = mismatchDescription {
-            assertReportsError(value, description, mismatchDescription: mismatchDescription,
-                               file: file, line: line)
+            assertReportsMismatch(value, description, mismatchDescription: mismatchDescription, file: file, line: line)
         } else {
-            assertReportsError(value, description, file: file, line: line)
+            assertReportsMismatch(value, description, file: file, line: line)
         }
     }
 
@@ -39,10 +38,9 @@ class BaseTestCase: XCTestCase {
         reportedError = nil
         assertThat(value, matcher)
         if let mismatchDescription = mismatchDescription {
-            assertReportsError(value, description, mismatchDescription: mismatchDescription,
-                               file: file, line: line)
+            assertReportsMismatch(value, description, mismatchDescription: mismatchDescription, file: file, line: line)
         } else {
-            assertReportsError(value, description, file: file, line: line)
+            assertReportsMismatch(value, description, file: file, line: line)
         }
     }
 
@@ -50,8 +48,7 @@ class BaseTestCase: XCTestCase {
         XCTAssertNil(reportedError, file: file, line: line)
     }
 
-    func assertReportsError<T>(value: T, _ description: String, mismatchDescription: String? = nil,
-                               file: String = __FILE__, line: UInt = __LINE__) {
+    func assertReportsMismatch<T>(value: T, _ description: String, mismatchDescription: String? = nil, file: String = __FILE__, line: UInt = __LINE__) {
 
        XCTAssertNotNil(reportedError, file: file, line: line)
        let message = expectedMessage(value, description, mismatchDescription: mismatchDescription)
