@@ -215,3 +215,27 @@ func isDivisibleByThree() -> Matcher<Int> {
 
 assertThat(342783, isDivisibleByThree())
 assertThat(489359, isDivisibleByThree()) // mismatch
+
+//: ### Errors ###
+//: If the function you're testing can throw errors, Hamcrest will report those errors.
+
+private enum SampleError: ErrorType {
+    case Error1
+    case Error2
+}
+
+private func throwingFunc() throws -> Int {
+    throw SampleError.Error1
+}
+
+assertThat(try throwingFunc(), equalTo(1))
+
+//: If you want to verify an error is being thrown, use `assertThrows`.
+
+private func notThrowingFunc() throws {
+}
+
+assertThrows(try notThrowingFunc())
+assertThrows(try notThrowingFunc(), SampleError.Error2)
+
+assertThrows(try throwingFunc(), SampleError.Error2)
