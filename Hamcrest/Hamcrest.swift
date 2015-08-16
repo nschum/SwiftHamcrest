@@ -36,6 +36,42 @@ func isPlayground() -> Bool {
     return (bundleIdentifier as? String)?.hasPrefix("com.apple.dt.playground.stub") ?? false
 }
 
+// MARK: assertThrows
+
+public func assertThrows<T>(@autoclosure value: () throws -> T, file: String = __FILE__, line: UInt = __LINE__) -> String {
+    do {
+        try value()
+        return reportResult(describeExpectedError())
+    } catch {
+        return reportResult(nil)
+    }
+}
+
+public func assertThrows<S, T: ErrorType where T: Equatable>(@autoclosure value: () throws -> S, _ error: T, file: String = __FILE__, line: UInt = __LINE__) -> String {
+    return assertThrows(value, equalToWithoutDescription(error), file: file, line: line)
+}
+
+public func assertThrows<S, T: ErrorType>(@autoclosure value: () throws -> S, _ matcher: Matcher<T>, file: String = __FILE__, line: UInt = __LINE__) -> String {
+    return reportResult(applyErrorMatcher(matcher, toBlock: value))
+}
+
+private func applyErrorMatcher<S, T: ErrorType>(matcher: Matcher<T>, @noescape toBlock: () throws -> S) -> String? {
+    do {
+        try toBlock()
+        return describeExpectedError(matcher.description)
+    } catch let error as T {
+        let match = matcher.matches(error)
+        switch match {
+        case .Match:
+            return nil
+        case let .Mismatch(mismatchDescription):
+            return describeErrorMismatch(error, matcher.description, mismatchDescription)
+        }
+    } catch let error {
+        return describeErrorMismatch(error, matcher.description, nil)
+    }
+}
+
 // MARK: assertThat
 
 public func assertThat<T>(@autoclosure value: () throws -> T, _ matcher: Matcher<T>, file: String = __FILE__, line: UInt = __LINE__) -> String {

@@ -18,6 +18,18 @@ func describeError(error: ErrorType) -> String {
     return "ERROR: \(error)"
 }
 
+func describeExpectedError() -> String {
+    return "EXPECTED ERROR"
+}
+
+func describeExpectedError(description: String) -> String {
+    return "EXPECTED ERROR: \(description)"
+}
+
+func describeErrorMismatch<T>(error: T, _ description: String, _ mismatchDescription: String?) -> String {
+    return "GOT ERROR: " + describeActualValue(error, mismatchDescription) + ", EXPECTED ERROR: \(description)"
+}
+
 func describeMismatch<T>(value: T, _ description: String, _ mismatchDescription: String?) -> String {
     return "GOT: " + describeActualValue(value, mismatchDescription) + ", EXPECTED: \(description)"
 }
