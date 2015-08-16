@@ -24,11 +24,11 @@ public func greaterThanOrEqualTo<T: Comparable>(expectedValue: T) -> Matcher<T> 
 }
 
 public func lessThan<T: Comparable>(expectedValue: T) -> Matcher<T> {
-    return Matcher("greater than \(expectedValue)") {$0 < expectedValue}
+    return Matcher("less than \(expectedValue)") {$0 < expectedValue}
 }
 
 public func lessThanOrEqualTo<T: Comparable>(expectedValue: T) -> Matcher<T> {
-    return Matcher("greater than or equal to \(expectedValue)") {$0 <= expectedValue}
+    return Matcher("less than or equal to \(expectedValue)") {$0 <= expectedValue}
 }
 
 public func inInterval<T, I: IntervalType where I.Bound == T>(expectedInterval: I) -> Matcher<T> {

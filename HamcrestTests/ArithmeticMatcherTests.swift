@@ -28,14 +28,14 @@ class ArithmeticMatcherTests: BaseTestCase {
 
     func testLessThan() {
         assertMatch(4.999, lessThan(5))
-        assertMismatch(5.0, lessThan(5), "greater than 5.0")
-        assertMismatch(5.001, lessThan(5), "greater than 5.0")
+        assertMismatch(5.0, lessThan(5), "less than 5.0")
+        assertMismatch(5.001, lessThan(5), "less than 5.0")
     }
 
     func testLessThanOrEqualTo() {
         assertMatch(4.999, lessThanOrEqualTo(5))
         assertMatch(5.0, lessThanOrEqualTo(5))
-        assertMismatch(5.001, lessThanOrEqualTo(5), "greater than or equal to 5.0")
+        assertMismatch(5.001, lessThanOrEqualTo(5), "less than or equal to 5.0")
     }
 
     func testInInterval() {
