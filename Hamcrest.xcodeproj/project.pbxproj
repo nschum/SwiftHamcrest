@@ -30,6 +30,7 @@
 		247C43471B4DD0F000F357B8 /* MetaMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2496DB0019922407008C270E /* MetaMatcherTests.swift */; };
 		247C43481B4DD0F000F357B8 /* ReflectionMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248CDCB019A24B3500743F70 /* ReflectionMatcherTests.swift */; };
 		247C43491B4DD0F000F357B8 /* StringMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248CDCB219A2531500743F70 /* StringMatcherTests.swift */; };
+		244ABFEA1B812A44007E8578 /* OperatorMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244ABFE91B812A44007E8578 /* OperatorMatcherTests.swift */; };
 		248CDCB119A24B3500743F70 /* ReflectionMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248CDCB019A24B3500743F70 /* ReflectionMatcherTests.swift */; };
 		248CDCB319A2531500743F70 /* StringMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248CDCB219A2531500743F70 /* StringMatcherTests.swift */; };
 		248CDCB519A2540200743F70 /* ArithmeticMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248CDCB419A2540200743F70 /* ArithmeticMatcherTests.swift */; };
@@ -90,6 +91,7 @@
 		242D15FB19B7A39B0099EA62 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		242D15FD19B7A3B60099EA62 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		247C43341B4DD0D700F357B8 /* HamcrestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamcrestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		244ABFE91B812A44007E8578 /* OperatorMatcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorMatcherTests.swift; sourceTree = "<group>"; };
 		2484A1611AD6897F00076A3F /* README.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = README.playground; sourceTree = "<group>"; };
 		248CDCB019A24B3500743F70 /* ReflectionMatcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReflectionMatcherTests.swift; sourceTree = "<group>"; };
 		248CDCB219A2531500743F70 /* StringMatcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringMatcherTests.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				2496DB0019922407008C270E /* MetaMatcherTests.swift */,
 				248CDCB019A24B3500743F70 /* ReflectionMatcherTests.swift */,
 				248CDCB219A2531500743F70 /* StringMatcherTests.swift */,
+				244ABFE91B812A44007E8578 /* OperatorMatcherTests.swift */,
 				2496DAFE19922407008C270E /* Supporting Files */,
 			);
 			path = HamcrestTests;
@@ -471,6 +474,7 @@
 				24918C0319A213CC00F1AE4A /* AssertThatTests.swift in Sources */,
 				24F95B241B80EBD0004A0F4C /* ErrorTests.swift in Sources */,
 				2496DB0119922407008C270E /* MetaMatcherTests.swift in Sources */,
+				244ABFEA1B812A44007E8578 /* OperatorMatcherTests.swift in Sources */,
 				24D9341E19A23DC200A411BD /* SequenceMatcherTests.swift in Sources */,
 				248CDCB319A2531500743F70 /* StringMatcherTests.swift in Sources */,
 				248CDCB119A24B3500743F70 /* ReflectionMatcherTests.swift in Sources */,
