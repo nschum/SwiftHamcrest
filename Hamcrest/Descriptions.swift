@@ -14,6 +14,10 @@ func describeAddress<T: AnyObject>(object: T) -> String {
     return NSString(format: "%p", unsafeBitCast(object, Int.self)) as String
 }
 
+func describeError(error: ErrorType) -> String {
+    return "ERROR: \(error)"
+}
+
 func describeMismatch<T>(value: T, _ description: String, _ mismatchDescription: String?) -> String {
     return "GOT: " + describeActualValue(value, mismatchDescription) + ", EXPECTED: \(description)"
 }

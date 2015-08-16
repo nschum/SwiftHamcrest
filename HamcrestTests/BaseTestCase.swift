@@ -48,11 +48,14 @@ class BaseTestCase: XCTestCase {
         XCTAssertNil(reportedError, file: file, line: line)
     }
 
-    func assertReportsMismatch<T>(value: T, _ description: String, mismatchDescription: String? = nil, file: String = __FILE__, line: UInt = __LINE__) {
+    func assertReportsError(message: String, file: String = __FILE__, line: UInt = __LINE__) {
+        XCTAssertNotNil(reportedError, file: file, line: line)
+        XCTAssertEqual((reportedError ?? ""), message, file: file, line: line)
+    }
 
-       XCTAssertNotNil(reportedError, file: file, line: line)
-       let message = expectedMessage(value, description, mismatchDescription: mismatchDescription)
-       XCTAssertEqual((reportedError ?? ""), message, file: file, line: line)
+    func assertReportsMismatch<T>(value: T, _ description: String, mismatchDescription: String? = nil, file: String = __FILE__, line: UInt = __LINE__) {
+        let message = expectedMessage(value, description, mismatchDescription: mismatchDescription)
+        assertReportsError(message, file: file, line: line)
     }
 }
 

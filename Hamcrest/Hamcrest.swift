@@ -38,18 +38,22 @@ func isPlayground() -> Bool {
 
 // MARK: assertThat
 
-public func assertThat<T>(value: T, _ matcher: Matcher<T>,
-                          file: String = __FILE__, line: UInt = __LINE__) -> String {
+public func assertThat<T>(@autoclosure value: () throws -> T, _ matcher: Matcher<T>, file: String = __FILE__, line: UInt = __LINE__) -> String {
     return reportResult(applyMatcher(matcher, toValue: value), file: file, line: line)
 }
 
-func applyMatcher<T>(matcher: Matcher<T>, toValue: T) -> String? {
-    let match = matcher.matches(toValue)
-    switch match {
-    case .Match:
-        return nil
-    case let .Mismatch(mismatchDescription):
-        return describeMismatch(toValue, matcher.description, mismatchDescription)
+func applyMatcher<T>(matcher: Matcher<T>, @noescape toValue: () throws -> T) -> String? {
+    do {
+        let value = try toValue()
+        let match = matcher.matches(value)
+        switch match {
+        case .Match:
+            return nil
+        case let .Mismatch(mismatchDescription):
+            return describeMismatch(value, matcher.description, mismatchDescription)
+        }
+    } catch let error {
+        return describeError(error)
     }
 }
 

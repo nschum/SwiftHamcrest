@@ -9,7 +9,7 @@ public struct MatchResultDescription {
     init(result: String?) {
         self.result = result
     }
-    init<T>(value: T, matcher: Matcher<T>) {
+    init<T>(@autoclosure value: () -> T, matcher: Matcher<T>) {
         self.result = applyMatcher(matcher, toValue: value)
     }
 }
