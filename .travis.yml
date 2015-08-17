@@ -1,0 +1,12 @@
+language: objective-c
+osx_image: xcode6.4
+cache: cocoapods
+sudo: false
+
+before_install:
+  - gem install --no-ri --no-rdoc cocoapods xcpretty
+
+script:
+  - set -o pipefail; xcodebuild -workspace *.xcworkspace -scheme "Hamcrest OSX" build test | xcpretty -c
+  - set -o pipefail; xcodebuild -workspace *.xcworkspace -scheme "Hamcrest iOS" build test | xcpretty -c
+  - pod lib lint

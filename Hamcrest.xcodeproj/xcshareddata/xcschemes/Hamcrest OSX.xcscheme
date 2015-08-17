@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2496DAFB19922407008C270E"
-               BuildableName = "HamcrestTests.xctest"
-               BlueprintName = "HamcrestTests"
+               BuildableName = "HamcrestTestsOSX.xctest"
+               BlueprintName = "HamcrestTestsOSX"
                ReferencedContainer = "container:Hamcrest.xcodeproj">
             </BuildableReference>
          </TestableReference>

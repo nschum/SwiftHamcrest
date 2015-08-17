@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Hamcrest.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "247C43331B4DD0D700F357B8"
+               BuildableName = "HamcrestTests.xctest"
+               BlueprintName = "HamcrestTests"
+               ReferencedContainer = "container:Hamcrest.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -28,7 +42,26 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "247C43331B4DD0D700F357B8"
+               BuildableName = "HamcrestTests.xctest"
+               BlueprintName = "HamcrestTests"
+               ReferencedContainer = "container:Hamcrest.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "2494844719B60A56007EEA3D"
+            BuildableName = "Hamcrest.framework"
+            BlueprintName = "Hamcrest"
+            ReferencedContainer = "container:Hamcrest.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = ""

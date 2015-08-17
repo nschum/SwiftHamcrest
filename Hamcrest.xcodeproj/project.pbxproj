@@ -19,6 +19,17 @@
 		2428C4C419A3EA5600475822 /* BasicMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428C4C319A3EA5600475822 /* BasicMatchers.swift */; };
 		2428C4C619A3EAC700475822 /* OperatorMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428C4C519A3EAC700475822 /* OperatorMatchers.swift */; };
 		242D15FF19B7A3BC0099EA62 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242D15FB19B7A39B0099EA62 /* XCTest.framework */; };
+		247C433A1B4DD0D700F357B8 /* Hamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2494844819B60A56007EEA3D /* Hamcrest.framework */; };
+		247C43401B4DD0F000F357B8 /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24918C0019A2134E00F1AE4A /* BaseTestCase.swift */; };
+		247C43411B4DD0F000F357B8 /* MatcherMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E64D3A19A29E6100090B1D /* MatcherMocks.swift */; };
+		247C43421B4DD0F000F357B8 /* AssertThatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24918C0219A213CC00F1AE4A /* AssertThatTests.swift */; };
+		247C43431B4DD0F000F357B8 /* BasicMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24918C0419A2145F00F1AE4A /* BasicMatcherTests.swift */; };
+		247C43441B4DD0F000F357B8 /* ArithmeticMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248CDCB419A2540200743F70 /* ArithmeticMatcherTests.swift */; };
+		247C43451B4DD0F000F357B8 /* DictionaryMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D9341B19A23BED00A411BD /* DictionaryMatcherTests.swift */; };
+		247C43461B4DD0F000F357B8 /* SequenceMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D9341D19A23DC200A411BD /* SequenceMatcherTests.swift */; };
+		247C43471B4DD0F000F357B8 /* MetaMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2496DB0019922407008C270E /* MetaMatcherTests.swift */; };
+		247C43481B4DD0F000F357B8 /* ReflectionMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248CDCB019A24B3500743F70 /* ReflectionMatcherTests.swift */; };
+		247C43491B4DD0F000F357B8 /* StringMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248CDCB219A2531500743F70 /* StringMatcherTests.swift */; };
 		248CDCB119A24B3500743F70 /* ReflectionMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248CDCB019A24B3500743F70 /* ReflectionMatcherTests.swift */; };
 		248CDCB319A2531500743F70 /* StringMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248CDCB219A2531500743F70 /* StringMatcherTests.swift */; };
 		248CDCB519A2540200743F70 /* ArithmeticMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248CDCB419A2540200743F70 /* ArithmeticMatcherTests.swift */; };
@@ -53,6 +64,13 @@
 			remoteGlobalIDString = 2496DAF019922407008C270E;
 			remoteInfo = Hamcrest;
 		};
+		247C433B1B4DD0D700F357B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2496DAE819922407008C270E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2494844719B60A56007EEA3D;
+			remoteInfo = Hamcrest;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +87,7 @@
 		2428C4C519A3EAC700475822 /* OperatorMatchers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorMatchers.swift; sourceTree = "<group>"; };
 		242D15FB19B7A39B0099EA62 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		242D15FD19B7A3B60099EA62 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		247C43341B4DD0D700F357B8 /* HamcrestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamcrestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2484A1611AD6897F00076A3F /* README.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = README.playground; sourceTree = "<group>"; };
 		248CDCB019A24B3500743F70 /* ReflectionMatcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReflectionMatcherTests.swift; sourceTree = "<group>"; };
 		248CDCB219A2531500743F70 /* StringMatcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringMatcherTests.swift; sourceTree = "<group>"; };
@@ -91,6 +110,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		247C43311B4DD0D700F357B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				247C433A1B4DD0D700F357B8 /* Hamcrest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2494844419B60A56007EEA3D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -143,6 +170,7 @@
 				2496DAF119922407008C270E /* Hamcrest.framework */,
 				2496DAFC19922407008C270E /* HamcrestTests.xctest */,
 				2494844819B60A56007EEA3D /* Hamcrest.framework */,
+				247C43341B4DD0D700F357B8 /* HamcrestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -223,6 +251,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		247C43331B4DD0D700F357B8 /* HamcrestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 247C433D1B4DD0D700F357B8 /* Build configuration list for PBXNativeTarget "HamcrestTests" */;
+			buildPhases = (
+				247C43301B4DD0D700F357B8 /* Sources */,
+				247C43311B4DD0D700F357B8 /* Frameworks */,
+				247C43321B4DD0D700F357B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				247C433C1B4DD0D700F357B8 /* PBXTargetDependency */,
+			);
+			name = HamcrestTests;
+			productName = HamcrestTests;
+			productReference = 247C43341B4DD0D700F357B8 /* HamcrestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		2494844719B60A56007EEA3D /* Hamcrest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2494845819B60A57007EEA3D /* Build configuration list for PBXNativeTarget "Hamcrest" */;
@@ -259,9 +305,9 @@
 			productReference = 2496DAF119922407008C270E /* Hamcrest.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		2496DAFB19922407008C270E /* HamcrestTests */ = {
+		2496DAFB19922407008C270E /* HamcrestTestsOSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2496DB0719922407008C270E /* Build configuration list for PBXNativeTarget "HamcrestTests" */;
+			buildConfigurationList = 2496DB0719922407008C270E /* Build configuration list for PBXNativeTarget "HamcrestTestsOSX" */;
 			buildPhases = (
 				2496DAF819922407008C270E /* Sources */,
 				2496DAF919922407008C270E /* Frameworks */,
@@ -272,7 +318,7 @@
 			dependencies = (
 				246F133C19A230EE001A37DE /* PBXTargetDependency */,
 			);
-			name = HamcrestTests;
+			name = HamcrestTestsOSX;
 			productName = HamcrestTests;
 			productReference = 2496DAFC19922407008C270E /* HamcrestTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -286,6 +332,9 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Nikolaj Schumacher";
 				TargetAttributes = {
+					247C43331B4DD0D700F357B8 = {
+						CreatedOnToolsVersion = 6.4;
+					};
 					2494844719B60A56007EEA3D = {
 						CreatedOnToolsVersion = 6.0;
 					};
@@ -311,12 +360,20 @@
 			targets = (
 				2496DAF019922407008C270E /* HamcrestOSX */,
 				2494844719B60A56007EEA3D /* Hamcrest */,
-				2496DAFB19922407008C270E /* HamcrestTests */,
+				2496DAFB19922407008C270E /* HamcrestTestsOSX */,
+				247C43331B4DD0D700F357B8 /* HamcrestTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		247C43321B4DD0D700F357B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2494844619B60A56007EEA3D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -341,6 +398,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		247C43301B4DD0D700F357B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				247C43471B4DD0F000F357B8 /* MetaMatcherTests.swift in Sources */,
+				247C43441B4DD0F000F357B8 /* ArithmeticMatcherTests.swift in Sources */,
+				247C43451B4DD0F000F357B8 /* DictionaryMatcherTests.swift in Sources */,
+				247C43411B4DD0F000F357B8 /* MatcherMocks.swift in Sources */,
+				247C43401B4DD0F000F357B8 /* BaseTestCase.swift in Sources */,
+				247C43431B4DD0F000F357B8 /* BasicMatcherTests.swift in Sources */,
+				247C43461B4DD0F000F357B8 /* SequenceMatcherTests.swift in Sources */,
+				247C43491B4DD0F000F357B8 /* StringMatcherTests.swift in Sources */,
+				247C43421B4DD0F000F357B8 /* AssertThatTests.swift in Sources */,
+				247C43481B4DD0F000F357B8 /* ReflectionMatcherTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2494844319B60A56007EEA3D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -404,9 +478,53 @@
 			target = 2496DAF019922407008C270E /* HamcrestOSX */;
 			targetProxy = 246F133B19A230EE001A37DE /* PBXContainerItemProxy */;
 		};
+		247C433C1B4DD0D700F357B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2494844719B60A56007EEA3D /* Hamcrest */;
+			targetProxy = 247C433B1B4DD0D700F357B8 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		247C433E1B4DD0D700F357B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HamcrestTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		247C433F1B4DD0D700F357B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = HamcrestTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		2494845919B60A57007EEA3D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -621,6 +739,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		247C433D1B4DD0D700F357B8 /* Build configuration list for PBXNativeTarget "HamcrestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				247C433E1B4DD0D700F357B8 /* Debug */,
+				247C433F1B4DD0D700F357B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		2494845819B60A57007EEA3D /* Build configuration list for PBXNativeTarget "Hamcrest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -648,7 +774,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2496DB0719922407008C270E /* Build configuration list for PBXNativeTarget "HamcrestTests" */ = {
+		2496DB0719922407008C270E /* Build configuration list for PBXNativeTarget "HamcrestTestsOSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2496DB0819922407008C270E /* Debug */,
