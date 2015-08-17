@@ -20,6 +20,9 @@ class ReflectionMatcherTests: BaseTestCase {
         assertMismatch(ReflectableClass(), hasProperty("wrong", "value2"),
             "has property \"wrong\" with value \"value2\"",
             mismatchDescription: "missing property")
+        assertMismatch(ReflectableClass(), hasProperty("property2", 25),
+            "has property \"property2\" with value 25",
+            mismatchDescription: "incompatible property type")
     }
 
     func testHasPropertyWithMatcher() {
@@ -31,6 +34,9 @@ class ReflectionMatcherTests: BaseTestCase {
         assertMismatch(ReflectableClass(), hasProperty("wrong", equalTo("value2")),
             "has property \"wrong\" with value equal to value2",
             mismatchDescription: "missing property")
+        assertMismatch(ReflectableClass(), hasProperty("property2", equalTo(25)),
+            "has property \"property2\" with value equal to 25",
+            mismatchDescription: "incompatible property type")
     }
 
     func testHasPropertyWithMatchers() {
@@ -42,5 +48,8 @@ class ReflectionMatcherTests: BaseTestCase {
         assertMismatch(ReflectableClass(), hasProperty(equalTo("wrong"), equalTo("value2")),
             "has property equal to wrong with value equal to value2",
             mismatchDescription: "missing property")
+        assertMismatch(ReflectableClass(), hasProperty(equalTo("property2"), equalTo(25)),
+            "has property equal to property2 with value equal to 25",
+            mismatchDescription: "incompatible property type")
     }
 }

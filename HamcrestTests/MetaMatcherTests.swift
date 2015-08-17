@@ -95,6 +95,15 @@ class MetaMatcherTests: BaseTestCase {
             "any of [d1, d2]")
     }
 
+    func testAnyOfOperator() {
+        assertMatch(5, succeedingMatcher() || succeedingMatcher())
+        assertMatch(5, succeedingMatcher() || failingMatcher())
+
+        assertMismatch(5,
+            failingMatcher(description: "d1") || failingMatcher(description: "d2"),
+            "any of [d1, d2]")
+    }
+
     func testDescribedAs() {
         assertMatch(5, describedAs("foo", succeedingMatcher()))
 
