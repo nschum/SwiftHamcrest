@@ -4,6 +4,8 @@
 *.xcworkspace/*.mode*
 *.xcworkspace/*.pbxuser
 *.xcworkspace/*.perspective*
+*.xccheckout
+*.xcscmblueprint
 xcuserdata
 
 Carthage
