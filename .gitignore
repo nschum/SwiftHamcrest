@@ -5,3 +5,5 @@
 *.xcworkspace/*.pbxuser
 *.xcworkspace/*.perspective*
 xcuserdata
+
+Carthage
