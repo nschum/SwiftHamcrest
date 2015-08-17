@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SwiftHamcrest"
-  s.version      = "0.2"
+  s.version      = "0.2.1"
   s.summary      = "Hamcrest test assertions for Swift"
 
   s.description  = <<-DESC
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = "10.9"
 
   s.module_name  = "Hamcrest"
-  s.source       = { :git => "https://github.com/nschum/SwiftHamcrest.git", :tag => "0.2" }
+  s.source       = { :git => "https://github.com/nschum/SwiftHamcrest.git", :tag => "0.2.1" }
   s.source_files = "Hamcrest/*.swift"
   s.frameworks   = ["Foundation", "XCTest"]
 end
