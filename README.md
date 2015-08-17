@@ -5,6 +5,8 @@ Hamcrest gives you advanced matchers with better error messages for your Swift u
 
 Hamcrest was originally written in Java and is available for many [languages](http://hamcrest.org).
 
+![OSX iOS](https://img.shields.io/cocoapods/p/SwiftHamcrest.svg) ![CocoaPods compatible](https://img.shields.io/cocoapods/v/SwiftHamcrest.svg)
+
 [![Build Status](https://travis-ci.org/nschum/SwiftHamcrest.svg?branch=master)](https://travis-ci.org/nschum/SwiftHamcrest)
 
 Integration
