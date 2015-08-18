@@ -1,7 +1,7 @@
 import XCTest
 import Hamcrest
 
-private class SampleClass: Printable {
+private class SampleClass: CustomStringConvertible {
     var description: String {
         return "SampleClass instance"
     }

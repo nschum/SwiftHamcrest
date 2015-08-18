@@ -24,10 +24,10 @@ class MetaMatcherTests: BaseTestCase {
         assertMismatch(5, instanceOf(Double.self, and: failingMatcherWithMismatchDescription()),
             "instance of Swift.Double and description", mismatchDescription: "mismatched type")
 
-        assertMatch(5, instanceOfAnd(succeedingMatcher(type: Int.self)))
-        assertMismatch(5, instanceOfAnd(failingMatcher(type: Int.self)),
+        assertMatch(5, instanceOfAnd(succeedingMatcher(Int.self)))
+        assertMismatch(5, instanceOfAnd(failingMatcher(Int.self)),
             "instance of Swift.Int and description")
-        assertMismatch(5, instanceOfAnd(failingMatcher(type: Double.self)),
+        assertMismatch(5, instanceOfAnd(failingMatcher(Double.self)),
             "instance of Swift.Double and description", mismatchDescription: "mismatched type")
     }
 

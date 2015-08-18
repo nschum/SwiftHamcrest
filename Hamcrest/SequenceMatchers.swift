@@ -5,7 +5,7 @@ public func empty<T: CollectionType>() -> Matcher<T> {
 public func hasCount<T: CollectionType>(matcher: Matcher<T.Index.Distance>) -> Matcher<T> {
     return Matcher("has count " + matcher.description) {
         (value: T) -> MatchResult in
-        let n = count(value)
+        let n = value.count
         return delegateMatching(n, matcher) {
             return "count " + describeActualValue(n, $0)
         }
@@ -38,7 +38,7 @@ public func everyItem<T, S: SequenceType where S.Generator.Element == T>(matcher
 }
 
 private func hasItem<T, S: SequenceType where S.Generator.Element == T>(matcher: Matcher<T>,
-                                                                        values: S) -> Bool {
+                                                                        _ values: S) -> Bool {
     for value in values {
         if matcher.matches(value) {
             return true
@@ -161,12 +161,12 @@ public func containsInAnyOrder<T: Equatable, S: SequenceType where S.Generator.E
 }
 
 func applyMatchers<T, S: SequenceType where S.Generator.Element == T>
-    (matchers: [Matcher<T>], # values: S) -> MatchResult {
+    (matchers: [Matcher<T>], values: S) -> MatchResult {
 
     var mismatchDescriptions: [String?] = []
 
     var i = 0
-    for (value, matcher) in Zip2(values, matchers) {
+    for (value, matcher) in zip(values, matchers) {
         switch delegateMatching(value, matcher, {
             "mismatch: " + describeMismatch(value, matcher.description, $0)
         }) {

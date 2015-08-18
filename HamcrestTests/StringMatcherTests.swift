@@ -5,12 +5,6 @@ class StringTests: BaseTestCase {
 
     let string = "foobar"
 
-    func testEmpty() {
-        assertMatch("", empty())
-
-        assertMismatch(string, empty(), "empty", mismatchDescription: "count 6")
-    }
-
     func testContainsString() {
         assertMatch(string, containsString("foo"))
         assertMatch(string, containsString("bar"))

@@ -17,7 +17,7 @@ func filterNotNil<T>(array: [T?]) -> [T] {
     return array.filter({$0 != nil}).map({$0!})
 }
 
-func delegateMatching<T>(value: T, matcher: Matcher<T>, mismatchDescriber: String? -> String?) -> MatchResult {
+func delegateMatching<T>(value: T, _ matcher: Matcher<T>, _ mismatchDescriber: String? -> String?) -> MatchResult {
     switch matcher.matches(value) {
     case .Match:
         return .Match
@@ -38,12 +38,12 @@ func isPlayground() -> Bool {
 
 // MARK: assertThat
 
-public func assertThat<T>(value: T, matcher: Matcher<T>,
+public func assertThat<T>(value: T, _ matcher: Matcher<T>,
                           file: String = __FILE__, line: UInt = __LINE__) -> String {
     return reportResult(applyMatcher(matcher, toValue: value), file: file, line: line)
 }
 
-func applyMatcher<T>(matcher: Matcher<T>, # toValue: T) -> String? {
+func applyMatcher<T>(matcher: Matcher<T>, toValue: T) -> String? {
     let match = matcher.matches(toValue)
     switch match {
     case .Match:

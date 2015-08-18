@@ -29,20 +29,19 @@ public func hasSuffix(expectedSuffix: String) -> Matcher<String> {
     return Matcher("has suffix \(describe(expectedSuffix))") {$0.hasSuffix(expectedSuffix)}
 }
 
-public func matchesPattern(pattern: String, options: NSRegularExpressionOptions = .allZeros) -> Matcher<String> {
-    var error: NSError?
-    if let regularExpression = NSRegularExpression(pattern: pattern, options: options, error: &error) {
+public func matchesPattern(pattern: String, options: NSRegularExpressionOptions = []) -> Matcher<String> {
+    do {
+        let regularExpression = try NSRegularExpression(pattern: pattern, options: options)
         return matchesPattern(regularExpression)
-    } else {
-        preconditionFailure(error!.localizedDescription)
+    } catch let error as NSError {
+        preconditionFailure(error.localizedDescription)
     }
 }
 
 public func matchesPattern(regularExpression: NSRegularExpression) -> Matcher<String> {
     return Matcher("matches \(describe(regularExpression.pattern))") {
         (value: String) -> Bool in
-        let error: NSError
         let range = NSMakeRange(0, (value as NSString).length)
-        return regularExpression.numberOfMatchesInString(value, options: .allZeros, range: range) > 0
+        return regularExpression.numberOfMatchesInString(value, options: [], range: range) > 0
     }
 }
