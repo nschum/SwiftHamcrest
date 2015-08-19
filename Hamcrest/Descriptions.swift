@@ -57,8 +57,6 @@ func joinMatcherDescriptions<T>(matchers: [Matcher<T>], prefix: String = "all of
 
 private func joinStrings(strings: [String]) -> String {
     switch (strings.count) {
-    case 0:
-        return "none"
     case 1:
         return strings[0]
     default:

@@ -15,10 +15,6 @@ public enum MatchResult: BooleanLiteralConvertible, BooleanType {
         self = match ? .Match : .Mismatch(mismatchDescription)
     }
 
-    public static func convertFromBooleanLiteral(value: BooleanLiteralType) -> MatchResult {
-        return value ? .Match : .Mismatch(nil)
-    }
-
     public var boolValue: Bool {
         switch self {
         case .Match:

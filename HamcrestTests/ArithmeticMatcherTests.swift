@@ -8,7 +8,13 @@ class ArithmeticMatcherTests: BaseTestCase {
         assertMismatch(5, equalTo(10), "equal to 10")
     }
 
-    func testCloseTo() {
+    func testCloseToFloat() {
+        assertMatch(Float(5.001), closeTo(Float(5), 0.0011))
+        assertMismatch(Float(5.001), closeTo(Float(5), 0.0009), "within 0.0009 of 5.0",
+            mismatchDescription: "difference of 0.000999927520751953")
+    }
+
+    func testCloseToDouble() {
         assertMatch(5.001, closeTo(5, 0.0011))
         assertMismatch(5.001, closeTo(5, 0.0009), "within 0.0009 of 5.0",
             mismatchDescription: "difference of 0.00100000000000033")
