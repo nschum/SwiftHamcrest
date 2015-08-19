@@ -98,7 +98,7 @@
 		2494844819B60A56007EEA3D /* Hamcrest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hamcrest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2496DAF119922407008C270E /* Hamcrest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hamcrest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2496DAF519922407008C270E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2496DAFC19922407008C270E /* HamcrestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamcrestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2496DAFC19922407008C270E /* HamcrestTestsOSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamcrestTestsOSX.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2496DAFF19922407008C270E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2496DB0019922407008C270E /* MetaMatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaMatcherTests.swift; sourceTree = "<group>"; };
 		2496DB0A19922429008C270E /* Hamcrest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hamcrest.swift; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				2496DAF119922407008C270E /* Hamcrest.framework */,
-				2496DAFC19922407008C270E /* HamcrestTests.xctest */,
+				2496DAFC19922407008C270E /* HamcrestTestsOSX.xctest */,
 				2494844819B60A56007EEA3D /* Hamcrest.framework */,
 				247C43341B4DD0D700F357B8 /* HamcrestTests.xctest */,
 			);
@@ -320,7 +320,7 @@
 			);
 			name = HamcrestTestsOSX;
 			productName = HamcrestTests;
-			productReference = 2496DAFC19922407008C270E /* HamcrestTests.xctest */;
+			productReference = 2496DAFC19922407008C270E /* HamcrestTestsOSX.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -746,6 +746,7 @@
 				247C433F1B4DD0D700F357B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2494845819B60A57007EEA3D /* Build configuration list for PBXNativeTarget "Hamcrest" */ = {
 			isa = XCConfigurationList;
