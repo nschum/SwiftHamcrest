@@ -30,12 +30,8 @@ public func hasSuffix(expectedSuffix: String) -> Matcher<String> {
 }
 
 public func matchesPattern(pattern: String, options: NSRegularExpressionOptions = []) -> Matcher<String> {
-    do {
-        let regularExpression = try NSRegularExpression(pattern: pattern, options: options)
-        return matchesPattern(regularExpression)
-    } catch let error as NSError {
-        preconditionFailure(error.localizedDescription)
-    }
+    let regularExpression = try! NSRegularExpression(pattern: pattern, options: options)
+    return matchesPattern(regularExpression)
 }
 
 public func matchesPattern(regularExpression: NSRegularExpression) -> Matcher<String> {
