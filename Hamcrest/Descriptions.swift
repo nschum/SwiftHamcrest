@@ -60,6 +60,6 @@ private func joinStrings(strings: [String]) -> String {
     case 1:
         return strings[0]
     default:
-        return "[" + ", ".join(strings) + "]"
+        return "[" + strings.joinWithSeparator(", ") + "]"
     }
 }

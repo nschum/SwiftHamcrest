@@ -15,20 +15,20 @@ class MetaMatcherTests: BaseTestCase {
         assertMatch(5, instanceOf(Int.self, and: succeedingMatcher()))
 
         assertMismatch(5, instanceOf(Int.self, and: failingMatcher()),
-            "instance of Swift.Int and description")
+            "instance of Int and description")
         assertMismatch(5, instanceOf(Double.self, and: failingMatcher()),
-            "instance of Swift.Double and description", mismatchDescription: "mismatched type")
+            "instance of Double and description", mismatchDescription: "mismatched type")
 
         assertMismatch(5, instanceOf(Int.self, and: failingMatcherWithMismatchDescription()),
-            "instance of Swift.Int and description", mismatchDescription: "mismatch description")
+            "instance of Int and description", mismatchDescription: "mismatch description")
         assertMismatch(5, instanceOf(Double.self, and: failingMatcherWithMismatchDescription()),
-            "instance of Swift.Double and description", mismatchDescription: "mismatched type")
+            "instance of Double and description", mismatchDescription: "mismatched type")
 
         assertMatch(5, instanceOfAnd(succeedingMatcher(Int.self)))
         assertMismatch(5, instanceOfAnd(failingMatcher(Int.self)),
-            "instance of Swift.Int and description")
+            "instance of Int and description")
         assertMismatch(5, instanceOfAnd(failingMatcher(Double.self)),
-            "instance of Swift.Double and description", mismatchDescription: "mismatched type")
+            "instance of Double and description", mismatchDescription: "mismatched type")
     }
 
     func testPresentAnd() {
