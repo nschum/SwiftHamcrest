@@ -11,6 +11,10 @@ public func describedAs<T>(description: String, _ matcher: Matcher<T>) -> Matche
 }
 
 public func allOf<T>(matchers: Matcher<T>...) -> Matcher<T> {
+    return allOf(matchers)
+}
+
+public func allOf<S: SequenceType, T where S.Generator.Element == Matcher<T>>(matchers: S) -> Matcher<T> {
     return Matcher(joinMatcherDescriptions(matchers)) {
         (value: T) -> MatchResult in
         var mismatchDescriptions: [String?] = []
@@ -35,6 +39,10 @@ public func && <T>(lhs: Matcher<T>, rhs: Matcher<T>) -> Matcher<T> {
 }
 
 public func anyOf<T>(matchers: Matcher<T>...) -> Matcher<T> {
+    return anyOf(matchers)
+}
+
+public func anyOf<S: SequenceType, T where S.Generator.Element == Matcher<T>>(matchers: S) -> Matcher<T> {
     return Matcher(joinMatcherDescriptions(matchers, prefix: "any of")) {
         (value: T) -> MatchResult in
         let matchedMatchers = matchers.filter {$0.matches(value).boolValue}

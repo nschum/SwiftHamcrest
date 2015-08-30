@@ -47,9 +47,10 @@ func joinDescriptions(descriptions: [String?]) -> String? {
     return notNil.isEmpty ? nil : joinStrings(notNil)
 }
 
-func joinMatcherDescriptions<T>(matchers: [Matcher<T>], prefix: String = "all of") -> String {
-    if matchers.count == 1 {
-        return matchers[0].description
+func joinMatcherDescriptions<S: SequenceType, T where S.Generator.Element == Matcher<T>>(matchers: S, prefix: String = "all of") -> String {
+    var generator = matchers.generate()
+    if let first = generator.next() where generator.next() == nil {
+        return first.description
     } else {
         return prefix + " " + joinDescriptions(matchers.map({$0.description}))
     }

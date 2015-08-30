@@ -70,6 +70,26 @@ class MetaMatcherTests: BaseTestCase {
             mismatchDescription: "[mismatch: d1 (mismatch description), mismatch: d2]")
     }
 
+    func testAllOfSequence() {
+        assertMatch(5, allOf([succeedingMatcher()]))
+        assertMatch(5, allOf([succeedingMatcher(), succeedingMatcher()]))
+
+        assertMismatch(5, allOf([failingMatcher()]), "description",
+            mismatchDescription: "mismatch: description")
+        assertMismatch(5,
+            allOf([succeedingMatcher(description: "d1"), failingMatcher(description: "d2")]),
+            "all of [d1, d2]",
+            mismatchDescription: "mismatch: d2")
+
+        assertMismatch(5,
+            allOf([
+                failingMatcherWithMismatchDescription(description: "d1"),
+                failingMatcher(description: "d2")
+            ]),
+            "all of [d1, d2]",
+            mismatchDescription: "[mismatch: d1 (mismatch description), mismatch: d2]")
+    }
+
     func testAllOfOperator() {
         assertMatch(5, succeedingMatcher() && succeedingMatcher())
 
@@ -92,6 +112,17 @@ class MetaMatcherTests: BaseTestCase {
         assertMismatch(5, anyOf(failingMatcher()), "description")
         assertMismatch(5,
             anyOf(failingMatcher(description: "d1"), failingMatcher(description: "d2")),
+            "any of [d1, d2]")
+    }
+
+    func testAnyOfSequence() {
+        assertMatch(5, anyOf([succeedingMatcher()]))
+        assertMatch(5, anyOf([succeedingMatcher(), succeedingMatcher()]))
+        assertMatch(5, anyOf([succeedingMatcher(), failingMatcher()]))
+
+        assertMismatch(5, anyOf([failingMatcher()]), "description")
+        assertMismatch(5,
+            anyOf([failingMatcher(description: "d1"), failingMatcher(description: "d2")]),
             "any of [d1, d2]")
     }
 
