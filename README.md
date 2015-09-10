@@ -9,17 +9,6 @@ Hamcrest was originally written in Java and is available for many [languages](ht
 
 [![Build Status](https://travis-ci.org/nschum/SwiftHamcrest.svg?branch=master)](https://travis-ci.org/nschum/SwiftHamcrest)
 
-Integration
------------
-
-Using CocoaPods 0.36, it is possible to integrate SwiftHamcrest using a Podfile similar to this:
-
-```ruby
-target 'HamcrestDemoTests' do
-  pod 'SwiftHamcrest'
-end
-```
-
 Tutorial
 --------
 
@@ -341,3 +330,22 @@ assertThrows(try notThrowingFunc(), SampleError.Error2)
 assertThrows(try throwingFunc(), SampleError.Error2)
 // GOT ERROR: SampleError.Error1, EXPECTED ERROR: SampleError.Error2
 ```
+
+Integration
+-----------
+
+### CocoaPods ###
+
+Integrate SwiftHamcrest using a Podfile similar to this:
+
+```ruby
+target 'HamcrestDemoTests' do
+  pod 'SwiftHamcrest'
+end
+```
+
+### Carthage ###
+
+Add the following to your Cartfile:
+
+    github "nschum/SwiftHamcrest"
