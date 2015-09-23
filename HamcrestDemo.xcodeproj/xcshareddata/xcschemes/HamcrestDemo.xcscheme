@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2494844719B60A56007EEA3D"
+               BuildableName = "Hamcrest.framework"
+               BlueprintName = "Hamcrest"
+               ReferencedContainer = "container:Hamcrest.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "24AC49A119C08B3000F030CA"
                BuildableName = "HamcrestDemo.app"
                BlueprintName = "HamcrestDemo"
