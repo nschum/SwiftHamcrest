@@ -343,8 +343,10 @@ Integration
 Integrate SwiftHamcrest using a Podfile similar to this:
 
 ```ruby
-target 'HamcrestDemoTests' do
-  pod 'SwiftHamcrest'
+use_frameworks!
+
+target 'HamcrestDemoTests', :exclusive => true do
+  pod 'SwiftHamcrest', '~> 0.3'
 end
 ```
 
