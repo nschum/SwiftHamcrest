@@ -135,7 +135,7 @@ private func containsInAnyOrder<T, S: SequenceType where S.Generator.Element == 
                         remainingMatchers.removeAtIndex(i)
                         continue values
                     }
-                    i++
+                    i += 1
                 }
                 unmatchedValues.append(value)
         }
@@ -175,14 +175,14 @@ func applyMatchers<T, S: SequenceType where S.Generator.Element == T>
         default:
             break
         }
-        i++
+        i += 1
     }
     var j = 0;
     for value in values {
         if j >= i {
             mismatchDescriptions.append("unmatched item \(describe(value))")
         }
-        j++
+        j += 1
     }
     for matcher in matchers[i..<matchers.count] {
         mismatchDescriptions.append("missing item \(matcher.description)")
