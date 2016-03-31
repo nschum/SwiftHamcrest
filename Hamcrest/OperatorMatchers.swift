@@ -1,5 +1,5 @@
 public func assertThat(resultDescription: MatchResultDescription,
-                       file: StaticString = __FILE__, line: UInt = __LINE__) -> String {
+                       file: StaticString = #file, line: UInt = #line) -> String {
     return reportResult(resultDescription.result, file: file, line: line)
 }
 

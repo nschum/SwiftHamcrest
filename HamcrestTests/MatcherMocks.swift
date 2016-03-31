@@ -2,7 +2,7 @@ import XCTest
 import Hamcrest
 
 func succeedingMatcher<T: Equatable>(expectingValue: T, description: String = "description",
-                                     file: StaticString = __FILE__, line: UInt = __LINE__) -> Matcher<T> {
+                                     file: StaticString = #file, line: UInt = #line) -> Matcher<T> {
 
     return Matcher<T>(description) {
         (value: T) -> Bool in

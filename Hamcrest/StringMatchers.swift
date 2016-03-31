@@ -7,7 +7,7 @@ public func containsString(string: String) -> Matcher<String> {
 public func containsStringsInOrder(strings: String...) -> Matcher<String> {
     return Matcher("contains in order \(describe(strings))") {
         (value: String) -> Bool in
-        var range = Range(start: value.startIndex, end: value.endIndex)
+        var range = value.startIndex ..< value.endIndex
         for string in strings {
             let r = value.rangeOfString(string, options: .CaseInsensitiveSearch, range: range)
             if let r = r {
