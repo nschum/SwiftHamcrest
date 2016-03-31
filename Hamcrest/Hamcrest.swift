@@ -32,8 +32,8 @@ func equalToWithoutDescription<T: Equatable>(expectedValue: T) -> Matcher<T> {
 
 func isPlayground() -> Bool {
     let infoDictionary = NSBundle.mainBundle().infoDictionary
-    let bundleIdentifier: AnyObject? = infoDictionary?["CFBundleIdentifier"]
-    return (bundleIdentifier as? String)?.hasPrefix("com.apple.dt.playground.stub") ?? false
+    let bundleIdentifier = infoDictionary?["CFBundleIdentifier"]
+    return (bundleIdentifier as? String)?.hasPrefix("com.apple.dt.Xcode") ?? false
 }
 
 // MARK: assertThrows
