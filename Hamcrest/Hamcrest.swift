@@ -41,9 +41,9 @@ func isPlayground() -> Bool {
 public func assertThrows<T>(@autoclosure value: () throws -> T, file: String = __FILE__, line: UInt = __LINE__) -> String {
     do {
         try value()
-        return reportResult(describeExpectedError())
+        return reportResult(describeExpectedError(), file: file, line: line)
     } catch {
-        return reportResult(nil)
+        return reportResult(nil, file: file, line: line)
     }
 }
 
