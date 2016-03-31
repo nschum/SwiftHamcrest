@@ -11,7 +11,7 @@ class BaseTestCase: XCTestCase {
     }
 
     func assertMatch<T>(value: T, _ matcher: Matcher<T>,
-                        file: String = __FILE__, line: UInt = __LINE__) {
+                        file: StaticString = __FILE__, line: UInt = __LINE__) {
 
         reportedError = nil
         assertThat(value, matcher)
@@ -20,7 +20,7 @@ class BaseTestCase: XCTestCase {
 
     func assertMismatch<T>(value: T, _ matcher: Matcher<T>, _ description: String,
                            mismatchDescription: String? = nil,
-                           file: String = __FILE__, line: UInt = __LINE__) {
+                           file: StaticString = __FILE__, line: UInt = __LINE__) {
 
         reportedError = nil
         assertThat(value, matcher)
@@ -33,7 +33,7 @@ class BaseTestCase: XCTestCase {
 
     func assertMismatch<T>(value: [T], _ matcher: Matcher<[T]>, _ description: String,
                            mismatchDescription: String? = nil,
-                           file: String = __FILE__, line: UInt = __LINE__) {
+                           file: StaticString = __FILE__, line: UInt = __LINE__) {
 
         reportedError = nil
         assertThat(value, matcher)
@@ -44,16 +44,16 @@ class BaseTestCase: XCTestCase {
         }
     }
 
-    func assertReportsNoError(file: String = __FILE__, line: UInt = __LINE__) {
+    func assertReportsNoError(file: StaticString = __FILE__, line: UInt = __LINE__) {
         XCTAssertNil(reportedError, file: file, line: line)
     }
 
-    func assertReportsError(message: String, file: String = __FILE__, line: UInt = __LINE__) {
+    func assertReportsError(message: String, file: StaticString = __FILE__, line: UInt = __LINE__) {
         XCTAssertNotNil(reportedError, file: file, line: line)
         XCTAssertEqual((reportedError ?? ""), message, file: file, line: line)
     }
 
-    func assertReportsMismatch<T>(value: T, _ description: String, mismatchDescription: String? = nil, file: String = __FILE__, line: UInt = __LINE__) {
+    func assertReportsMismatch<T>(value: T, _ description: String, mismatchDescription: String? = nil, file: StaticString = __FILE__, line: UInt = __LINE__) {
         let message = expectedMessage(value, description, mismatchDescription: mismatchDescription)
         assertReportsError(message, file: file, line: line)
     }

@@ -5,7 +5,7 @@ import XCTest
 /// Reporter function that is called whenever a Hamcrest assertion fails.
 /// By default this calls XCTFail, except in Playgrounds where it does nothing.
 /// This is intended for testing Hamcrest itself.
-public var HamcrestReportFunction: (_: String, file: String, line: UInt) -> () = HamcrestDefaultReportFunction
+public var HamcrestReportFunction: (_: String, file: StaticString, line: UInt) -> () = HamcrestDefaultReportFunction
 public let HamcrestDefaultReportFunction =
     isPlayground()
         ? {(message, file, line) in}
@@ -38,7 +38,7 @@ func isPlayground() -> Bool {
 
 // MARK: assertThrows
 
-public func assertThrows<T>(@autoclosure value: () throws -> T, file: String = __FILE__, line: UInt = __LINE__) -> String {
+public func assertThrows<T>(@autoclosure value: () throws -> T, file: StaticString = __FILE__, line: UInt = __LINE__) -> String {
     do {
         try value()
         return reportResult(describeExpectedError(), file: file, line: line)
@@ -74,7 +74,7 @@ private func applyErrorMatcher<S, T: ErrorType>(matcher: Matcher<T>, @noescape t
 
 // MARK: assertThat
 
-public func assertThat<T>(@autoclosure value: () throws -> T, _ matcher: Matcher<T>, file: String = __FILE__, line: UInt = __LINE__) -> String {
+public func assertThat<T>(@autoclosure value: () throws -> T, _ matcher: Matcher<T>, file: StaticString = __FILE__, line: UInt = __LINE__) -> String {
     return reportResult(applyMatcher(matcher, toValue: value), file: file, line: line)
 }
 
@@ -93,7 +93,7 @@ func applyMatcher<T>(matcher: Matcher<T>, @noescape toValue: () throws -> T) -> 
     }
 }
 
-func reportResult(possibleResult: String?, file: String = __FILE__, line: UInt = __LINE__)
+func reportResult(possibleResult: String?, file: StaticString = __FILE__, line: UInt = __LINE__)
     -> String {
 
     if let result = possibleResult {
