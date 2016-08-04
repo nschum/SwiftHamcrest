@@ -45,10 +45,10 @@ assertThat(x >= 2) // ✓
 assertThat(x >= 3) // GOT: 2, EXPECTED: greater than or equal to 3
 
 assertThat(x < 3) // ✓
-assertThat(x < 2) // GOT: 2, EXPECTED: greater than 2
+assertThat(x < 2) // GOT: 2, EXPECTED: less than 2
 
 assertThat(x <= 2) // ✓
-assertThat(x <= 1) // GOT: 2, EXPECTED: greater than or equal to 1
+assertThat(x <= 1) // GOT: 2, EXPECTED: less than or equal to 1
 
 class Test {}
 let o = Test()
@@ -74,11 +74,11 @@ assertThat(x, greaterThanOrEqualTo(3))
 // GOT: 2, EXPECTED: greater than or equal to 3
 
 assertThat(x, lessThan(3)) // ✓
-assertThat(x, lessThan(2)) // GOT: 2, EXPECTED: greater than 2
+assertThat(x, lessThan(2)) // GOT: 2, EXPECTED: less than 2
 
 assertThat(x, lessThanOrEqualTo(2)) // ✓
 assertThat(x, lessThanOrEqualTo(1))
-// GOT: 2, EXPECTED: greater than or equal to 1
+// GOT: 2, EXPECTED: less than or equal to 1
 
 assertThat(x, inInterval(1...2)) // ✓
 assertThat(x, inInterval(1..<2)) // GOT: 2, EXPECTED: in interval 1..<2
