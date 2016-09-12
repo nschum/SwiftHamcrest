@@ -8,6 +8,6 @@
       location = "group:HamcrestDemo.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:HamcrestDemoOSX.xcodeproj">
+      location = "group:/Users/nik/src/SwiftHamcrest/HamcrestDemo-macOS.xcodeproj">
    </FileRef>
 </Workspace>

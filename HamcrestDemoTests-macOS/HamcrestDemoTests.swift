@@ -2,7 +2,7 @@ import Cocoa
 import XCTest
 import Hamcrest
 
-class HamcrestDemoOSXTests: XCTestCase {
+class HamcrestDemoTests: XCTestCase {
 
     // Look at README.playground for a tutorial.
 

@@ -10,7 +10,7 @@
 //:
 //: Normally, you use these matchers in unit tests, where a mismatch will cause the test to fail, but they also work in Playgrounds, where a mismatch will simply print the error message.
 //:
-//: **To use this Playground, make sure to build the “Hamcrest OS X” target first (⌘B)!**
+//: **To use this Playground, make sure to build the “Hamcrest-macOS” target first (⌘B)!**
 //:
 //: In either case, the Hamcrest module needs to be imported.
 

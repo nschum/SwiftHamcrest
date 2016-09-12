@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2496DAF019922407008C270E"
                BuildableName = "Hamcrest.framework"
-               BlueprintName = "HamcrestOSX"
+               BlueprintName = "Hamcrest-macOS"
                ReferencedContainer = "container:Hamcrest.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,8 +34,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2496DAFB19922407008C270E"
-               BuildableName = "HamcrestTestsOSX.xctest"
-               BlueprintName = "HamcrestTestsOSX"
+               BuildableName = "HamcrestTests-macOS.xctest"
+               BlueprintName = "HamcrestTests-macOS"
                ReferencedContainer = "container:Hamcrest.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -45,7 +45,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2496DAF019922407008C270E"
             BuildableName = "Hamcrest.framework"
-            BlueprintName = "HamcrestOSX"
+            BlueprintName = "Hamcrest-macOS"
             ReferencedContainer = "container:Hamcrest.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -67,7 +67,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2496DAF019922407008C270E"
             BuildableName = "Hamcrest.framework"
-            BlueprintName = "HamcrestOSX"
+            BlueprintName = "Hamcrest-macOS"
             ReferencedContainer = "container:Hamcrest.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -85,7 +85,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2496DAF019922407008C270E"
             BuildableName = "Hamcrest.framework"
-            BlueprintName = "HamcrestOSX"
+            BlueprintName = "Hamcrest-macOS"
             ReferencedContainer = "container:Hamcrest.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

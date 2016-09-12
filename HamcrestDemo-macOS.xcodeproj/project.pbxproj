@@ -11,7 +11,7 @@
 		24003EC619C046BA000B9B0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24003EC519C046BA000B9B0A /* AppDelegate.swift */; };
 		24003EC819C046BA000B9B0A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24003EC719C046BA000B9B0A /* Images.xcassets */; };
 		24003ECB19C046BA000B9B0A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24003EC919C046BA000B9B0A /* MainMenu.xib */; };
-		24003ED719C046BA000B9B0A /* HamcrestDemoOSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24003ED619C046BA000B9B0A /* HamcrestDemoOSXTests.swift */; };
+		24003ED719C046BA000B9B0A /* HamcrestDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24003ED619C046BA000B9B0A /* HamcrestDemoTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,16 +25,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		24003EBE19C046BA000B9B0A /* HamcrestDemoOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HamcrestDemoOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		24003EC219C046BA000B9B0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24003EC319C046BA000B9B0A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		24003EC519C046BA000B9B0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		24003EC719C046BA000B9B0A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		24003EBE19C046BA000B9B0A /* HamcrestDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HamcrestDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24003EC219C046BA000B9B0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "HamcrestDemo-macOS/Info.plist"; sourceTree = "<group>"; };
+		24003EC319C046BA000B9B0A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = main.swift; path = "HamcrestDemo-macOS/main.swift"; sourceTree = "<group>"; };
+		24003EC519C046BA000B9B0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "HamcrestDemo-macOS/AppDelegate.swift"; sourceTree = "<group>"; };
+		24003EC719C046BA000B9B0A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "HamcrestDemo-macOS/Images.xcassets"; sourceTree = "<group>"; };
 		24003ECA19C046BA000B9B0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		24003ED019C046BA000B9B0A /* HamcrestDemoOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamcrestDemoOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		24003ED519C046BA000B9B0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24003ED619C046BA000B9B0A /* HamcrestDemoOSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HamcrestDemoOSXTests.swift; path = HamcrestDemoOSXTests/HamcrestDemoOSXTests.swift; sourceTree = SOURCE_ROOT; };
-		24003EE019C0472F000B9B0A /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
+		24003ED019C046BA000B9B0A /* HamcrestDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamcrestDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24003ED519C046BA000B9B0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "HamcrestDemoTests-macOS/Info.plist"; sourceTree = "<group>"; };
+		24003ED619C046BA000B9B0A /* HamcrestDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HamcrestDemoTests.swift; path = "HamcrestDemoTests-macOS/HamcrestDemoTests.swift"; sourceTree = SOURCE_ROOT; };
+		24003EE019C0472F000B9B0A /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Playground.playground; path = "HamcrestDemo-macOS/Playground.playground"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +58,8 @@
 		24003EB519C046BA000B9B0A = {
 			isa = PBXGroup;
 			children = (
-				24003EC019C046BA000B9B0A /* HamcrestDemoOSX */,
-				24003ED319C046BA000B9B0A /* HamcrestDemoOSXTests */,
+				24003EC019C046BA000B9B0A /* HamcrestDemo-macOS */,
+				24003ED319C046BA000B9B0A /* HamcrestDemoTests-macOS */,
 				24003EBF19C046BA000B9B0A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,13 +67,13 @@
 		24003EBF19C046BA000B9B0A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				24003EBE19C046BA000B9B0A /* HamcrestDemoOSX.app */,
-				24003ED019C046BA000B9B0A /* HamcrestDemoOSXTests.xctest */,
+				24003EBE19C046BA000B9B0A /* HamcrestDemo.app */,
+				24003ED019C046BA000B9B0A /* HamcrestDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		24003EC019C046BA000B9B0A /* HamcrestDemoOSX */ = {
+		24003EC019C046BA000B9B0A /* HamcrestDemo-macOS */ = {
 			isa = PBXGroup;
 			children = (
 				24003EE019C0472F000B9B0A /* Playground.playground */,
@@ -82,7 +82,7 @@
 				24003EC919C046BA000B9B0A /* MainMenu.xib */,
 				24003EC119C046BA000B9B0A /* Supporting Files */,
 			);
-			path = HamcrestDemoOSX;
+			name = "HamcrestDemo-macOS";
 			sourceTree = "<group>";
 		};
 		24003EC119C046BA000B9B0A /* Supporting Files */ = {
@@ -94,13 +94,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		24003ED319C046BA000B9B0A /* HamcrestDemoOSXTests */ = {
+		24003ED319C046BA000B9B0A /* HamcrestDemoTests-macOS */ = {
 			isa = PBXGroup;
 			children = (
-				24003ED619C046BA000B9B0A /* HamcrestDemoOSXTests.swift */,
+				24003ED619C046BA000B9B0A /* HamcrestDemoTests.swift */,
 				24003ED419C046BA000B9B0A /* Supporting Files */,
 			);
-			path = HamcrestDemoOSXTests;
+			name = "HamcrestDemoTests-macOS";
 			sourceTree = "<group>";
 		};
 		24003ED419C046BA000B9B0A /* Supporting Files */ = {
@@ -114,9 +114,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		24003EBD19C046BA000B9B0A /* HamcrestDemoOSX */ = {
+		24003EBD19C046BA000B9B0A /* HamcrestDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 24003EDA19C046BA000B9B0A /* Build configuration list for PBXNativeTarget "HamcrestDemoOSX" */;
+			buildConfigurationList = 24003EDA19C046BA000B9B0A /* Build configuration list for PBXNativeTarget "HamcrestDemo" */;
 			buildPhases = (
 				24003EBA19C046BA000B9B0A /* Sources */,
 				24003EBB19C046BA000B9B0A /* Frameworks */,
@@ -126,14 +126,14 @@
 			);
 			dependencies = (
 			);
-			name = HamcrestDemoOSX;
-			productName = HamcrestDemoOSX;
-			productReference = 24003EBE19C046BA000B9B0A /* HamcrestDemoOSX.app */;
+			name = HamcrestDemo;
+			productName = HamcrestDemo;
+			productReference = 24003EBE19C046BA000B9B0A /* HamcrestDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		24003ECF19C046BA000B9B0A /* HamcrestDemoOSXTests */ = {
+		24003ECF19C046BA000B9B0A /* HamcrestDemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 24003EDD19C046BA000B9B0A /* Build configuration list for PBXNativeTarget "HamcrestDemoOSXTests" */;
+			buildConfigurationList = 24003EDD19C046BA000B9B0A /* Build configuration list for PBXNativeTarget "HamcrestDemoTests" */;
 			buildPhases = (
 				24003ECC19C046BA000B9B0A /* Sources */,
 				24003ECD19C046BA000B9B0A /* Frameworks */,
@@ -144,9 +144,9 @@
 			dependencies = (
 				24003ED219C046BA000B9B0A /* PBXTargetDependency */,
 			);
-			name = HamcrestDemoOSXTests;
-			productName = HamcrestDemoOSXTests;
-			productReference = 24003ED019C046BA000B9B0A /* HamcrestDemoOSXTests.xctest */;
+			name = HamcrestDemoTests;
+			productName = HamcrestDemoTests;
+			productReference = 24003ED019C046BA000B9B0A /* HamcrestDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -170,7 +170,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 24003EB919C046BA000B9B0A /* Build configuration list for PBXProject "HamcrestDemoOSX" */;
+			buildConfigurationList = 24003EB919C046BA000B9B0A /* Build configuration list for PBXProject "HamcrestDemo-macOS" */;
 			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -183,8 +183,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				24003EBD19C046BA000B9B0A /* HamcrestDemoOSX */,
-				24003ECF19C046BA000B9B0A /* HamcrestDemoOSXTests */,
+				24003EBD19C046BA000B9B0A /* HamcrestDemo */,
+				24003ECF19C046BA000B9B0A /* HamcrestDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -222,7 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24003ED719C046BA000B9B0A /* HamcrestDemoOSXTests.swift in Sources */,
+				24003ED719C046BA000B9B0A /* HamcrestDemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,7 +231,7 @@
 /* Begin PBXTargetDependency section */
 		24003ED219C046BA000B9B0A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 24003EBD19C046BA000B9B0A /* HamcrestDemoOSX */;
+			target = 24003EBD19C046BA000B9B0A /* HamcrestDemo */;
 			targetProxy = 24003ED119C046BA000B9B0A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -243,6 +243,7 @@
 				24003ECA19C046BA000B9B0A /* Base */,
 			);
 			name = MainMenu.xib;
+			path = "HamcrestDemo-macOS";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -337,7 +338,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = HamcrestDemoOSX/Info.plist;
+				INFOPLIST_FILE = "HamcrestDemo-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.nschum.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -350,7 +351,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = HamcrestDemoOSX/Info.plist;
+				INFOPLIST_FILE = "HamcrestDemo-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.nschum.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -372,12 +373,12 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = HamcrestDemoOSXTests/Info.plist;
+				INFOPLIST_FILE = "HamcrestDemoTests-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.nschum.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HamcrestDemoOSX.app/Contents/MacOS/HamcrestDemoOSX";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HamcrestDemo.app/Contents/MacOS/HamcrestDemo";
 			};
 			name = Debug;
 		};
@@ -390,20 +391,20 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = HamcrestDemoOSXTests/Info.plist;
+				INFOPLIST_FILE = "HamcrestDemoTests-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.nschum.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 2.3;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HamcrestDemoOSX.app/Contents/MacOS/HamcrestDemoOSX";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HamcrestDemo.app/Contents/MacOS/HamcrestDemo";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		24003EB919C046BA000B9B0A /* Build configuration list for PBXProject "HamcrestDemoOSX" */ = {
+		24003EB919C046BA000B9B0A /* Build configuration list for PBXProject "HamcrestDemo-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				24003ED819C046BA000B9B0A /* Debug */,
@@ -412,7 +413,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		24003EDA19C046BA000B9B0A /* Build configuration list for PBXNativeTarget "HamcrestDemoOSX" */ = {
+		24003EDA19C046BA000B9B0A /* Build configuration list for PBXNativeTarget "HamcrestDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				24003EDB19C046BA000B9B0A /* Debug */,
@@ -421,7 +422,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		24003EDD19C046BA000B9B0A /* Build configuration list for PBXNativeTarget "HamcrestDemoOSXTests" */ = {
+		24003EDD19C046BA000B9B0A /* Build configuration list for PBXNativeTarget "HamcrestDemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				24003EDE19C046BA000B9B0A /* Debug */,

@@ -104,7 +104,7 @@
 		2494844819B60A56007EEA3D /* Hamcrest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hamcrest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2496DAF119922407008C270E /* Hamcrest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hamcrest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2496DAF519922407008C270E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2496DAFC19922407008C270E /* HamcrestTestsOSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamcrestTestsOSX.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2496DAFC19922407008C270E /* HamcrestTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HamcrestTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2496DAFF19922407008C270E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2496DB0019922407008C270E /* MetaMatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaMatcherTests.swift; sourceTree = "<group>"; };
 		2496DB0A19922429008C270E /* Hamcrest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hamcrest.swift; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				2496DAF119922407008C270E /* Hamcrest.framework */,
-				2496DAFC19922407008C270E /* HamcrestTestsOSX.xctest */,
+				2496DAFC19922407008C270E /* HamcrestTests-macOS.xctest */,
 				2494844819B60A56007EEA3D /* Hamcrest.framework */,
 				247C43341B4DD0D700F357B8 /* HamcrestTests.xctest */,
 			);
@@ -297,9 +297,9 @@
 			productReference = 2494844819B60A56007EEA3D /* Hamcrest.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		2496DAF019922407008C270E /* HamcrestOSX */ = {
+		2496DAF019922407008C270E /* Hamcrest-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2496DB0419922407008C270E /* Build configuration list for PBXNativeTarget "HamcrestOSX" */;
+			buildConfigurationList = 2496DB0419922407008C270E /* Build configuration list for PBXNativeTarget "Hamcrest-macOS" */;
 			buildPhases = (
 				2496DAEC19922407008C270E /* Sources */,
 				2496DAED19922407008C270E /* Frameworks */,
@@ -310,14 +310,14 @@
 			);
 			dependencies = (
 			);
-			name = HamcrestOSX;
+			name = "Hamcrest-macOS";
 			productName = Hamcrest;
 			productReference = 2496DAF119922407008C270E /* Hamcrest.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		2496DAFB19922407008C270E /* HamcrestTestsOSX */ = {
+		2496DAFB19922407008C270E /* HamcrestTests-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2496DB0719922407008C270E /* Build configuration list for PBXNativeTarget "HamcrestTestsOSX" */;
+			buildConfigurationList = 2496DB0719922407008C270E /* Build configuration list for PBXNativeTarget "HamcrestTests-macOS" */;
 			buildPhases = (
 				2496DAF819922407008C270E /* Sources */,
 				2496DAF919922407008C270E /* Frameworks */,
@@ -328,9 +328,9 @@
 			dependencies = (
 				246F133C19A230EE001A37DE /* PBXTargetDependency */,
 			);
-			name = HamcrestTestsOSX;
+			name = "HamcrestTests-macOS";
 			productName = HamcrestTests;
-			productReference = 2496DAFC19922407008C270E /* HamcrestTestsOSX.xctest */;
+			productReference = 2496DAFC19922407008C270E /* HamcrestTests-macOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -373,9 +373,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2496DAF019922407008C270E /* HamcrestOSX */,
+				2496DAF019922407008C270E /* Hamcrest-macOS */,
 				2494844719B60A56007EEA3D /* Hamcrest */,
-				2496DAFB19922407008C270E /* HamcrestTestsOSX */,
+				2496DAFB19922407008C270E /* HamcrestTests-macOS */,
 				247C43331B4DD0D700F357B8 /* HamcrestTests */,
 			);
 		};
@@ -494,7 +494,7 @@
 /* Begin PBXTargetDependency section */
 		246F133C19A230EE001A37DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2496DAF019922407008C270E /* HamcrestOSX */;
+			target = 2496DAF019922407008C270E /* Hamcrest-macOS */;
 			targetProxy = 246F133B19A230EE001A37DE /* PBXContainerItemProxy */;
 		};
 		247C433C1B4DD0D700F357B8 /* PBXTargetDependency */ = {
@@ -798,7 +798,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2496DB0419922407008C270E /* Build configuration list for PBXNativeTarget "HamcrestOSX" */ = {
+		2496DB0419922407008C270E /* Build configuration list for PBXNativeTarget "Hamcrest-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2496DB0519922407008C270E /* Debug */,
@@ -807,7 +807,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2496DB0719922407008C270E /* Build configuration list for PBXNativeTarget "HamcrestTestsOSX" */ = {
+		2496DB0719922407008C270E /* Build configuration list for PBXNativeTarget "HamcrestTests-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2496DB0819922407008C270E /* Debug */,
