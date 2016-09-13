@@ -1,8 +1,8 @@
-public func empty<T: CollectionType>() -> Matcher<T> {
+public func empty<T: Collection>() -> Matcher<T> {
     return describedAs("empty", hasCount(0))
 }
 
-public func hasCount<T: CollectionType>(matcher: Matcher<T.Index.Distance>) -> Matcher<T> {
+public func hasCount<T: Collection>(_ matcher: Matcher<T.IndexDistance>) -> Matcher<T> {
     return Matcher("has count " + matcher.description) {
         (value: T) -> MatchResult in
         let n = value.count
@@ -12,12 +12,12 @@ public func hasCount<T: CollectionType>(matcher: Matcher<T.Index.Distance>) -> M
     }
 }
 
-public func hasCount<T: CollectionType>(expectedCount: T.Index.Distance) -> Matcher<T> {
+public func hasCount<T: Collection>(_ expectedCount: T.IndexDistance) -> Matcher<T> {
     return hasCount(equalToWithoutDescription(expectedCount))
 }
 
-public func everyItem<T, S: SequenceType where S.Generator.Element == T>(matcher: Matcher<T>)
-    -> Matcher<S> {
+public func everyItem<T, S: Sequence>(_ matcher: Matcher<T>)
+    -> Matcher<S> where S.Iterator.Element == T {
 
     return Matcher("a sequence where every item \(matcher.description)") {
         (values: S) -> MatchResult in
@@ -27,7 +27,7 @@ public func everyItem<T, S: SequenceType where S.Generator.Element == T>(matcher
                 (mismatchDescription: String?) -> String? in
                 "mismatch: \(value)" + (mismatchDescription.map{" (\($0))"} ?? "")
             }) {
-            case let .Mismatch(mismatchDescription):
+            case let .mismatch(mismatchDescription):
                 mismatchDescriptions.append(mismatchDescription)
             default:
                 break
@@ -37,32 +37,32 @@ public func everyItem<T, S: SequenceType where S.Generator.Element == T>(matcher
     }
 }
 
-private func hasItem<T, S: SequenceType where S.Generator.Element == T>(matcher: Matcher<T>,
-                                                                        _ values: S) -> Bool {
+private func hasItem<T, S: Sequence>(_ matcher: Matcher<T>,
+                                                                        _ values: S) -> Bool where S.Iterator.Element == T {
     for value in values {
-        if matcher.matches(value) {
+        if matcher.matches(value).boolValue {
             return true
         }
     }
     return false
 }
 
-public func hasItem<T, S: SequenceType where S.Generator.Element == T>(matcher: Matcher<T>)
-    -> Matcher<S> {
+public func hasItem<T, S: Sequence>(_ matcher: Matcher<T>)
+    -> Matcher<S> where S.Iterator.Element == T {
 
     return Matcher("a sequence containing \(matcher.description)") {
         (values: S) -> Bool in hasItem(matcher, values)
     }
 }
 
-public func hasItem<T: Equatable, S: SequenceType where S.Generator.Element == T>(expectedValue: T)
-    -> Matcher<S> {
+public func hasItem<T: Equatable, S: Sequence>(_ expectedValue: T)
+    -> Matcher<S> where S.Iterator.Element == T {
 
     return hasItem(equalToWithoutDescription(expectedValue))
 }
 
-private func hasItems<T, S: SequenceType where S.Generator.Element == T>(matchers: [Matcher<T>])
-    -> Matcher<S> {
+private func hasItems<T, S: Sequence>(_ matchers: [Matcher<T>])
+    -> Matcher<S> where S.Iterator.Element == T {
 
     return Matcher("a sequence containing \(joinMatcherDescriptions(matchers))") {
         (values: S) -> MatchResult in
@@ -74,29 +74,29 @@ private func hasItems<T, S: SequenceType where S.Generator.Element == T>(matcher
         }
         switch missingItems.count {
         case 0:
-            return .Match
+            return .match
         case 1:
-            return .Mismatch("missing item \(missingItems[0].description)")
+            return .mismatch("missing item \(missingItems[0].description)")
         default:
-            return .Mismatch("missing items " + joinDescriptions(matchers.map({$0.description})))
+            return .mismatch("missing items " + joinDescriptions(matchers.map({$0.description})))
         }
     }
 }
 
-public func hasItems<T, S: SequenceType where S.Generator.Element == T>(matchers: Matcher<T>...)
-    -> Matcher<S> {
+public func hasItems<T, S: Sequence>(_ matchers: Matcher<T>...)
+    -> Matcher<S> where S.Iterator.Element == T {
 
     return hasItems(matchers)
 }
 
-public func hasItems<T: Equatable, S: SequenceType where S.Generator.Element == T>
-    (expectedValues: T...) -> Matcher<S> {
+public func hasItems<T: Equatable, S: Sequence>
+    (_ expectedValues: T...) -> Matcher<S> where S.Iterator.Element == T {
 
     return hasItems(expectedValues.map {equalToWithoutDescription($0)})
 }
 
-private func contains<T, S: SequenceType where S.Generator.Element == T>(matchers: [Matcher<T>])
-    -> Matcher<S> {
+private func contains<T, S: Sequence>(_ matchers: [Matcher<T>])
+    -> Matcher<S> where S.Iterator.Element == T {
 
     return Matcher("a sequence containing " + joinDescriptions(matchers.map({$0.description}))) {
         (values: S) -> MatchResult in
@@ -104,20 +104,20 @@ private func contains<T, S: SequenceType where S.Generator.Element == T>(matcher
     }
 }
 
-public func contains<T, S: SequenceType where S.Generator.Element == T>(matchers: Matcher<T>...)
-    -> Matcher<S> {
+public func contains<T, S: Sequence>(_ matchers: Matcher<T>...)
+    -> Matcher<S> where S.Iterator.Element == T {
 
     return contains(matchers)
 }
 
-public func contains<T: Equatable, S: SequenceType where S.Generator.Element == T>
-    (expectedValues: T...) -> Matcher<S> {
+public func contains<T: Equatable, S: Sequence>
+    (_ expectedValues: T...) -> Matcher<S> where S.Iterator.Element == T {
 
     return contains(expectedValues.map {equalToWithoutDescription($0)})
 }
 
-private func containsInAnyOrder<T, S: SequenceType where S.Generator.Element == T>
-    (matchers: [Matcher<T>]) -> Matcher<S> {
+private func containsInAnyOrder<T, S: Sequence>
+    (_ matchers: [Matcher<T>]) -> Matcher<S> where S.Iterator.Element == T {
 
     let descriptions = joinDescriptions(matchers.map({$0.description}))
 
@@ -131,8 +131,8 @@ private func containsInAnyOrder<T, S: SequenceType where S.Generator.Element == 
             for value in values {
                 var i = 0
                 for matcher in remainingMatchers {
-                    if matcher.matches(value) {
-                        remainingMatchers.removeAtIndex(i)
+                    if matcher.matches(value).boolValue {
+                        remainingMatchers.remove(at: i)
                         continue values
                     }
                     i += 1
@@ -143,25 +143,25 @@ private func containsInAnyOrder<T, S: SequenceType where S.Generator.Element == 
         if !isMatch {
             return applyMatchers(remainingMatchers, values: unmatchedValues)
         } else {
-            return .Match
+            return .match
         }
     }
 }
 
-public func containsInAnyOrder<T, S: SequenceType where S.Generator.Element == T>
-    (matchers: Matcher<T>...) -> Matcher<S> {
+public func containsInAnyOrder<T, S: Sequence>
+    (_ matchers: Matcher<T>...) -> Matcher<S> where S.Iterator.Element == T {
 
     return containsInAnyOrder(matchers)
 }
 
-public func containsInAnyOrder<T: Equatable, S: SequenceType where S.Generator.Element == T>
-    (expectedValues: T...) -> Matcher<S> {
+public func containsInAnyOrder<T: Equatable, S: Sequence>
+    (_ expectedValues: T...) -> Matcher<S> where S.Iterator.Element == T {
 
     return containsInAnyOrder(expectedValues.map {equalToWithoutDescription($0)})
 }
 
-func applyMatchers<T, S: SequenceType where S.Generator.Element == T>
-    (matchers: [Matcher<T>], values: S) -> MatchResult {
+func applyMatchers<T, S: Sequence>
+    (_ matchers: [Matcher<T>], values: S) -> MatchResult where S.Iterator.Element == T {
 
     var mismatchDescriptions: [String?] = []
 
@@ -170,7 +170,7 @@ func applyMatchers<T, S: SequenceType where S.Generator.Element == T>
         switch delegateMatching(value, matcher, {
             "mismatch: " + describeMismatch(value, matcher.description, $0)
         }) {
-        case let .Mismatch(mismatchDescription):
+        case let .mismatch(mismatchDescription):
             mismatchDescriptions.append(mismatchDescription)
         default:
             break
