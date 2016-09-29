@@ -1,17 +1,17 @@
 import Foundation
 
-public func containsString(string: String) -> Matcher<String> {
-    return Matcher("contains \"\(string)\"") {$0.rangeOfString(string) != nil}
+public func containsString(_ string: String) -> Matcher<String> {
+    return Matcher("contains \"\(string)\"") {$0.range(of: string) != nil}
 }
 
-public func containsStringsInOrder(strings: String...) -> Matcher<String> {
+public func containsStringsInOrder(_ strings: String...) -> Matcher<String> {
     return Matcher("contains in order \(describe(strings))") {
         (value: String) -> Bool in
-        var range = value.startIndex ..< value.endIndex
+        var range = value.startIndex..<value.endIndex
         for string in strings {
-            let r = value.rangeOfString(string, options: .CaseInsensitiveSearch, range: range)
+            let r = value.range(of: string, options: .caseInsensitive, range: range)
             if let r = r {
-                range.startIndex = r.endIndex
+                range = r.upperBound..<value.endIndex
             } else {
                 return false
             }
@@ -21,23 +21,23 @@ public func containsStringsInOrder(strings: String...) -> Matcher<String> {
     }
 }
 
-public func hasPrefix(expectedPrefix: String) -> Matcher<String> {
+public func hasPrefix(_ expectedPrefix: String) -> Matcher<String> {
     return Matcher("has prefix \(describe(expectedPrefix))") {$0.hasPrefix(expectedPrefix)}
 }
 
-public func hasSuffix(expectedSuffix: String) -> Matcher<String> {
+public func hasSuffix(_ expectedSuffix: String) -> Matcher<String> {
     return Matcher("has suffix \(describe(expectedSuffix))") {$0.hasSuffix(expectedSuffix)}
 }
 
-public func matchesPattern(pattern: String, options: NSRegularExpressionOptions = []) -> Matcher<String> {
+public func matchesPattern(_ pattern: String, options: NSRegularExpression.Options = []) -> Matcher<String> {
     let regularExpression = try! NSRegularExpression(pattern: pattern, options: options)
     return matchesPattern(regularExpression)
 }
 
-public func matchesPattern(regularExpression: NSRegularExpression) -> Matcher<String> {
+public func matchesPattern(_ regularExpression: NSRegularExpression) -> Matcher<String> {
     return Matcher("matches \(describe(regularExpression.pattern))") {
         (value: String) -> Bool in
         let range = NSMakeRange(0, (value as NSString).length)
-        return regularExpression.numberOfMatchesInString(value, options: [], range: range) > 0
+        return regularExpression.numberOfMatches(in: value, options: [], range: range) > 0
     }
 }

@@ -1,20 +1,20 @@
-public func not<T>(matcher: Matcher<T>) -> Matcher<T> {
-    return Matcher("not \(matcher.description)") {value in !matcher.matches(value)}
+public func not<T>(_ matcher: Matcher<T>) -> Matcher<T> {
+    return Matcher("not \(matcher.description)") {value in !matcher.matches(value).boolValue}
 }
 
-public func not<T: Equatable>(expectedValue: T) -> Matcher<T> {
+public func not<T: Equatable>(_ expectedValue: T) -> Matcher<T> {
     return not(equalToWithoutDescription(expectedValue))
 }
 
-public func describedAs<T>(description: String, _ matcher: Matcher<T>) -> Matcher<T> {
+public func describedAs<T>(_ description: String, _ matcher: Matcher<T>) -> Matcher<T> {
     return Matcher(description) {matcher.matches($0) as MatchResult}
 }
 
-public func allOf<T>(matchers: Matcher<T>...) -> Matcher<T> {
+public func allOf<T>(_ matchers: Matcher<T>...) -> Matcher<T> {
     return allOf(matchers)
 }
 
-public func allOf<S: SequenceType, T where S.Generator.Element == Matcher<T>>(matchers: S) -> Matcher<T> {
+public func allOf<S: Sequence, T>(_ matchers: S) -> Matcher<T> where S.Iterator.Element == Matcher<T> {
     return Matcher(joinMatcherDescriptions(matchers)) {
         (value: T) -> MatchResult in
         var mismatchDescriptions: [String?] = []
@@ -24,7 +24,7 @@ public func allOf<S: SequenceType, T where S.Generator.Element == Matcher<T>>(ma
                 "mismatch: \(matcher.description)"
                     + (mismatchDescription.map{" (\($0))"} ?? "")
             }) {
-            case let .Mismatch(mismatchDescription):
+            case let .mismatch(mismatchDescription):
                 mismatchDescriptions.append(mismatchDescription)
             default:
                 break
@@ -38,11 +38,11 @@ public func && <T>(lhs: Matcher<T>, rhs: Matcher<T>) -> Matcher<T> {
     return allOf(lhs, rhs)
 }
 
-public func anyOf<T>(matchers: Matcher<T>...) -> Matcher<T> {
+public func anyOf<T>(_ matchers: Matcher<T>...) -> Matcher<T> {
     return anyOf(matchers)
 }
 
-public func anyOf<S: SequenceType, T where S.Generator.Element == Matcher<T>>(matchers: S) -> Matcher<T> {
+public func anyOf<S: Sequence, T>(_ matchers: S) -> Matcher<T> where S.Iterator.Element == Matcher<T> {
     return Matcher(joinMatcherDescriptions(matchers, prefix: "any of")) {
         (value: T) -> MatchResult in
         let matchedMatchers = matchers.filter {$0.matches(value).boolValue}
