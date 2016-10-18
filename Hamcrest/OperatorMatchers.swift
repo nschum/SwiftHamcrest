@@ -1,4 +1,4 @@
-public func assertThat(resultDescription: MatchResultDescription,
+public func assertThat(_ resultDescription: MatchResultDescription,
                        file: StaticString = #file, line: UInt = #line) -> String {
     return reportResult(resultDescription.result, file: file, line: line)
 }
@@ -9,7 +9,7 @@ public struct MatchResultDescription {
     init(result: String?) {
         self.result = result
     }
-    init<T>(@autoclosure value: () -> T, matcher: Matcher<T>) {
+    init<T>(value: @autoclosure () -> T, matcher: Matcher<T>) {
         self.result = applyMatcher(matcher, toValue: value)
     }
 }
@@ -43,7 +43,7 @@ public func && (lhs: MatchResultDescription, rhs: MatchResultDescription)
 
     switch (lhs.result, rhs.result) {
     case (nil, nil):
-        return MatchResultDescription(result: .None)
+        return MatchResultDescription(result: .none)
     case let (result?, nil):
         return MatchResultDescription(result: result)
     case let (nil, result?):
