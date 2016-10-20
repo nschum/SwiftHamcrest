@@ -38,6 +38,7 @@ func isPlayground() -> Bool {
 
 // MARK: assertThrows
 
+@discardableResult
 public func assertThrows<T>(_ value: @autoclosure () throws -> T, file: StaticString = #file, line: UInt = #line) -> String {
     do {
         try value()
@@ -47,14 +48,17 @@ public func assertThrows<T>(_ value: @autoclosure () throws -> T, file: StaticSt
     }
 }
 
+@discardableResult
 public func assertThrows<S, T: Error>(_ value: @autoclosure () throws -> S, _ error: T, file: String = #file, line: UInt = #line) -> String where T: Equatable {
     return assertThrows(value, equalToWithoutDescription(error), file: file, line: line)
 }
 
+@discardableResult
 public func assertThrows<S, T: Error>(_ value: @autoclosure () throws -> S, _ matcher: Matcher<T>, file: String = #file, line: UInt = #line) -> String {
     return reportResult(applyErrorMatcher(matcher, toBlock: value))
 }
 
+@discardableResult
 private func applyErrorMatcher<S, T: Error>(_ matcher: Matcher<T>, toBlock: () throws -> S) -> String? {
     do {
         try toBlock()
@@ -73,7 +77,7 @@ private func applyErrorMatcher<S, T: Error>(_ matcher: Matcher<T>, toBlock: () t
 }
 
 // MARK: assertThat
-
+@discardableResult
 public func assertThat<T>(_ value: @autoclosure () throws -> T, _ matcher: Matcher<T>, file: StaticString = #file, line: UInt = #line) -> String {
     return reportResult(applyMatcher(matcher, toValue: value), file: file, line: line)
 }
