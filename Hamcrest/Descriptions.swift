@@ -1,20 +1,20 @@
 import Foundation
 
-func describe<T>(value: T) -> String {
+func describe<T>(_ value: T) -> String {
     if let stringArray = value as? [String] {
         return joinDescriptions(stringArray.map {describe($0)})
     }
     if let string = value as? String {
         return "\"\(string)\""
     }
-    return String(value)
+    return String(describing: value)
 }
 
-func describeAddress<T: AnyObject>(object: T) -> String {
-    return NSString(format: "%p", unsafeBitCast(object, Int.self)) as String
+func describeAddress<T: AnyObject>(_ object: T) -> String {
+    return NSString(format: "%p", unsafeBitCast(object, to: Int.self)) as String
 }
 
-func describeError(error: ErrorType) -> String {
+func describeError(_ error: Error) -> String {
     return "ERROR: \(error)"
 }
 
@@ -22,45 +22,45 @@ func describeExpectedError() -> String {
     return "EXPECTED ERROR"
 }
 
-func describeExpectedError(description: String) -> String {
+func describeExpectedError(_ description: String) -> String {
     return "EXPECTED ERROR: \(description)"
 }
 
-func describeErrorMismatch<T>(error: T, _ description: String, _ mismatchDescription: String?) -> String {
+func describeErrorMismatch<T>(_ error: T, _ description: String, _ mismatchDescription: String?) -> String {
     return "GOT ERROR: " + describeActualValue(error, mismatchDescription) + ", EXPECTED ERROR: \(description)"
 }
 
-func describeMismatch<T>(value: T, _ description: String, _ mismatchDescription: String?) -> String {
+func describeMismatch<T>(_ value: T, _ description: String, _ mismatchDescription: String?) -> String {
     return "GOT: " + describeActualValue(value, mismatchDescription) + ", EXPECTED: \(description)"
 }
 
-func describeActualValue<T>(value: T, _ mismatchDescription: String?) -> String {
+func describeActualValue<T>(_ value: T, _ mismatchDescription: String?) -> String {
     return describe(value) + (mismatchDescription.map{" (\($0))"} ?? "")
 }
 
-func joinDescriptions(descriptions: [String]) -> String {
+func joinDescriptions(_ descriptions: [String]) -> String {
     return joinStrings(descriptions)
 }
 
-func joinDescriptions(descriptions: [String?]) -> String? {
+func joinDescriptions(_ descriptions: [String?]) -> String? {
     let notNil = filterNotNil(descriptions)
     return notNil.isEmpty ? nil : joinStrings(notNil)
 }
 
-func joinMatcherDescriptions<S: SequenceType, T where S.Generator.Element == Matcher<T>>(matchers: S, prefix: String = "all of") -> String {
-    var generator = matchers.generate()
-    if let first = generator.next() where generator.next() == nil {
+func joinMatcherDescriptions<S: Sequence, T>(_ matchers: S, prefix: String = "all of") -> String where S.Iterator.Element == Matcher<T> {
+    var generator = matchers.makeIterator()
+    if let first = generator.next() , generator.next() == nil {
         return first.description
     } else {
         return prefix + " " + joinDescriptions(matchers.map({$0.description}))
     }
 }
 
-private func joinStrings(strings: [String]) -> String {
+private func joinStrings(_ strings: [String]) -> String {
     switch (strings.count) {
     case 1:
         return strings[0]
     default:
-        return "[" + strings.joinWithSeparator(", ") + "]"
+        return "[" + strings.joined(separator: ", ") + "]"
     }
 }

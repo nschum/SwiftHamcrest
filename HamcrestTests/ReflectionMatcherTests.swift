@@ -9,7 +9,7 @@ private class ReflectableClass {
 
 class ReflectionMatcherTests: BaseTestCase {
 
-    private let instance = ReflectableClass()
+    fileprivate let instance = ReflectableClass()
 
     func testHasProperty() {
         assertMatch(ReflectableClass(), hasProperty("property2", "value2"))
