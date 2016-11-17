@@ -10,7 +10,7 @@ class BaseTestCase: XCTestCase {
         super.setUp()
     }
 
-    func assertMatch<T>(value: T, _ matcher: Matcher<T>,
+    func assertMatch<T>(_ value: T, _ matcher: Matcher<T>,
                         file: StaticString = #file, line: UInt = #line) {
 
         reportedError = nil
@@ -18,7 +18,7 @@ class BaseTestCase: XCTestCase {
         assertReportsNoError(file, line: line)
     }
 
-    func assertMismatch<T>(value: T, _ matcher: Matcher<T>, _ description: String,
+    func assertMismatch<T>(_ value: T, _ matcher: Matcher<T>, _ description: String,
                            mismatchDescription: String? = nil,
                            file: StaticString = #file, line: UInt = #line) {
 
@@ -31,7 +31,7 @@ class BaseTestCase: XCTestCase {
         }
     }
 
-    func assertMismatch<T>(value: [T], _ matcher: Matcher<[T]>, _ description: String,
+    func assertMismatch<T>(_ value: [T], _ matcher: Matcher<[T]>, _ description: String,
                            mismatchDescription: String? = nil,
                            file: StaticString = #file, line: UInt = #line) {
 
@@ -44,45 +44,45 @@ class BaseTestCase: XCTestCase {
         }
     }
 
-    func assertReportsNoError(file: StaticString = #file, line: UInt = #line) {
+    func assertReportsNoError(_ file: StaticString = #file, line: UInt = #line) {
         XCTAssertNil(reportedError, file: file, line: line)
     }
 
-    func assertReportsError(message: String, file: StaticString = #file, line: UInt = #line) {
+    func assertReportsError(_ message: String, file: StaticString = #file, line: UInt = #line) {
         XCTAssertNotNil(reportedError, file: file, line: line)
         XCTAssertEqual((reportedError ?? ""), message, file: file, line: line)
     }
 
-    func assertReportsMismatch<T>(value: T, _ description: String, mismatchDescription: String? = nil, file: StaticString = #file, line: UInt = #line) {
+    func assertReportsMismatch<T>(_ value: T, _ description: String, mismatchDescription: String? = nil, file: StaticString = #file, line: UInt = #line) {
         let message = expectedMessage(value, description, mismatchDescription: mismatchDescription)
         assertReportsError(message, file: file, line: line)
     }
 }
 
-private func expectedMessage(value: Any, _ description: String, mismatchDescription: String?)
+private func expectedMessage(_ value: Any, _ description: String, mismatchDescription: String?)
     -> String {
 
     let inset = (mismatchDescription.map{" (\($0))"} ?? "")
     return "GOT: \(valueDescription(value))\(inset), EXPECTED: \(description)"
 }
 
-private func valueDescription(value: Any) -> String {
+private func valueDescription(_ value: Any) -> String {
     if let stringArray = value as? [String] {
         return joinStrings(stringArray.map {valueDescription($0)})
     } else if let string = value as? String {
         return "\"\(string)\""
     } else {
-        return String(value)
+        return String(describing: value)
     }
 }
 
-private func joinStrings(strings: [String]) -> String {
+private func joinStrings(_ strings: [String]) -> String {
     switch (strings.count) {
     case 0:
         return "none"
     case 1:
         return strings[0]
     default:
-        return "[" + strings.joinWithSeparator(", ") + "]"
+        return "[" + strings.joined(separator: ", ") + "]"
     }
 }

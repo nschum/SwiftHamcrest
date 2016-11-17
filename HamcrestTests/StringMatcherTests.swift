@@ -39,7 +39,7 @@ class StringTests: BaseTestCase {
 
     func testMatchesPattern() {
         assertMatch(string, matchesPattern("\\bfo+bar\\b"))
-        assertMatch(string, matchesPattern("\\bFO+BAR\\b", options: .CaseInsensitive))
+        assertMatch(string, matchesPattern("\\bFO+BAR\\b", options: .caseInsensitive))
 
         assertMismatch(string, matchesPattern("\\bFO+BAR\\b"), "matches \"\\bFO+BAR\\b\"")
         assertMismatch(string, matchesPattern("x"), "matches \"x\"")

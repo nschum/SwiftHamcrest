@@ -1,4 +1,4 @@
-public enum MatchResult: BooleanLiteralConvertible, BooleanType {
+public enum MatchResult: ExpressibleByBooleanLiteral {
 
     case Match
     case Mismatch(String?)
