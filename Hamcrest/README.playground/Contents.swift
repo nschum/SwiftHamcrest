@@ -80,7 +80,7 @@ assertThat("foobarbaz", hasSuffix("baz"))
 assertThat("foobarbaz", hasSuffix("ba")) // mismatch
 
 assertThat("ac", matchesPattern("\\b(a|b)(c|d)\\b"))
-assertThat("BD", matchesPattern("\\b(a|b)(c|d)\\b", options: .CaseInsensitive))
+assertThat("BD", matchesPattern("\\b(a|b)(c|d)\\b", options: .caseInsensitive))
 assertThat("aC", matchesPattern("\\b(a|b)(c|d)\\b"))
 
 assertThat(10.0, closeTo(10.0, 0.01))
@@ -161,8 +161,8 @@ assertThat(optional, presentAnd(equalTo(1))) // mismatch
 //: The following matchers can be used to assert types. References of type Any need to be cast before typed matchers can be used. instanceOf(and:) can be used to combine type verification and casting.
 
 class TestChild: Test {}
-assertThat(o, instanceOf(Test))
-assertThat(o, instanceOf(TestChild)) // mismatch
+assertThat(o, instanceOf(Test.self))
+assertThat(o, instanceOf(TestChild.self)) // mismatch
 
 let any: Any = 10
 assertThat(any, instanceOf(Int.self, and: equalTo(10)))
@@ -219,7 +219,7 @@ assertThat(489359, isDivisibleByThree()) // mismatch
 //: ### Errors ###
 //: If the function you're testing can throw errors, Hamcrest will report those errors.
 
-private enum SampleError: ErrorType {
+private enum SampleError: Error {
     case Error1
     case Error2
 }
