@@ -1,7 +1,7 @@
 import XCTest
 import Hamcrest
 
-func succeedingMatcher<T: Equatable>(expectingValue: T, description: String = "description",
+func succeedingMatcher<T: Equatable>(_ expectingValue: T, description: String = "description",
                                      file: StaticString = #file, line: UInt = #line) -> Matcher<T> {
 
     return Matcher<T>(description) {
@@ -11,19 +11,19 @@ func succeedingMatcher<T: Equatable>(expectingValue: T, description: String = "d
     }
 }
 
-func succeedingMatcher<T>(type: T.Type = T.self, description: String = "description")
+func succeedingMatcher<T>(_ type: T.Type = T.self, description: String = "description")
     -> Matcher<T> {
 
     return Matcher<T>(description) {value in true}
 }
 
-func failingMatcher<T>(type: T.Type = T.self, description: String = "description",
+func failingMatcher<T>(_ type: T.Type = T.self, description: String = "description",
                        mismatchDescription: String? = nil) -> Matcher<T> {
 
     return Matcher<T>(description) {value in .Mismatch(mismatchDescription)}
 }
 
-func failingMatcherWithMismatchDescription<T>(type: T.Type = T.self,
+func failingMatcherWithMismatchDescription<T>(_ type: T.Type = T.self,
                                               description: String = "description") -> Matcher<T> {
     return failingMatcher(type, description: description, mismatchDescription: "mismatch description")
 }

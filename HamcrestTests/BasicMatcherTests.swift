@@ -7,8 +7,8 @@ private class SampleClass: CustomStringConvertible {
     }
 }
 
-private func address<T: AnyObject>(object: T) -> String {
-    return NSString(format: "%p", unsafeBitCast(object, Int.self)) as String
+private func address<T: AnyObject>(_ object: T) -> String {
+    return NSString(format: "%p", unsafeBitCast(object, to: Int.self)) as String
 }
 
 class BasicMatcherTests: BaseTestCase {
@@ -23,8 +23,8 @@ class BasicMatcherTests: BaseTestCase {
     }
 
     func testIsA() {
-        assertMatch(5, isA(Int))
-        assertMismatch(5, isA(String), "is instance of String")
+        assertMatch(5, isA(Int.self))
+        assertMismatch(5, isA(String.self), "is instance of String")
     }
 
     func testNot() {
@@ -42,8 +42,8 @@ class BasicMatcherTests: BaseTestCase {
     }
 
     func testInstanceOf() {
-        assertMatch(5, instanceOf(Int))
-        assertMismatch(5, instanceOf(String), "instance of String")
+        assertMatch(5, instanceOf(Int.self))
+        assertMismatch(5, instanceOf(String.self), "instance of String")
     }
 
     func testNilValue() {
