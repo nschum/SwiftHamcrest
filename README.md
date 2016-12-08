@@ -108,7 +108,7 @@ assertThat("foobarbaz", hasSuffix("ba"))
 // GOT: "foobarbaz", EXPECTED: has suffix "ba"
 
 assertThat("ac", matchesPattern("\\b(a|b)(c|d)\\b")) // ✓
-assertThat("BD", matchesPattern("\\b(a|b)(c|d)\\b", options: .CaseInsensitive)) // ✓
+assertThat("BD", matchesPattern("\\b(a|b)(c|d)\\b", options: .caseInsensitive)) // ✓
 assertThat("aC", matchesPattern("\\b(a|b)(c|d)\\b"))
 // "GOT: "aC", EXPECTED: matches \b(a|b)(c|d)\b"
 
@@ -231,8 +231,8 @@ The following matchers can be used to assert types. References of type Any need 
 
 ```swift
 class TestChild: Test {}
-assertThat(o, instanceOf(Test)) // ✓
-assertThat(o, instanceOf(TestChild))
+assertThat(o, instanceOf(Test.self)) // ✓
+assertThat(o, instanceOf(TestChild.self))
 // GOT: __lldb_expr_60.Test, EXPECTED: instance of expected type
 
 let any: Any = 10
@@ -309,7 +309,7 @@ assertThat(489359, isDivisibleByThree())
 If the function you're testing can throw errors, Hamcrest will report those errors.
 
 ```swift
-private enum SampleError: ErrorType {
+private enum SampleError: Error {
     case Error1
     case Error2
 }
