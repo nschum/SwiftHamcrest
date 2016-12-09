@@ -12,6 +12,7 @@
 		24003EC819C046BA000B9B0A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24003EC719C046BA000B9B0A /* Images.xcassets */; };
 		24003ECB19C046BA000B9B0A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24003EC919C046BA000B9B0A /* MainMenu.xib */; };
 		24003ED719C046BA000B9B0A /* HamcrestDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24003ED619C046BA000B9B0A /* HamcrestDemoTests.swift */; };
+		24455B8B1DFA2D6700931602 /* Hamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24455B8A1DFA2D6700931602 /* Hamcrest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		24003ED519C046BA000B9B0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "HamcrestDemoTests-macOS/Info.plist"; sourceTree = "<group>"; };
 		24003ED619C046BA000B9B0A /* HamcrestDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HamcrestDemoTests.swift; path = "HamcrestDemoTests-macOS/HamcrestDemoTests.swift"; sourceTree = SOURCE_ROOT; };
 		24003EE019C0472F000B9B0A /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Playground.playground; path = "HamcrestDemo-macOS/Playground.playground"; sourceTree = "<group>"; };
+		24455B8A1DFA2D6700931602 /* Hamcrest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Hamcrest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24455B8B1DFA2D6700931602 /* Hamcrest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +64,7 @@
 				24003EC019C046BA000B9B0A /* HamcrestDemo-macOS */,
 				24003ED319C046BA000B9B0A /* HamcrestDemoTests-macOS */,
 				24003EBF19C046BA000B9B0A /* Products */,
+				24455B891DFA2D6700931602 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +113,14 @@
 				24003ED519C046BA000B9B0A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		24455B891DFA2D6700931602 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24455B8A1DFA2D6700931602 /* Hamcrest.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

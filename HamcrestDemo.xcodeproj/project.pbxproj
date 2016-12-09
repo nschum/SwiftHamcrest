@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24455B8E1DFA2D9C00931602 /* Hamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24455B8D1DFA2D9C00931602 /* Hamcrest.framework */; };
 		24AC49A819C08B3000F030CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC49A719C08B3000F030CA /* AppDelegate.swift */; };
 		24AC49AA19C08B3000F030CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC49A919C08B3000F030CA /* ViewController.swift */; };
 		24AC49AD19C08B3000F030CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24AC49AB19C08B3000F030CA /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24455B8D1DFA2D9C00931602 /* Hamcrest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Hamcrest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24AC49A219C08B3000F030CA /* HamcrestDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HamcrestDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24AC49A619C08B3000F030CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24AC49A719C08B3000F030CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,18 +52,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24455B8E1DFA2D9C00931602 /* Hamcrest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24455B8C1DFA2D9B00931602 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24455B8D1DFA2D9C00931602 /* Hamcrest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		24AC499919C08B3000F030CA = {
 			isa = PBXGroup;
 			children = (
 				24AC49A419C08B3000F030CA /* HamcrestDemo */,
 				24AC49BA19C08B3000F030CA /* HamcrestDemoTests */,
 				24AC49A319C08B3000F030CA /* Products */,
+				24455B8C1DFA2D9B00931602 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
