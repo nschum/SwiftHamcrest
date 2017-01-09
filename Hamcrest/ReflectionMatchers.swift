@@ -7,10 +7,10 @@ public func hasProperty<T, U>(_ propertyMatcher: Matcher<String>, _ matcher: Mat
                     return "property value " + describeActualValue(propertyValue, $0)
                 }
             } else {
-                return .Mismatch("incompatible property type")
+                return .mismatch("incompatible property type")
             }
         } else {
-            return .Mismatch("missing property")
+            return .mismatch("missing property")
         }
     }
 }

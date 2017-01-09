@@ -20,7 +20,7 @@ class AssertThatTests: BaseTestCase {
     }
 
     func testMatcherWithMatchResultReturningMatch() {
-        let matcher = Matcher<Int>("") {value in .Match}
+        let matcher = Matcher<Int>("") {value in .match}
 
         assertThat(5, matcher)
 
@@ -28,7 +28,7 @@ class AssertThatTests: BaseTestCase {
     }
 
     func testMatcherWithMatchResultReturningMismach() {
-        let matcher = Matcher<Int>("description") {value in .Mismatch(nil)}
+        let matcher = Matcher<Int>("description") {value in .mismatch(nil)}
 
         assertThat(5, matcher)
 
@@ -36,7 +36,7 @@ class AssertThatTests: BaseTestCase {
     }
 
     func testMatcherWithMatchResultReturningMismachWithDescription() {
-        let matcher = Matcher<Int>("description") {value in .Mismatch("mismatch description")}
+        let matcher = Matcher<Int>("description") {value in .mismatch("mismatch description")}
 
         assertThat(5, matcher)
 

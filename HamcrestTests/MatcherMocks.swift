@@ -20,7 +20,7 @@ func succeedingMatcher<T>(_ type: T.Type = T.self, description: String = "descri
 func failingMatcher<T>(_ type: T.Type = T.self, description: String = "description",
                        mismatchDescription: String? = nil) -> Matcher<T> {
 
-    return Matcher<T>(description) {value in .Mismatch(mismatchDescription)}
+    return Matcher<T>(description) {value in .mismatch(mismatchDescription)}
 }
 
 func failingMatcherWithMismatchDescription<T>(_ type: T.Type = T.self,

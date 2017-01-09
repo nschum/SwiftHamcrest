@@ -27,7 +27,7 @@ public func everyItem<T, S: Sequence>(_ matcher: Matcher<T>)
                 (mismatchDescription: String?) -> String? in
                 "mismatch: \(value)" + (mismatchDescription.map{" (\($0))"} ?? "")
             }) {
-            case let .Mismatch(mismatchDescription):
+            case let .mismatch(mismatchDescription):
                 mismatchDescriptions.append(mismatchDescription)
             default:
                 break
@@ -74,11 +74,11 @@ private func hasItems<T, S: Sequence>(_ matchers: [Matcher<T>])
         }
         switch missingItems.count {
         case 0:
-            return .Match
+            return .match
         case 1:
-            return .Mismatch("missing item \(missingItems[0].description)")
+            return .mismatch("missing item \(missingItems[0].description)")
         default:
-            return .Mismatch("missing items " + joinDescriptions(matchers.map({$0.description})))
+            return .mismatch("missing items " + joinDescriptions(matchers.map({$0.description})))
         }
     }
 }
@@ -143,7 +143,7 @@ private func containsInAnyOrder<T, S: Sequence>
         if !isMatch {
             return applyMatchers(remainingMatchers, values: unmatchedValues)
         } else {
-            return .Match
+            return .match
         }
     }
 }
@@ -170,7 +170,7 @@ func applyMatchers<T, S: Sequence>
         switch delegateMatching(value, matcher, {
             "mismatch: " + describeMismatch(value, matcher.description, $0)
         }) {
-        case let .Mismatch(mismatchDescription):
+        case let .mismatch(mismatchDescription):
             mismatchDescriptions.append(mismatchDescription)
         default:
             break

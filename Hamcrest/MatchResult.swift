@@ -1,25 +1,25 @@
 public enum MatchResult: ExpressibleByBooleanLiteral {
 
-    case Match
-    case Mismatch(String?)
+    case match
+    case mismatch(String?)
 
     public init(booleanLiteral match: Bool) {
-        self = match ? .Match : .Mismatch(nil)
+        self = match ? .match : .mismatch(nil)
     }
 
     public init(_ match: Bool) {
-        self = match ? .Match : .Mismatch(nil)
+        self = match ? .match : .mismatch(nil)
     }
 
     public init(_ match: Bool, _ mismatchDescription: String?) {
-        self = match ? .Match : .Mismatch(mismatchDescription)
+        self = match ? .match : .mismatch(mismatchDescription)
     }
 
     public var boolValue: Bool {
         switch self {
-        case .Match:
+        case .match:
             return true
-        case .Mismatch:
+        case .mismatch:
             return false
         }
     }

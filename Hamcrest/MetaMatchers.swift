@@ -24,7 +24,7 @@ public func allOf<S: Sequence, T>(_ matchers: S) -> Matcher<T> where S.Iterator.
                 "mismatch: \(matcher.description)"
                     + (mismatchDescription.map{" (\($0))"} ?? "")
             }) {
-            case let .Mismatch(mismatchDescription):
+            case let .mismatch(mismatchDescription):
                 mismatchDescriptions.append(mismatchDescription)
             default:
                 break
