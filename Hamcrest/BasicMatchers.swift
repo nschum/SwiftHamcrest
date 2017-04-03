@@ -5,7 +5,7 @@ public func anything<T>() -> Matcher<T> {
 public func sameInstance<T: AnyObject>(_ expectedValue: T) -> Matcher<T> {
     return Matcher("same instance as \(describeAddress(expectedValue))") {
         (value: T) -> MatchResult in
-        value === expectedValue ? .Match : .Mismatch(describeAddress(value))
+        value === expectedValue ? .match : .mismatch(describeAddress(value))
     }
 }
 
@@ -42,7 +42,7 @@ public func presentAnd<T>(_ matcher: Matcher<T>) -> Matcher<Optional<T>> {
         if let unwrappedValue = value {
             return matcher.matches(unwrappedValue)
         } else {
-            return .Mismatch(nil)
+            return .mismatch(nil)
         }
     }
 }
@@ -64,7 +64,7 @@ public func instanceOfAnd<T: Any>(_ matcher: Matcher<T>) -> Matcher<Any> {
         if let value = value as? T {
             return matcher.matches(value)
         } else {
-            return .Mismatch("mismatched type")
+            return .mismatch("mismatched type")
         }
     }
 }

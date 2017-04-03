@@ -19,10 +19,10 @@ func filterNotNil<T>(_ array: [T?]) -> [T] {
 
 func delegateMatching<T>(_ value: T, _ matcher: Matcher<T>, _ mismatchDescriber: (String?) -> String?) -> MatchResult {
     switch matcher.matches(value) {
-    case .Match:
-        return .Match
-    case let .Mismatch(mismatchDescription):
-        return .Mismatch(mismatchDescriber(mismatchDescription))
+    case .match:
+        return .match
+    case let .mismatch(mismatchDescription):
+        return .mismatch(mismatchDescriber(mismatchDescription))
     }
 }
 
@@ -62,9 +62,9 @@ func isPlayground() -> Bool {
     } catch let error as T {
         let match = matcher.matches(error)
         switch match {
-        case .Match:
+        case .match:
             return nil
-        case let .Mismatch(mismatchDescription):
+        case let .mismatch(mismatchDescription):
             return describeErrorMismatch(error, matcher.description, mismatchDescription)
         }
     } catch let error {
@@ -83,9 +83,9 @@ func isPlayground() -> Bool {
         let value = try toValue()
         let match = matcher.matches(value)
         switch match {
-        case .Match:
+        case .match:
             return nil
-        case let .Mismatch(mismatchDescription):
+        case let .mismatch(mismatchDescription):
             return describeMismatch(value, matcher.description, mismatchDescription)
         }
     } catch let error {

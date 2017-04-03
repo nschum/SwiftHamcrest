@@ -7,7 +7,7 @@ class MatchResultTests: XCTestCase {
         let matchResult: MatchResult = true
 
         switch matchResult {
-        case .Match:
+        case .match:
             break
         default:
             XCTFail()
@@ -18,7 +18,7 @@ class MatchResultTests: XCTestCase {
         let matchResult: MatchResult = false
 
         switch matchResult {
-        case .Mismatch:
+        case .mismatch:
             break
         default:
             XCTFail()
@@ -29,7 +29,7 @@ class MatchResultTests: XCTestCase {
         let matchResult = MatchResult(true)
 
         switch matchResult {
-        case .Match:
+        case .match:
             break
         default:
             XCTFail()
@@ -40,7 +40,7 @@ class MatchResultTests: XCTestCase {
         let matchResult = MatchResult(false)
 
         switch matchResult {
-        case .Mismatch:
+        case .mismatch:
             break
         default:
             XCTFail()
@@ -51,7 +51,7 @@ class MatchResultTests: XCTestCase {
         let matchResult = MatchResult(true, "description")
 
         switch matchResult {
-        case .Match:
+        case .match:
             break
         default:
             XCTFail()
@@ -62,7 +62,7 @@ class MatchResultTests: XCTestCase {
         let matchResult = MatchResult(false, "description")
 
         switch matchResult {
-        case let .Mismatch(mismatchDescription) where mismatchDescription != nil:
+        case let .mismatch(mismatchDescription) where mismatchDescription != nil:
             XCTAssertEqual(mismatchDescription!, "description")
         default:
             XCTFail()
