@@ -93,7 +93,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "24AC49A119C08B3000F030CA"
+            BlueprintIdentifier = "24003EBD19C046BA000B9B0A"
             BuildableName = "HamcrestDemo.app"
             BlueprintName = "HamcrestDemo"
             ReferencedContainer = "container:HamcrestDemo-macOS.xcodeproj">

@@ -24,10 +24,24 @@
 			remoteGlobalIDString = 24AC49A119C08B3000F030CA;
 			remoteInfo = HamcrestDemo;
 		};
+		A76FDDE61E9374C2002918A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A76FDDE11E9374C2002918A1 /* HamcrestDemo-macOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24003EBE19C046BA000B9B0A;
+			remoteInfo = HamcrestDemo;
+		};
+		A76FDDE81E9374C2002918A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A76FDDE11E9374C2002918A1 /* HamcrestDemo-macOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 24003ED019C046BA000B9B0A;
+			remoteInfo = HamcrestDemoTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		24455B8D1DFA2D9C00931602 /* Hamcrest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Hamcrest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24455B8D1DFA2D9C00931602 /* Hamcrest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Hamcrest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24AC49A219C08B3000F030CA /* HamcrestDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HamcrestDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24AC49A619C08B3000F030CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24AC49A719C08B3000F030CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +52,7 @@
 		24AC49B719C08B3000F030CA /* HamcrestDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamcrestDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24AC49BC19C08B3000F030CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24AC49BD19C08B3000F030CA /* HamcrestDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamcrestDemoTests.swift; sourceTree = "<group>"; };
+		A76FDDE11E9374C2002918A1 /* HamcrestDemo-macOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "HamcrestDemo-macOS.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +77,7 @@
 		24455B8C1DFA2D9B00931602 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A76FDDE11E9374C2002918A1 /* HamcrestDemo-macOS.xcodeproj */,
 				24455B8D1DFA2D9C00931602 /* Hamcrest.framework */,
 			);
 			name = Frameworks;
@@ -122,6 +138,15 @@
 				24AC49BC19C08B3000F030CA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A76FDDE21E9374C2002918A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A76FDDE71E9374C2002918A1 /* HamcrestDemo.app */,
+				A76FDDE91E9374C2002918A1 /* HamcrestDemoTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +219,12 @@
 			mainGroup = 24AC499919C08B3000F030CA;
 			productRefGroup = 24AC49A319C08B3000F030CA /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A76FDDE21E9374C2002918A1 /* Products */;
+					ProjectRef = A76FDDE11E9374C2002918A1 /* HamcrestDemo-macOS.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				24AC49A119C08B3000F030CA /* HamcrestDemo */,
@@ -201,6 +232,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A76FDDE71E9374C2002918A1 /* HamcrestDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = HamcrestDemo.app;
+			remoteRef = A76FDDE61E9374C2002918A1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A76FDDE91E9374C2002918A1 /* HamcrestDemoTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = HamcrestDemoTests.xctest;
+			remoteRef = A76FDDE81E9374C2002918A1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		24AC49A019C08B3000F030CA /* Resources */ = {
