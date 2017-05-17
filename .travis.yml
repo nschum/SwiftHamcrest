@@ -1,8 +1,8 @@
 language: objective-c
-osx_image: xcode8.2
+osx_image: xcode8.3
 
 script:
   - set -o pipefail;
   - xcodebuild -workspace *.xcworkspace -scheme "Hamcrest-macOS" build test | xcpretty -c
-  - xcodebuild -workspace *.xcworkspace -scheme "Hamcrest-iOS" -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPad Pro (9.7 inch)" build test | xcpretty -c
+  - xcodebuild -workspace *.xcworkspace -scheme "Hamcrest-iOS" -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPhone 5s" build test | xcpretty -c
   - pod lib lint SwiftHamcrest.podspec
