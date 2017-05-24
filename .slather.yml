@@ -1,0 +1,7 @@
+coverage_service: coveralls
+xcworkspace: ./Hamcrest.xcworkspace
+scheme: Hamcrest-macOS
+configuration: Debug
+source_directory: Hamcrest
+output_directory: ./coverage
+ignore:

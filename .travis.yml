@@ -1,8 +1,14 @@
 language: objective-c
 osx_image: xcode8.3
 
+before_install:
+  - gem install slather
+
 script:
   - set -o pipefail;
   - xcodebuild -workspace *.xcworkspace -scheme "Hamcrest-macOS" build test | xcpretty -c
   - xcodebuild -workspace *.xcworkspace -scheme "Hamcrest-iOS" -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPhone 5s" build test | xcpretty -c
   - pod lib lint SwiftHamcrest.podspec
+
+after_success:
+  - slather
