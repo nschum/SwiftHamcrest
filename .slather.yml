@@ -1,6 +1,6 @@
 coverage_service: coveralls
 xcodeproj: ./Hamcrest.xcodeproj
-xcworkspace: ./Hamcrest.xcworkspace
+workspace: ./Hamcrest.xcworkspace
 scheme: Hamcrest-macOS
 configuration: Debug
 source_directory: Hamcrest
