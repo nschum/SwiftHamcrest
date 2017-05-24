@@ -12,6 +12,7 @@ Hamcrest was originally written in Java and is available for many [languages](ht
 ![CocoaPods compatible](https://img.shields.io/cocoapods/v/SwiftHamcrest.svg)
 
 [![Build Status](https://travis-ci.org/nschum/SwiftHamcrest.svg?branch=master)](https://travis-ci.org/nschum/SwiftHamcrest)
+[![Coverage Status](https://coveralls.io/repos/github/nschum/SwiftHamcrest/badge.svg?branch=master)](https://coveralls.io/github/nschum/SwiftHamcrest?branch=master)
 
 Tutorial
 --------
