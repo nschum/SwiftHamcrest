@@ -6,3 +6,4 @@ configuration: Debug
 source_directory: Hamcrest
 output_directory: ./coverage
 ignore:
+  - HamcrestTests/*
