@@ -283,6 +283,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2494845819B60A57007EEA3D /* Build configuration list for PBXNativeTarget "Hamcrest" */;
 			buildPhases = (
+				481906251ED69B6500E47930 /* Swift Format */,
 				2494844319B60A56007EEA3D /* Sources */,
 				2494844419B60A56007EEA3D /* Frameworks */,
 				2494844519B60A56007EEA3D /* Headers */,
@@ -301,6 +302,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2496DB0419922407008C270E /* Build configuration list for PBXNativeTarget "Hamcrest-macOS" */;
 			buildPhases = (
+				481906241ED69B1E00E47930 /* Swift Format */,
 				2496DAEC19922407008C270E /* Sources */,
 				2496DAED19922407008C270E /* Frameworks */,
 				2496DAEE19922407008C270E /* Headers */,
@@ -411,6 +413,37 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		481906241ED69B1E00E47930 /* Swift Format */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Format";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${SRCROOT}/bin/swiftformat --disable blankLinesAtEndOfScope,blankLinesBetweenScopes,consecutiveBlankLines,indent,linebreakAtEndOfFile,numberFormatting,ranges,redundantNilInit,redundantParens,redundantReturn,redundantSelf,semicolons,spaceAroundBraces,spaceAroundOperators,spaceInsideBraces,trailingCommas,trailingSpace,unusedArguments,void ${SRCROOT}\n";
+		};
+		481906251ED69B6500E47930 /* Swift Format */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Format";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${SRCROOT}/bin/swiftformat --disable blankLinesAtEndOfScope,blankLinesBetweenScopes,consecutiveBlankLines,indent,linebreakAtEndOfFile,numberFormatting,ranges,redundantNilInit,redundantParens,redundantReturn,redundantSelf,semicolons,spaceAroundBraces,spaceAroundOperators,spaceInsideBraces,trailingCommas,trailingSpace,unusedArguments,void ${SRCROOT}\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		247C43301B4DD0D700F357B8 /* Sources */ = {
