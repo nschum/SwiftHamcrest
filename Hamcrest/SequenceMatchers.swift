@@ -177,7 +177,7 @@ func applyMatchers<T, S: Sequence>
         }
         i += 1
     }
-    var j = 0;
+    var j = 0
     for value in values {
         if j >= i {
             mismatchDescriptions.append("unmatched item \(describe(value))")
