@@ -7,5 +7,6 @@
 *.xccheckout
 *.xcscmblueprint
 xcuserdata
+.idea/
 
 Carthage
