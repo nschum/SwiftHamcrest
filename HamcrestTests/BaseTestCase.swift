@@ -10,7 +10,6 @@ class BaseTestCase: XCTestCase {
         super.setUp()
     }
 
-
     func assertMatch<T>(_ value: [T], _ matcher: Matcher<[T]>, file: StaticString = #file, line: UInt = #line) {
         reportedError = nil
         assertThat(value, matcher)

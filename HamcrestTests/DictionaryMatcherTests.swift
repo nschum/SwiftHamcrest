@@ -34,15 +34,14 @@ class DictionaryMatcherTests: BaseTestCase {
 
     func testHasEntryInDictionary() {
         let dictionary: [String: Any] = ["some": "value", "another": 1]
-        
+
         assertThat(dictionary, hasEntry(equalTo("some"), instanceOfAnd(equalTo("value"))))
         assertThat(dictionary, hasEntry(equalTo("another"), instanceOfAnd(equalTo(1))))
     }
 
-    
     func testHasEntryInStringDictionry() {
         let dictionary: [String: String] = ["some": "value", "another": "1"]
-        
+
         assertThat(dictionary, hasEntry(equalTo("some"), instanceOfAnd(equalTo("value"))))
         assertThat(dictionary, hasEntry(equalTo("another"), instanceOfAnd(equalTo("1"))))
     }
