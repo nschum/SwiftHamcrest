@@ -103,7 +103,7 @@ class MetaMatcherTests: BaseTestCase {
             "all of [d1, d2]",
             mismatchDescription: "[mismatch: d1 (mismatch description), mismatch: d2]")
     }
-    
+
     func testAnyOf() {
         assertMatch(5, anyOf(succeedingMatcher()))
         assertMatch(5, anyOf(succeedingMatcher(), succeedingMatcher()))
