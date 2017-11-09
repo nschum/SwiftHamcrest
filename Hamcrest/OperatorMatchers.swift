@@ -11,7 +11,7 @@ public struct MatchResultDescription {
     }
 
     init<T>(value: @autoclosure () -> T, matcher: Matcher<T>) {
-        self.result = applyMatcher(matcher, toValue: value)
+        result = applyMatcher(matcher, toValue: value)
     }
 }
 
