@@ -7,11 +7,11 @@ public func containsString(_ string: String) -> Matcher<String> {
 public func containsStringsInOrder(_ strings: String...) -> Matcher<String> {
     return Matcher("contains in order \(describe(strings))") {
         (value: String) -> Bool in
-        var range = value.characters.startIndex..<value.characters.endIndex
+        var range = value.startIndex..<value.endIndex
         for string in strings {
             let r = value.range(of: string, options: .caseInsensitive, range: range)
             if let r = r {
-								range = r.upperBound..<value.characters.endIndex
+								range = r.upperBound..<value.endIndex
             } else {
                 return false
             }
