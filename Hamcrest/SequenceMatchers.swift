@@ -25,7 +25,7 @@ public func everyItem<T, S: Sequence>(_ matcher: Matcher<T>)
         for value in values {
             switch delegateMatching(value, matcher, {
                 (mismatchDescription: String?) -> String? in
-                "mismatch: \(value)" + (mismatchDescription.map{" (\($0))"} ?? "")
+                "mismatch: \(value)" + (mismatchDescription.map {" (\($0))"} ?? "")
             }) {
             case let .mismatch(mismatchDescription):
                 mismatchDescriptions.append(mismatchDescription)

@@ -3,10 +3,10 @@ import Hamcrest
 
 class BaseTestCase: XCTestCase {
 
-    var reportedError: String? = nil
+    var reportedError: String?
 
     override func setUp() {
-        HamcrestReportFunction = {(message, file, line) in self.reportedError = message}
+        HamcrestReportFunction = {message, file, line in self.reportedError = message}
         super.setUp()
     }
 
@@ -66,7 +66,7 @@ class BaseTestCase: XCTestCase {
 private func expectedMessage(_ value: Any, _ description: String, mismatchDescription: String?)
     -> String {
 
-    let inset = (mismatchDescription.map{" (\($0))"} ?? "")
+    let inset = (mismatchDescription.map {" (\($0))"} ?? "")
     return "GOT: \(valueDescription(value))\(inset), EXPECTED: \(description)"
 }
 
@@ -81,7 +81,7 @@ private func valueDescription(_ value: Any) -> String {
 }
 
 private func joinStrings(_ strings: [String]) -> String {
-    switch (strings.count) {
+    switch strings.count {
     case 0:
         return "none"
     case 1:
