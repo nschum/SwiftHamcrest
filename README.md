@@ -348,7 +348,7 @@ Integrate SwiftHamcrest using a Podfile similar to this:
 use_frameworks!
 
 target 'HamcrestDemoTests', :exclusive => true do
-  pod 'SwiftHamcrest', '~> 1.1.0'
+  pod 'SwiftHamcrest', '~> 2.0.0'
 end
 ```
 
