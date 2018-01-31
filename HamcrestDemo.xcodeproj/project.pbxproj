@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 47;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -194,7 +194,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Nikolaj Schumacher";
 				TargetAttributes = {
 					24AC49A119C08B3000F030CA = {
@@ -209,7 +209,7 @@
 				};
 			};
 			buildConfigurationList = 24AC499D19C08B3000F030CA /* Build configuration list for PBXProject "HamcrestDemo" */;
-			compatibilityVersion = "Xcode 6.3";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
