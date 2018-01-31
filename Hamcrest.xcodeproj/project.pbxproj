@@ -342,7 +342,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
+<<<<<<< HEAD
 				LastUpgradeCheck = 0900;
+=======
+				LastUpgradeCheck = 0910;
+>>>>>>> master
 				ORGANIZATIONNAME = "Nikolaj Schumacher";
 				TargetAttributes = {
 					247C43331B4DD0D700F357B8 = {
@@ -427,7 +431,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${SRCROOT}/bin/swiftformat --disable blankLinesAtEndOfScope,blankLinesBetweenScopes,consecutiveBlankLines,indent,linebreakAtEndOfFile,numberFormatting,ranges,redundantNilInit,redundantParens,redundantReturn,redundantSelf,semicolons,spaceAroundBraces,spaceAroundOperators,spaceInsideBraces,trailingCommas,trailingSpace,unusedArguments,void ${SRCROOT}\n";
+			shellScript = "${SRCROOT}/bin/swiftformat --disable indent,numberFormatting,ranges,redundantReturn,spaceAroundOperators,spaceInsideBraces,trailingCommas,unusedArguments,void ${SRCROOT}\n";
 		};
 		481906251ED69B6500E47930 /* Swift Format */ = {
 			isa = PBXShellScriptBuildPhase;

@@ -15,7 +15,6 @@ public func containsStringsInOrder(_ strings: String...) -> Matcher<String> {
             } else {
                 return false
             }
-
         }
         return true
     }
