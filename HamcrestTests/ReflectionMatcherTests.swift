@@ -1,5 +1,5 @@
-import XCTest
 import Hamcrest
+import XCTest
 
 private class ReflectableClass {
     var property1: String = "value1"

@@ -1,5 +1,5 @@
-import XCTest
 import Hamcrest
+import XCTest
 
 private class SampleClass: CustomStringConvertible {
     var description: String {

@@ -1,6 +1,6 @@
 import Cocoa
-import XCTest
 import Hamcrest
+import XCTest
 
 class HamcrestDemoTests: XCTestCase {
 
