@@ -1,5 +1,5 @@
-import XCTest
 import Hamcrest
+import XCTest
 
 class StringTests: BaseTestCase {
 

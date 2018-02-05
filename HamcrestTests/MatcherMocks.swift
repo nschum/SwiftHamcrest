@@ -1,5 +1,5 @@
-import XCTest
 import Hamcrest
+import XCTest
 
 func succeedingMatcher<T: Equatable>(_ expectingValue: T, description: String = "description",
                                      file: StaticString = #file, line: UInt = #line) -> Matcher<T> {
