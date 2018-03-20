@@ -1,6 +1,5 @@
 public func hasEntry<K, V>(_ keyMatcher: Matcher<K>, _ valueMatcher: Matcher<V>)
     -> Matcher<Dictionary<K, V>> {
-
         return Matcher("a dictionary containing [\(keyMatcher.description) -> \(valueMatcher.description)]") {
             (dictionary: Dictionary<K, V>) -> Bool in
 
@@ -15,7 +14,6 @@ public func hasEntry<K, V>(_ keyMatcher: Matcher<K>, _ valueMatcher: Matcher<V>)
 
 public func hasEntry<K, V: Equatable>(_ expectedKey: K, _ expectedValue: V)
     -> Matcher<Dictionary<K, V>> {
-
         return hasEntry(equalToWithoutDescription(expectedKey), equalToWithoutDescription(expectedValue))
 }
 
@@ -25,7 +23,6 @@ public func hasKey<K, V>(_ matcher: Matcher<K>) -> Matcher<Dictionary<K, V>> {
 
 public func hasKey<K, V>(_ expectedKey: K)
     -> Matcher<Dictionary<K, V>> {
-
         return hasKey(equalToWithoutDescription(expectedKey))
 }
 

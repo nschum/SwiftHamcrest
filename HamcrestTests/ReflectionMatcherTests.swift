@@ -8,7 +8,6 @@ private class ReflectableClass {
 }
 
 class ReflectionMatcherTests: BaseTestCase {
-
     fileprivate let instance = ReflectableClass()
 
     func testHasProperty() {

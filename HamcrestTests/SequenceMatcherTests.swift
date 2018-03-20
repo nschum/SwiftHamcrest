@@ -2,7 +2,6 @@ import Hamcrest
 import XCTest
 
 class SequenceMatcherTests: BaseTestCase {
-
     let sequence = ["item1", "item2", "item3"]
 
     func testEmpty() {

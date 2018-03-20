@@ -2,7 +2,6 @@ import Hamcrest
 import XCTest
 
 class BaseTestCase: XCTestCase {
-
     var reportedError: String?
 
     override func setUp() {
@@ -25,7 +24,6 @@ class BaseTestCase: XCTestCase {
     func assertMismatch<T>(_ value: T, _ matcher: Matcher<T>, _ description: String,
                            mismatchDescription: String? = nil,
                            file: StaticString = #file, line: UInt = #line) {
-
         reportedError = nil
         assertThat(value, matcher)
         if let mismatchDescription = mismatchDescription {
@@ -38,7 +36,6 @@ class BaseTestCase: XCTestCase {
     func assertMismatch<T>(_ value: [T], _ matcher: Matcher<[T]>, _ description: String,
                            mismatchDescription: String? = nil,
                            file: StaticString = #file, line: UInt = #line) {
-
         reportedError = nil
         assertThat(value, matcher)
         if let mismatchDescription = mismatchDescription {
@@ -65,7 +62,6 @@ class BaseTestCase: XCTestCase {
 
 private func expectedMessage(_ value: Any, _ description: String, mismatchDescription: String?)
     -> String {
-
     let inset = (mismatchDescription.map {" (\($0))"} ?? "")
     return "GOT: \(valueDescription(value))\(inset), EXPECTED: \(description)"
 }

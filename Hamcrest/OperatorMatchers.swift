@@ -41,7 +41,6 @@ public func <= <T: Comparable>(value: T, expectedValue: T) -> MatchResultDescrip
 
 public func && (lhs: MatchResultDescription, rhs: MatchResultDescription)
     -> MatchResultDescription {
-
     switch (lhs.result, rhs.result) {
     case (nil, nil):
         return MatchResultDescription(result: .none)

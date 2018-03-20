@@ -12,7 +12,6 @@ private func address<T: AnyObject>(_ object: T) -> String {
 }
 
 class OperatorMatcherTests: BaseTestCase {
-
     func testSameInstance() {
         let object = SampleClass()
         assertThat(object === object)

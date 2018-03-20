@@ -2,7 +2,6 @@ import Hamcrest
 import XCTest
 
 class MetaMatcherTests: BaseTestCase {
-
     func testIs() {
         assertMatch(5, `is`(succeedingMatcher()))
         assertMismatch(5, `is`(failingMatcher()), "is description")

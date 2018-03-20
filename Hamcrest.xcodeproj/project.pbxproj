@@ -427,7 +427,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${SRCROOT}/bin/swiftformat --disable blankLinesAtStartOfScope,indent,numberFormatting,ranges,redundantReturn,spaceAroundOperators,spaceInsideBraces,strongOutlets,trailingCommas,unusedArguments,void ${SRCROOT}\n";
+			shellScript = "${SRCROOT}/bin/swiftformat --disable indent,numberFormatting,ranges,redundantReturn,spaceAroundOperators,spaceInsideBraces,strongOutlets,trailingCommas,unusedArguments,void ${SRCROOT}\n";
 		};
 		481906251ED69B6500E47930 /* Swift Format */ = {
 			isa = PBXShellScriptBuildPhase;
