@@ -2,7 +2,6 @@ import Hamcrest
 import XCTest
 
 class MatchResultTests: XCTestCase {
-
     func testInitBooleanLiteralTrue() {
         let matchResult: MatchResult = true
 

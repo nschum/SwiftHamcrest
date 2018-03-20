@@ -2,7 +2,6 @@ import Hamcrest
 import XCTest
 
 class StringTests: BaseTestCase {
-
     let string = "foobar"
 
     func testContainsString() {

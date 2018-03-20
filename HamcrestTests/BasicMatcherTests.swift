@@ -12,7 +12,6 @@ private func address<T: AnyObject>(_ object: T) -> String {
 }
 
 class BasicMatcherTests: BaseTestCase {
-
     func testAnything() {
         assertMatch(5, anything())
     }

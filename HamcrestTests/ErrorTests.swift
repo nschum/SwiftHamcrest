@@ -2,7 +2,6 @@ import Hamcrest
 import XCTest
 
 class ErrorTests: BaseTestCase {
-
     func testThrownError() {
         let matcher = Matcher<Int>("") {value in true}
 

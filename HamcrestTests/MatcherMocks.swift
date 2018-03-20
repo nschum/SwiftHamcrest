@@ -3,7 +3,6 @@ import XCTest
 
 func succeedingMatcher<T: Equatable>(_ expectingValue: T, description: String = "description",
                                      file: StaticString = #file, line: UInt = #line) -> Matcher<T> {
-
     return Matcher<T>(description) {
         (value: T) -> Bool in
         XCTAssertEqual(value, expectingValue, file: file, line: line)
@@ -13,13 +12,11 @@ func succeedingMatcher<T: Equatable>(_ expectingValue: T, description: String = 
 
 func succeedingMatcher<T>(_ type: T.Type = T.self, description: String = "description")
     -> Matcher<T> {
-
     return Matcher<T>(description) {value in true}
 }
 
 func failingMatcher<T>(_ type: T.Type = T.self, description: String = "description",
                        mismatchDescription: String? = nil) -> Matcher<T> {
-
     return Matcher<T>(description) {value in .mismatch(mismatchDescription)}
 }
 
