@@ -3,8 +3,7 @@ public func empty<T: Collection>() -> Matcher<T> {
 }
 
 public func hasCount<T: Collection>(_ matcher: Matcher<T.IndexDistance>) -> Matcher<T> {
-    return Matcher("has count " + matcher.description) {
-        (value: T) -> MatchResult in
+    return Matcher("has count " + matcher.description) { (value: T) -> MatchResult in
         let n = value.count
         return delegateMatching(n, matcher) {
             return "count " + describeActualValue(n, $0)
@@ -17,12 +16,10 @@ public func hasCount<T: Collection>(_ expectedCount: T.IndexDistance) -> Matcher
 }
 
 public func everyItem<T, S: Sequence>(_ matcher: Matcher<T>) -> Matcher<S> where S.Iterator.Element == T {
-    return Matcher("a sequence where every item \(matcher.description)") {
-        (values: S) -> MatchResult in
+    return Matcher("a sequence where every item \(matcher.description)") { (values: S) -> MatchResult in
         var mismatchDescriptions: [String?] = []
         for value in values {
-            switch delegateMatching(value, matcher, {
-                (mismatchDescription: String?) -> String? in
+            switch delegateMatching(value, matcher, { (mismatchDescription: String?) -> String? in
                 "mismatch: \(value)" + (mismatchDescription.map {" (\($0))"} ?? "")
             }) {
             case let .mismatch(mismatchDescription):
@@ -45,8 +42,8 @@ private func hasItem<T, S: Sequence>(_ matcher: Matcher<T>, _ values: S) -> Bool
 }
 
 public func hasItem<T, S: Sequence>(_ matcher: Matcher<T>) -> Matcher<S> where S.Iterator.Element == T {
-    return Matcher("a sequence containing \(matcher.description)") {
-        (values: S) -> Bool in hasItem(matcher, values)
+    return Matcher("a sequence containing \(matcher.description)") { (values: S) -> Bool in
+        hasItem(matcher, values)
     }
 }
 
@@ -55,8 +52,7 @@ public func hasItem<T: Equatable, S: Sequence>(_ expectedValue: T) -> Matcher<S>
 }
 
 private func hasItems<T, S: Sequence>(_ matchers: [Matcher<T>]) -> Matcher<S> where S.Iterator.Element == T {
-    return Matcher("a sequence containing \(joinMatcherDescriptions(matchers))") {
-        (values: S) -> MatchResult in
+    return Matcher("a sequence containing \(joinMatcherDescriptions(matchers))") { (values: S) -> MatchResult in
         var missingItems = [] as [Matcher<T>]
         for matcher in matchers {
             if !hasItem(matcher, values) {
@@ -83,8 +79,7 @@ public func hasItems<T: Equatable, S: Sequence>(_ expectedValues: T...) -> Match
 }
 
 private func contains<T, S: Sequence>(_ matchers: [Matcher<T>]) -> Matcher<S> where S.Iterator.Element == T {
-    return Matcher("a sequence containing " + joinDescriptions(matchers.map({$0.description}))) {
-        (values: S) -> MatchResult in
+    return Matcher("a sequence containing " + joinDescriptions(matchers.map({$0.description}))) { (values: S) -> MatchResult in
         return applyMatchers(matchers, values: values)
     }
 }
@@ -100,9 +95,7 @@ public func contains<T: Equatable, S: Sequence>(_ expectedValues: T...) -> Match
 private func containsInAnyOrder<T, S: Sequence>(_ matchers: [Matcher<T>]) -> Matcher<S> where S.Iterator.Element == T {
     let descriptions = joinDescriptions(matchers.map({$0.description}))
 
-    return Matcher("a sequence containing in any order " + descriptions) {
-        (values: S) -> MatchResult in
-
+    return Matcher("a sequence containing in any order " + descriptions) { (values: S) -> MatchResult in
         var unmatchedValues: [T] = []
         var remainingMatchers = matchers
 

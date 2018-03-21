@@ -1,7 +1,5 @@
 public func hasEntry<K, V>(_ keyMatcher: Matcher<K>, _ valueMatcher: Matcher<V>) -> Matcher<Dictionary<K, V>> {
-        return Matcher("a dictionary containing [\(keyMatcher.description) -> \(valueMatcher.description)]") {
-            (dictionary: Dictionary<K, V>) -> Bool in
-
+        return Matcher("a dictionary containing [\(keyMatcher.description) -> \(valueMatcher.description)]") { (dictionary: Dictionary<K, V>) -> Bool in
             for (key, value) in dictionary {
                 if keyMatcher.matches(key).boolValue && valueMatcher.matches(value).boolValue {
                     return true
