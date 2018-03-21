@@ -5,8 +5,7 @@ public func containsString(_ string: String) -> Matcher<String> {
 }
 
 public func containsStringsInOrder(_ strings: String...) -> Matcher<String> {
-    return Matcher("contains in order \(describe(strings))") {
-        (value: String) -> Bool in
+    return Matcher("contains in order \(describe(strings))") { (value: String) -> Bool in
         var range = value.startIndex..<value.endIndex
         for string in strings {
             let r = value.range(of: string, options: .caseInsensitive, range: range)
@@ -34,8 +33,7 @@ public func matchesPattern(_ pattern: String, options: NSRegularExpression.Optio
 }
 
 public func matchesPattern(_ regularExpression: NSRegularExpression) -> Matcher<String> {
-    return Matcher("matches \(describe(regularExpression.pattern))") {
-        (value: String) -> Bool in
+    return Matcher("matches \(describe(regularExpression.pattern))") { (value: String) -> Bool in
         let range = NSMakeRange(0, (value as NSString).length)
         return regularExpression.numberOfMatches(in: value, options: [], range: range) > 0
     }
