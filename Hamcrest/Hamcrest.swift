@@ -95,7 +95,6 @@ func isPlayground() -> Bool {
 
 func reportResult(_ possibleResult: String?, file: StaticString = #file, line: UInt = #line)
     -> String {
-
     if let result = possibleResult {
         HamcrestReportFunction(result, file, line)
         return result

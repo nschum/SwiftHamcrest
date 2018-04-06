@@ -1,8 +1,7 @@
-import XCTest
 import Hamcrest
+import XCTest
 
 class ArithmeticMatcherTests: BaseTestCase {
-
     func testEqualTo() {
         assertMatch(5, equalTo(5))
         assertMismatch(5, equalTo(10), "equal to 10")

@@ -1,8 +1,7 @@
-import XCTest
 import Hamcrest
+import XCTest
 
 class HamcrestDemoTests: XCTestCase {
-
     override func setUp() {
         super.setUp()
         HamcrestReportFunction = {message, file, line in XCTFail(message, file:file, line:line)}

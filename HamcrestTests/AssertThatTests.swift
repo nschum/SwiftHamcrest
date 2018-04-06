@@ -1,8 +1,7 @@
-import XCTest
 import Hamcrest
+import XCTest
 
 class AssertThatTests: BaseTestCase {
-
     func testMatcherWithBoolReturningTrue() {
         let matcher = Matcher<Int>("") {value in true}
 

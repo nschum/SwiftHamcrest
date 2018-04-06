@@ -1,5 +1,5 @@
-import XCTest
 import Hamcrest
+import XCTest
 
 private class SampleClass: CustomStringConvertible {
     var description: String {
@@ -12,7 +12,6 @@ private func address<T: AnyObject>(_ object: T) -> String {
 }
 
 class OperatorMatcherTests: BaseTestCase {
-
     func testSameInstance() {
         let object = SampleClass()
         assertThat(object === object)

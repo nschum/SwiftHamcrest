@@ -1,8 +1,7 @@
-import XCTest
 import Hamcrest
+import XCTest
 
 class DictionaryMatcherTests: BaseTestCase {
-
     let dictionary = [
         "key1": "value1",
         "key2": "value2",

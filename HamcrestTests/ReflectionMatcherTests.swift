@@ -1,5 +1,5 @@
-import XCTest
 import Hamcrest
+import XCTest
 
 private class ReflectableClass {
     var property1: String = "value1"
@@ -8,7 +8,6 @@ private class ReflectableClass {
 }
 
 class ReflectionMatcherTests: BaseTestCase {
-
     fileprivate let instance = ReflectableClass()
 
     func testHasProperty() {
