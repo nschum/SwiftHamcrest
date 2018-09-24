@@ -1,9 +1,8 @@
 import Cocoa
-import XCTest
 import Hamcrest
+import XCTest
 
 class HamcrestDemoTests: XCTestCase {
-
     // Look at README.playground for a tutorial.
 
     func testSuccess() {
