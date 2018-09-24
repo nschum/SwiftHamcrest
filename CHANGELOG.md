@@ -1,3 +1,9 @@
+Version 2.1.0
+------------
+_TBA_
+
+- Migrated to Swift 4.2 and Xcode 10
+
 Version 2.0.0
 -------------
 _31 Jan 2018_

@@ -2,7 +2,7 @@ public func empty<T: Collection>() -> Matcher<T> {
     return describedAs("empty", hasCount(0))
 }
 
-public func hasCount<T: Collection>(_ matcher: Matcher<T.IndexDistance>) -> Matcher<T> {
+public func hasCount<T: Collection>(_ matcher: Matcher<Int>) -> Matcher<T> {
     return Matcher("has count " + matcher.description) { (value: T) -> MatchResult in
         let n = value.count
         return delegateMatching(n, matcher) {
@@ -11,7 +11,7 @@ public func hasCount<T: Collection>(_ matcher: Matcher<T.IndexDistance>) -> Matc
     }
 }
 
-public func hasCount<T: Collection>(_ expectedCount: T.IndexDistance) -> Matcher<T> {
+public func hasCount<T: Collection>(_ expectedCount: Int) -> Matcher<T> {
     return hasCount(equalToWithoutDescription(expectedCount))
 }
 
