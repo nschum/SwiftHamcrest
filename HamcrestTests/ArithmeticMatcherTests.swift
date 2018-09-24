@@ -10,13 +10,13 @@ class ArithmeticMatcherTests: BaseTestCase {
     func testCloseToFloat() {
         assertMatch(Float(5.001), closeTo(Float(5), 0.0011))
         assertMismatch(Float(5.001), closeTo(Float(5), 0.0009), "within 0.0009 of 5.0",
-            mismatchDescription: "difference of 0.000999927520751953")
+            mismatchDescription: "difference of 0.0009999275207519531")
     }
 
     func testCloseToDouble() {
         assertMatch(5.001, closeTo(5, 0.0011))
-        assertMismatch(5.001, closeTo(5, 0.0009), "within 0.0009 of 5.0",
-            mismatchDescription: "difference of 0.00100000000000033")
+        assertMismatch(5.001, closeTo(5, 0.00091), "within 0.00091 of 5.0",
+            mismatchDescription: "difference of 0.001000000000000334")
     }
 
     func testGreaterThan() {
