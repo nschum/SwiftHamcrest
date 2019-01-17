@@ -1,12 +1,133 @@
-*.xcodeproj/*.mode*
-*.xcodeproj/*.pbxuser
-*.xcodeproj/*.perspective*
-*.xcworkspace/*.mode*
-*.xcworkspace/*.pbxuser
-*.xcworkspace/*.perspective*
+
+# ==========
+### macOS ###
+
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two 
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### macOS ###
+# ==========
+#
+#
+#
+
+# ==========
+### Cocoa ###
+
+# Xcode
+
+## Build generated
+build/
+DerivedData/
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+## Other
+*.moved-aside
 *.xccheckout
 *.xcscmblueprint
-xcuserdata
-.idea/
 
-Carthage
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+### Cocoa ###
+# ==========
+#
+#
+#
+
+# ==========
+### Swift Package Manager ###
+#
+Packages/
+Package.pins
+.build/
+
+### Swift Package Manager ###
+# ==========
+#
+#
+#
+
+# ==========
+### CocoaPods ###
+
+# NOTE: never ignore the lock file.
+# See https://guides.cocoapods.org/using/using-cocoapods.html#what-is-podfilelock
+
+Pods/
+
+### CocoaPods ###
+# ==========
+#
+#
+#
+
+# ==========
+### Carthage ###
+
+Carthage/Build
+Carthage/Checkouts
+
+### Carthage ###
+# ==========
+#
+#
+#
+
+# ==========
+### Fastlane ###
+
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/#source-control
+
+fastlane/README.md
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+### Fastlane ###
+# ==========
+#
+#
+#
