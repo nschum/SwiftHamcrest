@@ -94,7 +94,7 @@
 		244ABFE91B812A44007E8578 /* OperatorMatcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorMatcherTests.swift; sourceTree = "<group>"; };
 		245174F51B8139DF0031BDE1 /* MatchResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchResultTests.swift; sourceTree = "<group>"; };
 		247C43341B4DD0D700F357B8 /* HamcrestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamcrestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2484A1611AD6897F00076A3F /* README.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = README.playground; sourceTree = "<group>"; };
+		2484A1611AD6897F00076A3F /* README.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = README.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		248CDCB019A24B3500743F70 /* ReflectionMatcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReflectionMatcherTests.swift; sourceTree = "<group>"; };
 		248CDCB219A2531500743F70 /* StringMatcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringMatcherTests.swift; sourceTree = "<group>"; };
 		248CDCB419A2540200743F70 /* ArithmeticMatcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArithmeticMatcherTests.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 		2496DAFF19922407008C270E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2496DB0019922407008C270E /* MetaMatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaMatcherTests.swift; sourceTree = "<group>"; };
 		2496DB0A19922429008C270E /* Hamcrest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hamcrest.swift; sourceTree = "<group>"; };
-		2496DB0C1992246B008C270E /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
+		2496DB0C1992246B008C270E /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		24C73EBA19B7AA280096DCB7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		24D9341B19A23BED00A411BD /* DictionaryMatcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryMatcherTests.swift; sourceTree = "<group>"; };
 		24D9341D19A23DC200A411BD /* SequenceMatcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceMatcherTests.swift; sourceTree = "<group>"; };

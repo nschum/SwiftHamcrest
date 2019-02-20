@@ -323,11 +323,19 @@ private func throwingFunc() throws -> Int {
 assertThat(try throwingFunc(), equalTo(1)) // ERROR: SampleError.Error1
 ```
 
-If you want to verify an error is being thrown, use `assertThrows`.
+If you don't want to test the result of a function that can throw errors, or if this function does not return any error, use `assertNotThrows`.
 
 ```swift
 private func notThrowingFunc() throws {
 }
+
+assertNotThrows(try notThrowingFunc()) // ✓
+assertNotThrows(_ = try throwingFunc()) // ERROR: UNEXPECTED ERROR
+```
+
+If you want to verify an error is being thrown, use `assertThrows`.
+
+```swift
 
 assertThrows(try notThrowingFunc()) // EXPECTED ERROR
 assertThrows(try notThrowingFunc(), SampleError.Error2)
