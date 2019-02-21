@@ -30,6 +30,10 @@ func describeErrorMismatch<T>(_ error: T, _ description: String, _ mismatchDescr
     return "GOT ERROR: " + describeActualValue(error, mismatchDescription) + ", EXPECTED ERROR: \(description)"
 }
 
+func describeUnexpectedError() -> String {
+    return "UNEXPECTED ERROR"
+}
+
 public func describeMismatch<T>(_ value: T, _ description: String, _ mismatchDescription: String?) -> String {
     return "GOT: " + describeActualValue(value, mismatchDescription) + ", EXPECTED: \(description)"
 }

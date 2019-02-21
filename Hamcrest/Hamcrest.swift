@@ -72,6 +72,17 @@ func isPlayground() -> Bool {
     }
 }
 
+// MARK: assertNotThrows
+
+@discardableResult public func assertNotThrows<T>(_ value: @autoclosure () throws -> T, file: StaticString = #file, line: UInt = #line) -> String {
+    do {
+        _ = try value()
+        return reportResult(nil, file: file, line: line)
+    } catch {
+        return reportResult(describeUnexpectedError(), file: file, line: line)
+    }
+}
+
 // MARK: assertThat
 
 @discardableResult public func assertThat<T>(_ value: @autoclosure () throws -> T, _ matcher: Matcher<T>, file: StaticString = #file, line: UInt = #line) -> String {
