@@ -1,6 +1,12 @@
+Version 2.1.1
+------------
+_21 Feb 2019_
+
+- Added assertNotThrows function (#43)
+
 Version 2.1.0
 ------------
-_TBA_
+_24 Sep 2018_
 
 - Migrated to Swift 4.2 and Xcode 10
 
