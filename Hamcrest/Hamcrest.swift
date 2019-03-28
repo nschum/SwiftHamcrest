@@ -48,7 +48,7 @@ func isPlayground() -> Bool {
 }
 
 @discardableResult public func assertThrows<S, T: Error>(_ value: @autoclosure () throws -> S, _ error: T, file: String = #file, line: UInt = #line) -> String where T: Equatable {
-    return assertThrows(value, equalToWithoutDescription(error), file: file, line: line)
+	return assertThrows(try value(), equalToWithoutDescription(error), file: file, line: line)
 }
 
 @discardableResult public func assertThrows<S, T: Error>(_ value: @autoclosure () throws -> S, _ matcher: Matcher<T>, file: String = #file, line: UInt = #line) -> String {
