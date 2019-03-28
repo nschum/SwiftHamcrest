@@ -1,3 +1,10 @@
+Version 2.2.0
+------------
+_28 Mar 2019_
+
+- Migrated to Swift 5.0
+
+
 Version 2.1.1
 ------------
 _21 Feb 2019_
