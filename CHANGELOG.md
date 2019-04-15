@@ -1,3 +1,9 @@
+Version 2.2.1
+------------
+_15 Apr 2019_
+
+- Fixed: Migrated macOS part to Swift 5.0
+
 Version 2.2.0
 ------------
 _28 Mar 2019_
