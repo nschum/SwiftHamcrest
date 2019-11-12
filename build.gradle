@@ -43,7 +43,8 @@ task carthageArchive(type:Exec) {
 
 task binaryRelease(type: Copy) {
     from file("Hamcrest.framework.zip")
-    into file("$buildDir/Hamcrest-${project.ext.version}.zip")
+    into file("$buildDir")
+
+    rename '(.+).framework.zip', '$1-' + project.ext.version + '.zip'
 }
 binaryRelease.dependsOn carthageArchive
-
