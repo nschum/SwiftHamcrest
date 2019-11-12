@@ -1,0 +1,49 @@
+buildscript {
+	repositories {
+		maven {
+			url('http://repo.openbakery.org/')
+		}
+		mavenCentral()
+	}
+
+	dependencies {
+			classpath "org.openbakery:xcode-plugin:0.19.2.develop.+"
+	}
+}
+
+apply plugin: "org.openbakery.xcode-plugin"
+
+project.ext.version = "2.2.1"
+
+xcodebuild {
+  projectFile = "Hamcrest.xcodeproj"
+  scheme = 'Hamcrest-iOS'
+  target = 'Hamcrest'
+  configuration = 'Debug'
+  type = 'iOS'
+  bitcode = false
+  version = 11
+
+  destination = ['iPhone 8', 'iPad Air 2' ]
+}
+
+task testiOS(type: org.openbakery.XcodeTestTask) {
+  // the default parameters are set to iOS to nothing to specify here
+}
+
+task testMacOS(type: org.openbakery.XcodeTestTask) {
+  scheme = 'Hamcrest-macOS'
+  type = 'macOS'
+}
+
+task carthageArchive(type:Exec) {
+    workingDir '.'
+    commandLine 'carthage', 'build', '--archive'
+}
+
+task binaryRelease(type: Copy) {
+    from file("Hamcrest.framework.zip")
+    into file("$buildDir/Hamcrest-${project.ext.version}.zip")
+}
+binaryRelease.dependsOn carthageArchive
+

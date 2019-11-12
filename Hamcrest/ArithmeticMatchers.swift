@@ -35,5 +35,5 @@ public func inInterval<T>(_ expectedInterval: ClosedRange<T>) -> Matcher<T> {
 }
 
 public func inInterval<T>(_ expectedInterval: Range<T>) -> Matcher<T> {
-	return Matcher("in interval \(expectedInterval)") {expectedInterval.contains($0)}
+    return Matcher("in interval \(expectedInterval)") {expectedInterval.contains($0)}
 }
