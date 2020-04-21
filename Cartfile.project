@@ -1,0 +1,9 @@
+Hamcrest-iOS:
+  project: Hamcrest.xcworkspace
+  sdks:
+  - iphonesimulator
+  - iphoneos
+Hamcrest-macOS:
+  project: Hamcrest.xcworkspace
+  sdks:
+  - macosx
