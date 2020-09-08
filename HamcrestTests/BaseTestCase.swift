@@ -9,13 +9,13 @@ class BaseTestCase: XCTestCase {
         super.setUp()
     }
 
-    func assertMatch<T>(_ value: [T], _ matcher: Matcher<[T]>, file: StaticString = #file, line: UInt = #line) {
+	func assertMatch<T>(_ value: [T], _ matcher: Matcher<[T]>, file: StaticString = #filePath, line: UInt = #line) {
         reportedError = nil
         assertThat(value, matcher)
         assertReportsNoError(file, line: line)
     }
 
-    func assertMatch<T>(_ value: T, _ matcher: Matcher<T>, file: StaticString = #file, line: UInt = #line) {
+	func assertMatch<T>(_ value: T, _ matcher: Matcher<T>, file: StaticString = #filePath, line: UInt = #line) {
         reportedError = nil
         assertThat(value, matcher)
         assertReportsNoError(file, line: line)
@@ -23,7 +23,7 @@ class BaseTestCase: XCTestCase {
 
     func assertMismatch<T>(_ value: T, _ matcher: Matcher<T>, _ description: String,
                            mismatchDescription: String? = nil,
-                           file: StaticString = #file, line: UInt = #line) {
+													 file: StaticString = #filePath, line: UInt = #line) {
         reportedError = nil
         assertThat(value, matcher)
         if let mismatchDescription = mismatchDescription {
@@ -35,7 +35,7 @@ class BaseTestCase: XCTestCase {
 
     func assertMismatch<T>(_ value: [T], _ matcher: Matcher<[T]>, _ description: String,
                            mismatchDescription: String? = nil,
-                           file: StaticString = #file, line: UInt = #line) {
+													 file: StaticString = #filePath, line: UInt = #line) {
         reportedError = nil
         assertThat(value, matcher)
         if let mismatchDescription = mismatchDescription {
@@ -45,16 +45,16 @@ class BaseTestCase: XCTestCase {
         }
     }
 
-    func assertReportsNoError(_ file: StaticString = #file, line: UInt = #line) {
+	func assertReportsNoError(_ file: StaticString = #filePath, line: UInt = #line) {
         XCTAssertNil(reportedError, file: file, line: line)
     }
 
-    func assertReportsError(_ message: String, file: StaticString = #file, line: UInt = #line) {
+	func assertReportsError(_ message: String, file: StaticString = #filePath, line: UInt = #line) {
         XCTAssertNotNil(reportedError, file: file, line: line)
         XCTAssertEqual((reportedError ?? ""), message, file: file, line: line)
     }
 
-    func assertReportsMismatch<T>(_ value: T, _ description: String, mismatchDescription: String? = nil, file: StaticString = #file, line: UInt = #line) {
+	func assertReportsMismatch<T>(_ value: T, _ description: String, mismatchDescription: String? = nil, file: StaticString = #filePath, line: UInt = #line) {
         let message = expectedMessage(value, description, mismatchDescription: mismatchDescription)
         assertReportsError(message, file: file, line: line)
     }
