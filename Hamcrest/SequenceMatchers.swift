@@ -51,6 +51,25 @@ public func hasItem<T: Equatable, S: Sequence>(_ expectedValue: T) -> Matcher<S>
     return hasItem(equalToWithoutDescription(expectedValue))
 }
 
+private func hasItem<T, S: Sequence>(matcher: Matcher<T>, values: S, atIndex: Int) -> Bool where S.Iterator.Element == T {
+    for (index, value) in values.enumerated() {
+        if matcher.matches(value).boolValue && index == atIndex {
+            return true
+        }
+    }
+    return false
+}
+
+public func hasItem<T, S: Sequence>(_ matcher: Matcher<T>, atIndex index: Int) -> Matcher<S> where S.Iterator.Element == T {
+    Matcher("a sequence containing \(matcher.description) at index \(index)") { (values: S) -> Bool in
+        hasItem(matcher: matcher, values: values, atIndex: index)
+    }
+}
+
+public func hasItem<T: Equatable, S: Sequence>(_ expectedValue: T, atIndex index: Int) -> Matcher<S> where S.Iterator.Element == T {
+    hasItem(equalToWithoutDescription(expectedValue), atIndex: index)
+}
+
 private func hasItems<T, S: Sequence>(_ matchers: [Matcher<T>]) -> Matcher<S> where S.Iterator.Element == T {
     return Matcher("a sequence containing \(joinMatcherDescriptions(matchers))") { (values: S) -> MatchResult in
         var missingItems = [] as [Matcher<T>]

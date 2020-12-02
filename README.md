@@ -187,6 +187,13 @@ assertThat(array, hasItem(equalTo("foo"))) // ✓
 assertThat(array, hasItem(equalTo("baz")))
 // GOT: [foo, bar], EXPECTED: a sequence containing equal to baz
 
+assertThat(array, hasItem("foo", atIndex: 0))) // ✓
+assertThat(array, hasItem("foo", atIndex: 1))) // GOT: ["foo", "bar"], EXPECTED: a sequence containing "foo" at index 1"
+
+assertThat(array, hasItem(equalTo("foo"), atIndex: 0))) // ✓
+assertThat(array, hasItem(equalTo("foo"), atIndex: 1))) // GOT: ["foo", "bar"], EXPECTED: a sequence containing "foo" at index 1"
+
+
 assertThat(array, hasItems("foo", "bar")) // ✓
 assertThat(array, hasItems(equalTo("foo"), equalTo("baz")))
 // GOT: [foo, bar] (missing item equal to baz),

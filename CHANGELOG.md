@@ -1,3 +1,10 @@
+Version 2.2.2
+-------------
+_2 Dec 2020_
+
+- Added new hasItem(<T>, atIndex:Int) matcher
+
+
 Version 2.2.1
 ------------
 _15 Apr 2019_

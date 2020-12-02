@@ -143,4 +143,16 @@ class SequenceMatcherTests: BaseTestCase {
             "a sequence containing in any order [equal to item3, equal to wrong, equal to item1]",
             mismatchDescription: "mismatch: GOT: \"item2\", EXPECTED: equal to wrong")
     }
+
+    func testHasItemAtIndex() {
+        assertMatch(sequence, hasItem("item1", atIndex: 0))
+        assertMatch(sequence, hasItem("item2", atIndex: 1))
+        assertMatch(sequence, hasItem("item3", atIndex: 2))
+    }
+
+    func testHasItemEqualAtIndex() {
+        assertMatch(sequence, hasItem(equalTo("item1"), atIndex: 0))
+        assertMatch(sequence, hasItem(equalTo("item2"), atIndex: 1))
+        assertMatch(sequence, hasItem(equalTo("item3"), atIndex: 2))
+    }
 }
