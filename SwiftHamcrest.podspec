@@ -21,6 +21,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/nschum/SwiftHamcrest.git", :tag => "2.2.2" }
   s.source_files = "Hamcrest/*.swift"
   s.frameworks   = ["Foundation", "XCTest"]
+  s.swift_version = '5.0'
 
   s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
 
