@@ -58,9 +58,6 @@
 		24D9341E19A23DC200A411BD /* SequenceMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D9341D19A23DC200A411BD /* SequenceMatcherTests.swift */; };
 		24E64D3B19A29E6100090B1D /* MatcherMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E64D3A19A29E6100090B1D /* MatcherMocks.swift */; };
 		24F95B241B80EBD0004A0F4C /* ErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F95B231B80EBD0004A0F4C /* ErrorTests.swift */; };
-		A7D357EB2577A8EF00AAE489 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D357E82577A8EE00AAE489 /* Package.swift */; };
-		A7D357EC2577A8EF00AAE489 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = A7D357E92577A8EE00AAE489 /* CHANGELOG.md */; };
-		A7D357ED2577A8EF00AAE489 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A7D357EA2577A8EF00AAE489 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,9 +114,6 @@
 		24D9341D19A23DC200A411BD /* SequenceMatcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceMatcherTests.swift; sourceTree = "<group>"; };
 		24E64D3A19A29E6100090B1D /* MatcherMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatcherMocks.swift; sourceTree = "<group>"; };
 		24F95B231B80EBD0004A0F4C /* ErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorTests.swift; sourceTree = "<group>"; };
-		A7D357E82577A8EE00AAE489 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		A7D357E92577A8EE00AAE489 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
-		A7D357EA2577A8EF00AAE489 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,9 +164,6 @@
 		2496DAE719922407008C270E = {
 			isa = PBXGroup;
 			children = (
-				A7D357E92577A8EE00AAE489 /* CHANGELOG.md */,
-				A7D357E82577A8EE00AAE489 /* Package.swift */,
-				A7D357EA2577A8EF00AAE489 /* README.md */,
 				2496DAF319922407008C270E /* Hamcrest */,
 				2496DAFD19922407008C270E /* HamcrestTests */,
 				242D160019B7A3E30099EA62 /* Frameworks */,
@@ -412,8 +403,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7D357ED2577A8EF00AAE489 /* README.md in Resources */,
-				A7D357EC2577A8EF00AAE489 /* CHANGELOG.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,7 +500,6 @@
 				2496DB0B19922429008C270E /* Hamcrest.swift in Sources */,
 				2428C4BE19A3E3E100475822 /* ArithmeticMatchers.swift in Sources */,
 				2428C4BA19A3E1F300475822 /* StringMatchers.swift in Sources */,
-				A7D357EB2577A8EF00AAE489 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
