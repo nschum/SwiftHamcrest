@@ -7,7 +7,7 @@ before_install:
 script:
   - set -o pipefail;
   - xcodebuild -workspace *.xcworkspace -scheme "Hamcrest-macOS" build test | xcpretty -c
-  - xcodebuild -workspace *.xcworkspace -scheme "Hamcrest-iOS" -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPhone 5s" build test | xcpretty -c
+  - xcodebuild -workspace *.xcworkspace -scheme "Hamcrest-iOS" -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPhone 12" build test | xcpretty -c
   - pod spec lint --quick
 
 after_success:
