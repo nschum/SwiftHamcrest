@@ -355,6 +355,10 @@ assertThrows(try throwingFunc(), SampleError.Error2)
 Integration
 -----------
 
+### Swift Package Manager ###
+
+Select the 'Add Package Dependency' option in your Xcode project and copy this repository's URL into the 'Choose Package Repository' window.
+
 ### CocoaPods ###
 
 Integrate SwiftHamcrest using a Podfile similar to this:
