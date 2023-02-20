@@ -45,7 +45,7 @@ class AssertThatTests: BaseTestCase {
     func testAssertThatHasCustomInfoThatIsShown() {
         let matcher = Matcher<Int>("description") {value in .mismatch("mismatch description")}
 
-        assertThat(5, matcher, reason: "Failure reason")
+        assertThat(5, matcher, message: "Failure reason")
 
         guard let reportedError else {
             XCTFail("expected error")

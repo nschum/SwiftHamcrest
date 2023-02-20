@@ -352,12 +352,12 @@ assertThrows(try throwingFunc(), SampleError.Error2)
 // GOT ERROR: SampleError.Error1, EXPECTED ERROR: SampleError.Error2
 ```
 
-### Reason ###
+### Message ###
 
-If the matcher does not give a meaningful message, you can add a custom reason that it displayed when the matcher does not match.
+If the matcher does not give a meaningful message, you can add a custom message that it displayed when the matcher does not match.
 
 ```swift
-assertThat(true, equalTo(false), reason: "Custom error message")
+assertThat(true, equalTo(false), message: "Custom error message")
 ```
 // failed: Custom error message – GOT: true, EXPECTED: equal to false
 

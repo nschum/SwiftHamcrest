@@ -85,8 +85,8 @@ func isPlayground() -> Bool {
 
 // MARK: assertThat
 
-@discardableResult public func assertThat<T>(_ value: @autoclosure () throws -> T, _ matcher: Matcher<T>, reason: String? = nil, file: StaticString = #file, line: UInt = #line) -> String {
-    return reportResult(applyMatcher(matcher, toValue: value), reason: reason, file: file, line: line)
+@discardableResult public func assertThat<T>(_ value: @autoclosure () throws -> T, _ matcher: Matcher<T>, message: String? = nil, file: StaticString = #file, line: UInt = #line) -> String {
+    return reportResult(applyMatcher(matcher, toValue: value), message: message, file: file, line: line)
 }
 
 @discardableResult func applyMatcher<T>(_ matcher: Matcher<T>, toValue: () throws -> T) -> String? {
@@ -104,12 +104,12 @@ func isPlayground() -> Bool {
     }
 }
 
-func reportResult(_ possibleResult: String?, reason: String? = nil, file: StaticString = #file, line: UInt = #line)
+func reportResult(_ possibleResult: String?, message: String? = nil, file: StaticString = #file, line: UInt = #line)
     -> String {
     if let possibleResult {
         let result: String
-        if let reason {
-            result = "\(reason) - \(possibleResult)"
+        if let message {
+            result = "\(message) - \(possibleResult)"
         } else {
             result = possibleResult
         }
