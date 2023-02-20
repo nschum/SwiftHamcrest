@@ -26,7 +26,7 @@ class AssertThatTests: BaseTestCase {
         XCTAssertNil(reportedError)
     }
 
-    func testMatcherWithMatchResultReturningMismach() {
+    func testMatcherWithMatchResultReturningMismatch() {
         let matcher = Matcher<Int>("description") {value in .mismatch(nil)}
 
         assertThat(5, matcher)
@@ -34,11 +34,23 @@ class AssertThatTests: BaseTestCase {
         assertReportsMismatch(5, "description")
     }
 
-    func testMatcherWithMatchResultReturningMismachWithDescription() {
+    func testMatcherWithMatchResultReturningMismatchWithDescription() {
         let matcher = Matcher<Int>("description") {value in .mismatch("mismatch description")}
 
         assertThat(5, matcher)
 
         assertReportsMismatch(5, "description", mismatchDescription: "mismatch description")
+    }
+
+    func testAssertThatHasCustomInfoThatIsShown() {
+        let matcher = Matcher<Int>("description") {value in .mismatch("mismatch description")}
+
+        assertThat(5, matcher, reason: "Failure reason")
+
+        guard let reportedError else {
+            XCTFail("expected error")
+            return
+        }
+        XCTAssertEqual(reportedError, "Failure reason - GOT: 5 (mismatch description), EXPECTED: description")
     }
 }
