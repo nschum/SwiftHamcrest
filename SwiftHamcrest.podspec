@@ -13,9 +13,9 @@ Pod::Spec.new do |s|
   s.author       = { "Nikolaj Schumacher" => "me@nschum.de",
                      "René Pirringer" => "rene@openbakery.org" }
 
-  s.ios.deployment_target = "8.0"
-  s.osx.deployment_target = "10.9"
-  s.tvos.deployment_target = "9.0"
+  s.ios.deployment_target = "11.0"
+  s.osx.deployment_target = "11"
+  s.tvos.deployment_target = "11.0"
 
   s.module_name  = "Hamcrest"
   s.source       = { :git => "https://github.com/nschum/SwiftHamcrest.git", :tag => "2.2.3" }
