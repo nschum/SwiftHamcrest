@@ -1,9 +1,14 @@
+Version 2.2.3
+-------------
+_27 Feb 2023_
+
+- Added that the assertThat function has a message parameter that is shown when the assertion failed. Issue #51
+
 Version 2.2.2
 -------------
 _2 Dec 2020_
 
 - Added new hasItem(<T>, atIndex:Int) matcher
-
 
 Version 2.2.1
 ------------
