@@ -1,6 +1,7 @@
 Swift Hamcrest
 ==============
-[![Build Status](https://github.com/nschum/SwiftHamcrest/actions/workflows/build.yml/badge.svg)] (https://github.com/nschum/SwiftHamcrest/actions/workflows/build.yml/badge.svg)
+
+[![Build Status](https://github.com/nschum/SwiftHamcrest/actions/workflows/build.yml/badge.svg)](https://github.com/nschum/SwiftHamcrest/actions/workflows/build.yml/badge.svg)
 
 
 
