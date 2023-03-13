@@ -106,9 +106,9 @@ func isPlayground() -> Bool {
 
 func reportResult(_ possibleResult: String?, message: String? = nil, file: StaticString = #file, line: UInt = #line)
     -> String {
-    if let possibleResult {
+    if let possibleResult = possibleResult {
         let result: String
-        if let message {
+        if let message = message {
             result = "\(message) - \(possibleResult)"
         } else {
             result = possibleResult

@@ -47,7 +47,7 @@ class AssertThatTests: BaseTestCase {
 
         assertThat(5, matcher, message: "Failure reason")
 
-        guard let reportedError else {
+        guard let reportedError = reportedError else {
             XCTFail("expected error")
             return
         }
