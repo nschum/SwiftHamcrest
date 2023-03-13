@@ -1,19 +1,18 @@
 Swift Hamcrest
 ==============
 
-[![Build Status](https://github.com/nschum/SwiftHamcrest/actions/workflows/build.yml/badge.svg)](https://github.com/nschum/SwiftHamcrest/actions/workflows/build.yml/badge.svg)
-
+![Build Status](https://github.com/nschum/SwiftHamcrest/actions/workflows/build.yml/badge.svg)](https://github.com/nschum/SwiftHamcrest/actions/workflows/build.yml/badge.svg)
+![Swift 5.7](https://img.shields.io/badge/Swift-5.7-lightgrey.svg)
+![OS X ≥ 11.0](https://img.shields.io/badge/OS%20X-≥%2011.0-lightgrey.svg)
+![iOS ≥ 11.0](https://img.shields.io/badge/iOS%20-≥%2011.0-lightgrey.svg)
+![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+![CocoaPods compatible](https://img.shields.io/cocoapods/v/SwiftHamcrest.svg)
 
 
 Hamcrest gives you advanced matchers with better error messages for your Swift unit tests.
 
 Hamcrest was originally written in Java and is available for many [languages](http://hamcrest.org).
 
-![Swift 5.7](https://img.shields.io/badge/Swift-5.7-lightgrey.svg)
-![OS X ≥ 11.0](https://img.shields.io/badge/OS%20X-≥%2011.0-lightgrey.svg)
-![iOS ≥ 11.0](https://img.shields.io/badge/iOS%20-≥%2011.0-lightgrey.svg)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-![CocoaPods compatible](https://img.shields.io/cocoapods/v/SwiftHamcrest.svg)
 
 
 Tutorial
@@ -379,7 +378,7 @@ use_frameworks!
 
 target 'HamcrestDemoTests' do
   inherit! :search_paths
-  pod 'SwiftHamcrest', '~> 2.2.3'
+  pod 'SwiftHamcrest', '~> 2.2.4'
 end
 ```
 

@@ -1,3 +1,9 @@
+Version 2.2.4
+-------------
+_13 Mar 2023_
+
+- Added compatibilty with Xcode 13. Issue #53
+
 Version 2.2.3
 -------------
 _27 Feb 2023_
