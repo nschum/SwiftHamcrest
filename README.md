@@ -1,5 +1,8 @@
 Swift Hamcrest
 ==============
+[![Build Status](https://github.com/nschum/SwiftHamcrest/actions/workflows/build.yml/badge.svg)] (https://github.com/nschum/SwiftHamcrest/actions/workflows/build.yml/badge.svg)
+
+
 
 Hamcrest gives you advanced matchers with better error messages for your Swift unit tests.
 
