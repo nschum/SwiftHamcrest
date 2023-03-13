@@ -1,0 +1,21 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Build without tests
+    runs-on: macos-latest
+    steps:
+      - name: Check out project
+        uses: actions/checkout@v3
+      - name: Build And Test macOS
+        run: xcodebuild -workspace *.xcworkspace -scheme "Hamcrest-macOS" build test | xcpretty && exit ${PIPESTATUS[0]}
+      - name: Build And Test iOS
+        run: xcodebuild -workspace *.xcworkspace -scheme "Hamcrest-iOS" -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPhone 14" build test | xcpretty && exit ${PIPESTATUS[0]}
+      - name: Cocoapods Check
+        run: pod spec lint --quick
