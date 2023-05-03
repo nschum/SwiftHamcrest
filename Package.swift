@@ -9,6 +9,6 @@ let package = Package(
     ],
     targets: [
         .target(name: "Hamcrest", dependencies: [], path: "Hamcrest"),
-        .testTarget(name: "SwiftHamcrestTests", dependencies: ["Hamcrest"], path: "HamcrestTests"),
+        .testTarget(name: "HamcrestTests", dependencies: ["Hamcrest"], path: "HamcrestTests"),
     ]
 )
