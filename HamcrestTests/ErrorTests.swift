@@ -1,8 +1,7 @@
-import XCTest
 import Hamcrest
+import XCTest
 
 class ErrorTests: BaseTestCase {
-
     func testThrownError() {
         let matcher = Matcher<Int>("") {value in true}
 
@@ -75,6 +74,30 @@ class ErrorTests: BaseTestCase {
         assertThrows(try throwingFunc(), equalTo(AlternativeError.error))
 
         assertReportsError("GOT ERROR: \(SampleError.error1), EXPECTED ERROR: equal to \(AlternativeError.error)")
+    }
+
+    func testNotThrowingVoidFunc() {
+        assertNotThrows(try notThrowingVoidFunc())
+
+        assertReportsNoError()
+    }
+
+    func testNotThrowingVoidFuncWithError() {
+        assertNotThrows(try throwingVoidFunc())
+
+        assertReportsError("UNEXPECTED ERROR")
+    }
+
+    func testNotThrowingFunc() {
+        assertNotThrows(_ = try notThrowingFunc())
+
+        assertReportsNoError()
+    }
+
+    func testNotThrowingFuncWithError() {
+        assertNotThrows(_ = try throwingFunc())
+
+        assertReportsError("UNEXPECTED ERROR")
     }
 }
 

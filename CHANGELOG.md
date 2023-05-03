@@ -1,3 +1,52 @@
+Version 2.2.4
+-------------
+_13 Mar 2023_
+
+- Added compatibilty with Xcode 13. Issue #53
+
+Version 2.2.3
+-------------
+_27 Feb 2023_
+
+- Added that the assertThat function has a message parameter that is shown when the assertion failed. Issue #51
+
+Version 2.2.2
+-------------
+_2 Dec 2020_
+
+- Added new hasItem(<T>, atIndex:Int) matcher
+
+Version 2.2.1
+------------
+_15 Apr 2019_
+
+- Fixed: Migrated macOS part to Swift 5.0
+
+Version 2.2.0
+------------
+_28 Mar 2019_
+
+- Migrated to Swift 5.0
+
+
+Version 2.1.1
+------------
+_21 Feb 2019_
+
+- Added assertNotThrows function (#43)
+
+Version 2.1.0
+------------
+_24 Sep 2018_
+
+- Migrated to Swift 4.2 and Xcode 10
+
+Version 2.0.0
+-------------
+_31 Jan 2018_
+
+- Migrate to Swift 4.0
+
 Version 1.0.0
 -------------
 _19 Feb 2017_

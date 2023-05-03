@@ -14,6 +14,7 @@
 //:
 //: In either case, the Hamcrest module needs to be imported.
 
+import Foundation
 import Hamcrest
 
 //: ### Operator Matchers
@@ -87,7 +88,6 @@ assertThat(10.0, closeTo(10.0, 0.01))
 assertThat(10.0000001, closeTo(10, 0.01))
 assertThat(10.1, closeTo(10, 0.01)) // mismatch
 
-import Foundation
 assertThat(CGPoint(x: 5, y: 10), hasProperty("x", closeTo(5.0, 0.00001)))
 assertThat(CGPoint(x: 5, y: 10), hasProperty("y", closeTo(0.0, 0.00001))) // mismatch
 
@@ -130,6 +130,9 @@ assertThat(array, containsInAnyOrder(equalTo("bar"), equalTo("foo")))
 
 assertThat(array, hasItem(equalTo("foo")))
 assertThat(array, hasItem(equalTo("baz"))) // mismatch
+
+assertThat(array, hasItem(equalTo("foo", atIndex: 0)))
+assertThat(array, hasItem(equalTo("foo", atIndex: 1))) // mismatch
 
 assertThat(array, hasItems("foo", "bar"))
 assertThat(array, hasItems(equalTo("foo"), equalTo("baz"))) // mismatch
@@ -230,10 +233,15 @@ private func throwingFunc() throws -> Int {
 
 assertThat(try throwingFunc(), equalTo(1))
 
-//: If you want to verify an error is being thrown, use `assertThrows`.
+//: If you don't want to test the result of a function that can throw errors, or if this function does not return any error, use `assertNotThrows`.
 
 private func notThrowingFunc() throws {
 }
+
+assertNotThrows(try notThrowingFunc())
+assertNotThrows(_ = try throwingFunc())
+
+//: If you want to verify an error is being thrown, use `assertThrows`.
 
 assertThrows(try notThrowingFunc())
 assertThrows(try notThrowingFunc(), SampleError.Error2)

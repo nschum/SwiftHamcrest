@@ -1,23 +1,21 @@
-import XCTest
 import Hamcrest
+import XCTest
 
 class BaseTestCase: XCTestCase {
-
-    var reportedError: String? = nil
+    var reportedError: String?
 
     override func setUp() {
-        HamcrestReportFunction = {(message, file, line) in self.reportedError = message}
+        HamcrestReportFunction = {message, file, line in self.reportedError = message}
         super.setUp()
     }
 
-
-    func assertMatch<T>(_ value: [T], _ matcher: Matcher<[T]>, file: StaticString = #file, line: UInt = #line) {
+	func assertMatch<T>(_ value: [T], _ matcher: Matcher<[T]>, file: StaticString = #filePath, line: UInt = #line) {
         reportedError = nil
         assertThat(value, matcher)
         assertReportsNoError(file, line: line)
     }
 
-    func assertMatch<T>(_ value: T, _ matcher: Matcher<T>, file: StaticString = #file, line: UInt = #line) {
+	func assertMatch<T>(_ value: T, _ matcher: Matcher<T>, file: StaticString = #filePath, line: UInt = #line) {
         reportedError = nil
         assertThat(value, matcher)
         assertReportsNoError(file, line: line)
@@ -25,8 +23,7 @@ class BaseTestCase: XCTestCase {
 
     func assertMismatch<T>(_ value: T, _ matcher: Matcher<T>, _ description: String,
                            mismatchDescription: String? = nil,
-                           file: StaticString = #file, line: UInt = #line) {
-
+													 file: StaticString = #filePath, line: UInt = #line) {
         reportedError = nil
         assertThat(value, matcher)
         if let mismatchDescription = mismatchDescription {
@@ -38,8 +35,7 @@ class BaseTestCase: XCTestCase {
 
     func assertMismatch<T>(_ value: [T], _ matcher: Matcher<[T]>, _ description: String,
                            mismatchDescription: String? = nil,
-                           file: StaticString = #file, line: UInt = #line) {
-
+													 file: StaticString = #filePath, line: UInt = #line) {
         reportedError = nil
         assertThat(value, matcher)
         if let mismatchDescription = mismatchDescription {
@@ -49,16 +45,16 @@ class BaseTestCase: XCTestCase {
         }
     }
 
-    func assertReportsNoError(_ file: StaticString = #file, line: UInt = #line) {
+	func assertReportsNoError(_ file: StaticString = #filePath, line: UInt = #line) {
         XCTAssertNil(reportedError, file: file, line: line)
     }
 
-    func assertReportsError(_ message: String, file: StaticString = #file, line: UInt = #line) {
+	func assertReportsError(_ message: String, file: StaticString = #filePath, line: UInt = #line) {
         XCTAssertNotNil(reportedError, file: file, line: line)
         XCTAssertEqual((reportedError ?? ""), message, file: file, line: line)
     }
 
-    func assertReportsMismatch<T>(_ value: T, _ description: String, mismatchDescription: String? = nil, file: StaticString = #file, line: UInt = #line) {
+	func assertReportsMismatch<T>(_ value: T, _ description: String, mismatchDescription: String? = nil, file: StaticString = #filePath, line: UInt = #line) {
         let message = expectedMessage(value, description, mismatchDescription: mismatchDescription)
         assertReportsError(message, file: file, line: line)
     }
@@ -66,8 +62,7 @@ class BaseTestCase: XCTestCase {
 
 private func expectedMessage(_ value: Any, _ description: String, mismatchDescription: String?)
     -> String {
-
-    let inset = (mismatchDescription.map{" (\($0))"} ?? "")
+    let inset = (mismatchDescription.map {" (\($0))"} ?? "")
     return "GOT: \(valueDescription(value))\(inset), EXPECTED: \(description)"
 }
 
@@ -82,7 +77,7 @@ private func valueDescription(_ value: Any) -> String {
 }
 
 private func joinStrings(_ strings: [String]) -> String {
-    switch (strings.count) {
+    switch strings.count {
     case 0:
         return "none"
     case 1:

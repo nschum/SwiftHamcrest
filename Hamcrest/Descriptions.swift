@@ -30,12 +30,16 @@ func describeErrorMismatch<T>(_ error: T, _ description: String, _ mismatchDescr
     return "GOT ERROR: " + describeActualValue(error, mismatchDescription) + ", EXPECTED ERROR: \(description)"
 }
 
+func describeUnexpectedError() -> String {
+    return "UNEXPECTED ERROR"
+}
+
 public func describeMismatch<T>(_ value: T, _ description: String, _ mismatchDescription: String?) -> String {
     return "GOT: " + describeActualValue(value, mismatchDescription) + ", EXPECTED: \(description)"
 }
 
 func describeActualValue<T>(_ value: T, _ mismatchDescription: String?) -> String {
-    return describe(value) + (mismatchDescription.map{" (\($0))"} ?? "")
+    return describe(value) + (mismatchDescription.map {" (\($0))"} ?? "")
 }
 
 func joinDescriptions(_ descriptions: [String]) -> String {
@@ -57,7 +61,7 @@ func joinMatcherDescriptions<S: Sequence, T>(_ matchers: S, prefix: String = "al
 }
 
 private func joinStrings(_ strings: [String]) -> String {
-    switch (strings.count) {
+    switch strings.count {
     case 1:
         return strings[0]
     default:

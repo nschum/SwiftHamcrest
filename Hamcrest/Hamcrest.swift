@@ -8,8 +8,8 @@ import XCTest
 public var HamcrestReportFunction: (_: String, _ file: StaticString, _ line: UInt) -> () = HamcrestDefaultReportFunction
 public let HamcrestDefaultReportFunction =
     isPlayground()
-        ? {(message, file, line) in}
-        : {(message, file, line) in XCTFail(message, file: file, line: line)}
+        ? {message, file, line in}
+        : {message, file, line in XCTFail(message, file: file, line: line)}
 
 // MARK: helpers
 
@@ -48,7 +48,7 @@ func isPlayground() -> Bool {
 }
 
 @discardableResult public func assertThrows<S, T: Error>(_ value: @autoclosure () throws -> S, _ error: T, file: String = #file, line: UInt = #line) -> String where T: Equatable {
-    return assertThrows(value, equalToWithoutDescription(error), file: file, line: line)
+	return assertThrows(try value(), equalToWithoutDescription(error), file: file, line: line)
 }
 
 @discardableResult public func assertThrows<S, T: Error>(_ value: @autoclosure () throws -> S, _ matcher: Matcher<T>, file: String = #file, line: UInt = #line) -> String {
@@ -72,10 +72,21 @@ func isPlayground() -> Bool {
     }
 }
 
+// MARK: assertNotThrows
+
+@discardableResult public func assertNotThrows<T>(_ value: @autoclosure () throws -> T, file: StaticString = #file, line: UInt = #line) -> String {
+    do {
+        _ = try value()
+        return reportResult(nil, file: file, line: line)
+    } catch {
+        return reportResult(describeUnexpectedError(), file: file, line: line)
+    }
+}
+
 // MARK: assertThat
 
-@discardableResult public func assertThat<T>(_ value: @autoclosure () throws -> T, _ matcher: Matcher<T>, file: StaticString = #file, line: UInt = #line) -> String {
-    return reportResult(applyMatcher(matcher, toValue: value), file: file, line: line)
+@discardableResult public func assertThat<T>(_ value: @autoclosure () throws -> T, _ matcher: Matcher<T>, message: String? = nil, file: StaticString = #file, line: UInt = #line) -> String {
+    return reportResult(applyMatcher(matcher, toValue: value), message: message, file: file, line: line)
 }
 
 @discardableResult func applyMatcher<T>(_ matcher: Matcher<T>, toValue: () throws -> T) -> String? {
@@ -93,10 +104,15 @@ func isPlayground() -> Bool {
     }
 }
 
-func reportResult(_ possibleResult: String?, file: StaticString = #file, line: UInt = #line)
+func reportResult(_ possibleResult: String?, message: String? = nil, file: StaticString = #file, line: UInt = #line)
     -> String {
-
-    if let result = possibleResult {
+    if let possibleResult = possibleResult {
+        let result: String
+        if let message = message {
+            result = "\(message) - \(possibleResult)"
+        } else {
+            result = possibleResult
+        }
         HamcrestReportFunction(result, file, line)
         return result
     } else {

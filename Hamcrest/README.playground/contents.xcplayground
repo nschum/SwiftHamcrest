@@ -1,3 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='5.0' target-platform='osx' display-mode='rendered' last-migration='0810'>
+<playground version='5.0' target-platform='macos' display-mode='rendered' buildActiveScheme='true' last-migration='0810'>
+    <timeline fileName='timeline.xctimeline'/>
 </playground>

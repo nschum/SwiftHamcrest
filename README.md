@@ -1,18 +1,19 @@
 Swift Hamcrest
 ==============
 
+![Build Status](https://github.com/nschum/SwiftHamcrest/actions/workflows/build.yml/badge.svg)](https://github.com/nschum/SwiftHamcrest/actions/workflows/build.yml/badge.svg)
+![Swift 5.7](https://img.shields.io/badge/Swift-5.7-lightgrey.svg)
+![OS X ≥ 11.0](https://img.shields.io/badge/OS%20X-≥%2011.0-lightgrey.svg)
+![iOS ≥ 11.0](https://img.shields.io/badge/iOS%20-≥%2011.0-lightgrey.svg)
+![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+![CocoaPods compatible](https://img.shields.io/cocoapods/v/SwiftHamcrest.svg)
+
+
 Hamcrest gives you advanced matchers with better error messages for your Swift unit tests.
 
 Hamcrest was originally written in Java and is available for many [languages](http://hamcrest.org).
 
-![Swift 3.0](https://img.shields.io/badge/Swift-3.0-lightgrey.svg)
-![OS X ≥ 10.9](https://img.shields.io/badge/OS%20X-≥%2010.9-lightgrey.svg)
-![iOS ≥ 7.0](https://img.shields.io/badge/iOS%20-≥%207.0-lightgrey.svg)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-![CocoaPods compatible](https://img.shields.io/cocoapods/v/SwiftHamcrest.svg)
 
-[![Build Status](https://travis-ci.org/nschum/SwiftHamcrest.svg?branch=master)](https://travis-ci.org/nschum/SwiftHamcrest)
-[![Coverage Status](https://coveralls.io/repos/github/nschum/SwiftHamcrest/badge.svg?branch=master)](https://coveralls.io/github/nschum/SwiftHamcrest?branch=master)
 
 Tutorial
 --------
@@ -186,6 +187,13 @@ assertThat(array, hasItem(equalTo("foo"))) // ✓
 assertThat(array, hasItem(equalTo("baz")))
 // GOT: [foo, bar], EXPECTED: a sequence containing equal to baz
 
+assertThat(array, hasItem("foo", atIndex: 0))) // ✓
+assertThat(array, hasItem("foo", atIndex: 1))) // GOT: ["foo", "bar"], EXPECTED: a sequence containing "foo" at index 1"
+
+assertThat(array, hasItem(equalTo("foo"), atIndex: 0))) // ✓
+assertThat(array, hasItem(equalTo("foo"), atIndex: 1))) // GOT: ["foo", "bar"], EXPECTED: a sequence containing "foo" at index 1"
+
+
 assertThat(array, hasItems("foo", "bar")) // ✓
 assertThat(array, hasItems(equalTo("foo"), equalTo("baz")))
 // GOT: [foo, bar] (missing item equal to baz),
@@ -322,11 +330,19 @@ private func throwingFunc() throws -> Int {
 assertThat(try throwingFunc(), equalTo(1)) // ERROR: SampleError.Error1
 ```
 
-If you want to verify an error is being thrown, use `assertThrows`.
+If you don't want to test the result of a function that can throw errors, or if this function does not return any error, use `assertNotThrows`.
 
 ```swift
 private func notThrowingFunc() throws {
 }
+
+assertNotThrows(try notThrowingFunc()) // ✓
+assertNotThrows(_ = try throwingFunc()) // ERROR: UNEXPECTED ERROR
+```
+
+If you want to verify an error is being thrown, use `assertThrows`.
+
+```swift
 
 assertThrows(try notThrowingFunc()) // EXPECTED ERROR
 assertThrows(try notThrowingFunc(), SampleError.Error2)
@@ -336,8 +352,22 @@ assertThrows(try throwingFunc(), SampleError.Error2)
 // GOT ERROR: SampleError.Error1, EXPECTED ERROR: SampleError.Error2
 ```
 
+### Message ###
+
+If the matcher does not give a meaningful message, you can add a custom message that it displayed when the matcher does not match.
+
+```swift
+assertThat(true, equalTo(false), message: "Custom error message")
+```
+// failed: Custom error message – GOT: true, EXPECTED: equal to false
+
+
 Integration
 -----------
+
+### Swift Package Manager ###
+
+Select the 'Add Package Dependency' option in your Xcode project and copy this repository's URL into the 'Choose Package Repository' window.
 
 ### CocoaPods ###
 
@@ -346,8 +376,9 @@ Integrate SwiftHamcrest using a Podfile similar to this:
 ```ruby
 use_frameworks!
 
-target 'HamcrestDemoTests', :exclusive => true do
-  pod 'SwiftHamcrest', '~> 1.0.0'
+target 'HamcrestDemoTests' do
+  inherit! :search_paths
+  pod 'SwiftHamcrest', '~> 2.2.4'
 end
 ```
 

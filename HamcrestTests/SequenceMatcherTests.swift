@@ -1,8 +1,7 @@
-import XCTest
 import Hamcrest
+import XCTest
 
 class SequenceMatcherTests: BaseTestCase {
-
     let sequence = ["item1", "item2", "item3"]
 
     func testEmpty() {
@@ -22,7 +21,7 @@ class SequenceMatcherTests: BaseTestCase {
         assertMismatch(sequence, hasCount(equalTo(2)), "has count equal to 2",
             mismatchDescription: "count 3")
     }
-    
+
     func testEveryItem() {
         assertMatch(sequence, everyItem(succeedingMatcher()))
 
@@ -48,7 +47,7 @@ class SequenceMatcherTests: BaseTestCase {
 
         assertMismatch(sequence, hasItem(equalTo("wrong")), "a sequence containing equal to wrong")
     }
-    
+
     func testHasItems() {
         assertMatch(sequence, hasItems("item2"))
         assertMatch(sequence, hasItems("item2", "item3"))
@@ -62,7 +61,7 @@ class SequenceMatcherTests: BaseTestCase {
             "a sequence containing all of [\"wrong1\", \"wrong2\"]",
             mismatchDescription: "missing items [\"wrong1\", \"wrong2\"]")
     }
-    
+
     func testHasItemsWithMatcher() {
         assertMatch(sequence, hasItems(equalTo("item2")))
         assertMatch(sequence, hasItems(equalTo("item2"), equalTo("item3")))
@@ -106,7 +105,7 @@ class SequenceMatcherTests: BaseTestCase {
             "a sequence containing [equal to item1, equal to wrong, equal to item3]",
             mismatchDescription: "mismatch: GOT: \"item2\", EXPECTED: equal to wrong")
     }
-    
+
     func testContainsInAnyOrder() {
         assertMatch(sequence, containsInAnyOrder("item1", "item2", "item3"))
         assertMatch(sequence, containsInAnyOrder("item1", "item3", "item2"))
@@ -143,5 +142,17 @@ class SequenceMatcherTests: BaseTestCase {
             containsInAnyOrder(equalTo("item3"), equalTo("wrong"), equalTo("item1")),
             "a sequence containing in any order [equal to item3, equal to wrong, equal to item1]",
             mismatchDescription: "mismatch: GOT: \"item2\", EXPECTED: equal to wrong")
+    }
+
+    func testHasItemAtIndex() {
+        assertMatch(sequence, hasItem("item1", atIndex: 0))
+        assertMatch(sequence, hasItem("item2", atIndex: 1))
+        assertMatch(sequence, hasItem("item3", atIndex: 2))
+    }
+
+    func testHasItemEqualAtIndex() {
+        assertMatch(sequence, hasItem(equalTo("item1"), atIndex: 0))
+        assertMatch(sequence, hasItem(equalTo("item2"), atIndex: 1))
+        assertMatch(sequence, hasItem(equalTo("item3"), atIndex: 2))
     }
 }
