@@ -1,5 +1,4 @@
-// swift-tools-version:4.2
-// Managed by ice
+// swift-tools-version:5.8
 
 import PackageDescription
 
