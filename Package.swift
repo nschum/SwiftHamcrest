@@ -5,10 +5,10 @@ import PackageDescription
 let package = Package(
     name: "Hamcrest",
     products: [
-        .library(name: "Hamcrest", targets: ["SwiftHamcrest"]),
+        .library(name: "Hamcrest", targets: ["Hamcrest"]),
     ],
     targets: [
-        .target(name: "SwiftHamcrest", dependencies: [], path: "Hamcrest"),
+        .target(name: "Hamcrest", dependencies: [], path: "Hamcrest"),
         .testTarget(name: "SwiftHamcrestTests", dependencies: ["SwiftHamcrest"], path: "HamcrestTests"),
     ]
 )
