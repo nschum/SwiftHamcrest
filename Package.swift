@@ -4,9 +4,9 @@
 import PackageDescription
 
 let package = Package(
-    name: "Hamcrest",
+    name: "SwiftHamcrest",
     products: [
-        .library(name: "Hamcrest", targets: ["SwiftHamcrest"]),
+        .library(name: "SwiftHamcrest", targets: ["SwiftHamcrest"]),
     ],
     targets: [
         .target(name: "SwiftHamcrest", dependencies: [], path: "Hamcrest"),
