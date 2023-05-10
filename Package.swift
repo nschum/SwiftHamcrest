@@ -1,15 +1,14 @@
-// swift-tools-version:4.2
-// Managed by ice
+// swift-tools-version:5.8
 
 import PackageDescription
 
 let package = Package(
-    name: "SwiftHamcrest",
+    name: "Hamcrest",
     products: [
-        .library(name: "SwiftHamcrest", targets: ["SwiftHamcrest"]),
+        .library(name: "Hamcrest", targets: ["Hamcrest"]),
     ],
     targets: [
-        .target(name: "SwiftHamcrest", dependencies: [], path: "Hamcrest"),
-        .testTarget(name: "SwiftHamcrestTests", dependencies: ["SwiftHamcrest"], path: "HamcrestTests"),
+        .target(name: "Hamcrest", dependencies: [], path: "Hamcrest"),
+        .testTarget(name: "HamcrestTests", dependencies: ["Hamcrest"], path: "HamcrestTests"),
     ]
 )
