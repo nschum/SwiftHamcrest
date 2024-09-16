@@ -5,8 +5,8 @@ import XCTest
 /// Reporter function that is called whenever a Hamcrest assertion fails.
 /// By default this calls XCTFail, except in Playgrounds where it does nothing.
 /// This is intended for testing Hamcrest itself.
-public var HamcrestReportFunction: (_: String, _ file: StaticString, _ line: UInt) -> () = HamcrestDefaultReportFunction
-public let HamcrestDefaultReportFunction =
+nonisolated(unsafe) public var HamcrestReportFunction: (_: String, _ file: StaticString, _ line: UInt) -> () = HamcrestDefaultReportFunction
+nonisolated(unsafe) public let HamcrestDefaultReportFunction =
     isPlayground()
         ? {message, file, line in}
         : {message, file, line in XCTFail(message, file: file, line: line)}
@@ -89,7 +89,7 @@ func isPlayground() -> Bool {
     return reportResult(applyMatcher(matcher, toValue: value), message: message, file: file, line: line)
 }
 
-@discardableResult func applyMatcher<T>(_ matcher: Matcher<T>, toValue: () throws -> T) -> String? {
+@discardableResult public func applyMatcher<T>(_ matcher: Matcher<T>, toValue: () throws -> T) -> String? {
     do {
         let value = try toValue()
         let match = matcher.matches(value)

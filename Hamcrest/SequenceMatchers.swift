@@ -147,7 +147,7 @@ public func containsInAnyOrder<T: Equatable, S: Sequence>(_ expectedValues: T...
     return containsInAnyOrder(expectedValues.map {equalToWithoutDescription($0)})
 }
 
-func applyMatchers<T, S: Sequence>(_ matchers: [Matcher<T>], values: S) -> MatchResult where S.Iterator.Element == T {
+public func applyMatchers<T, S: Sequence>(_ matchers: [Matcher<T>], values: S) -> MatchResult where S.Iterator.Element == T {
     var mismatchDescriptions: [String?] = []
 
     var i = 0
