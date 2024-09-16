@@ -1,5 +1,14 @@
+Version 2.3
+-----------
+
+_16 Sep 2024_
+
+- Added Swift Testing support.
+- Migrated to Swift 6
+
 Version 2.2.4
 -------------
+
 _13 Mar 2023_
 
 - Added compatibilty with Xcode 13. Issue #53

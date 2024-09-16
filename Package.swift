@@ -1,7 +1,7 @@
 // swift-tools-version:6.0
 
-import PackageDescription
 import CompilerPluginSupport
+import PackageDescription
 
 let package = Package(
     name: "Hamcrest",
@@ -18,7 +18,6 @@ let package = Package(
             name: "Hamcrest",
             dependencies: [],
             path: "Hamcrest"),
-
 
         .testTarget(
             name: "HamcrestTests",

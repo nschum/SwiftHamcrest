@@ -4,11 +4,11 @@
 //
 //  Created by René Pirringer on 16.09.24.
 //
+import HamcrestSwiftTestingMacros
 import SwiftSyntax
 import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 import SwiftSyntaxMacrosTestSupport
-import HamcrestSwiftTestingMacros
 import XCTest
 
 #if canImport(HamcrestSwiftTestingMacros)
@@ -21,7 +21,6 @@ let testMacros: [String: Macro.Type] = [
 #endif
 
 final class AssertThatMacroTests: XCTestCase {
-
     func test_macro_syntax_with_equal_int() throws {
         #if canImport(HamcrestSwiftTestingMacros)
 
@@ -37,7 +36,6 @@ final class AssertThatMacroTests: XCTestCase {
             throw XCTSkip("macros are only supported when running tests for the host platform")
         #endif
     }
-
 
     func test_macro_syntax_with_equal_string() throws {
         #if canImport(HamcrestSwiftTestingMacros)

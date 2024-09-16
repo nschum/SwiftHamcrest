@@ -6,14 +6,12 @@
 //
 
 import Foundation
+import SwiftCompilerPlugin
 import SwiftSyntax
 import SwiftSyntaxMacros
-import SwiftCompilerPlugin
 
 public struct AssertThatMacro: ExpressionMacro, Sendable {
-
     public static func expansion(of node: some SwiftSyntax.FreestandingMacroExpansionSyntax, in context: some SwiftSyntaxMacros.MacroExpansionContext) throws -> SwiftSyntax.ExprSyntax {
-
         let arguments = node.arguments
         guard arguments.count == 2 else {
             fatalError("the macro does not have proper arguments")
@@ -28,8 +26,6 @@ public struct AssertThatMacro: ExpressionMacro, Sendable {
         }
          return "checkMatcher(\(firstArgument), \(secondArgument), comments: [], isRequired: false, sourceLocation: Testing.SourceLocation.__here()).__expected()"
     }
-
-
 }
 
 @main
@@ -39,5 +35,4 @@ struct HamcrestMacroPlugin: CompilerPlugin {
     public let providingMacros: [Macro.Type] = [
         AssertThatMacro.self
     ]
-
 }

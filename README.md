@@ -369,6 +369,30 @@ Integration
 
 Select the 'Add Package Dependency' option in your Xcode project and copy this repository's URL into the 'Choose Package Repository' window.
 
+### Swift-Testing ###
+
+Hamcrest also works with the new Swift-Testing framework. Migration to Swift-Testing is quite easy, because there `#assertThat` macro.
+The macro is in the module `HamcrestSwiftTesting` so this needs to imported.
+
+e.g.
+
+```
+
+import Hamcrest
+import HamcrestSwiftTesting
+import Testing
+
+struct ExampleTest {
+
+    @Test func test_assertThat() async throws {
+        #assertThat("foo", equalTo("foo"))
+        #assertThat("foo", not(equalTo("bar")))
+    }
+}
+
+```
+
+
 ### CocoaPods ###
 
 Integrate SwiftHamcrest using a Podfile similar to this:
