@@ -97,7 +97,7 @@ public func hasItems<T: Equatable, S: Sequence>(_ expectedValues: T...) -> Match
     return hasItems(expectedValues.map {equalToWithoutDescription($0)})
 }
 
-private func contains<T, S: Sequence>(_ matchers: [Matcher<T>]) -> Matcher<S> where S.Iterator.Element == T {
+public func contains<T, S: Sequence>(_ matchers: [Matcher<T>]) -> Matcher<S> where S.Iterator.Element == T {
     return Matcher("a sequence containing " + joinDescriptions(matchers.map({$0.description}))) { (values: S) -> MatchResult in
         return applyMatchers(matchers, values: values)
     }
