@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Check out project
         uses: actions/checkout@v4
+      - name: Xcode Version
+        run: xcodebuild -version
       - name: Build And Test macOS
         run: xcodebuild -workspace *.xcworkspace -scheme "Hamcrest-macOS" build test | xcpretty && exit ${PIPESTATUS[0]}
       - name: Build And Test iOS
