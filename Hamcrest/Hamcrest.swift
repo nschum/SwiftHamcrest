@@ -1,17 +1,27 @@
 import Foundation
 import Swift
 import XCTest
+#if canImport(Testing)
+import Testing
+#endif
 
 /// Reporter function that is called whenever a Hamcrest assertion fails.
 /// By default this calls XCTFail, except in Playgrounds where it does nothing.
 /// This is intended for testing Hamcrest itself.
-nonisolated(unsafe) public var HamcrestReportFunction: (_: String, _ file: StaticString, _ line: UInt) -> () = HamcrestDefaultReportFunction
+nonisolated(unsafe) public var HamcrestReportFunction: (_: String, _ fileID: String, _ file: StaticString, _ line: UInt) -> () = HamcrestDefaultReportFunction
 nonisolated(unsafe) public let HamcrestDefaultReportFunction =
-    isPlayground()
-        ? {message, file, line in}
-        : {message, file, line in XCTFail(message, file: file, line: line)}
+    isPlayground() ? {message, fileID, file, line in} : {message, fileID, file, line in reporterFunction(message, fileID: fileID, file: file, line: line)}
 
 // MARK: helpers
+
+func reporterFunction(_ message: String = "", fileID: String, file: StaticString, line: UInt) {
+#if canImport(Testing)
+    let location = Testing.SourceLocation(fileID: fileID, filePath: "\(file)", line: Int(line), column: Int(1))
+    Issue.record(Testing.Comment(rawValue: message), sourceLocation: location)
+#else
+    XCTFail(message, file: file, line: line)
+#endif
+}
 
 func filterNotNil<T>(_ array: [T?]) -> [T] {
     return array.filter({$0 != nil}).map({$0!})
@@ -85,8 +95,8 @@ func isPlayground() -> Bool {
 
 // MARK: assertThat
 
-@discardableResult public func assertThat<T>(_ value: @autoclosure () throws -> T, _ matcher: Matcher<T>, message: String? = nil, file: StaticString = #file, line: UInt = #line) -> String {
-    return reportResult(applyMatcher(matcher, toValue: value), message: message, file: file, line: line)
+@discardableResult public func assertThat<T>(_ value: @autoclosure () throws -> T, _ matcher: Matcher<T>, message: String? = nil, fileID: String = #fileID, file: StaticString = #file, line: UInt = #line) -> String {
+    return reportResult(applyMatcher(matcher, toValue: value), message: message, fileID: fileID, file: file, line: line)
 }
 
 @discardableResult public func applyMatcher<T>(_ matcher: Matcher<T>, toValue: () throws -> T) -> String? {
@@ -104,7 +114,7 @@ func isPlayground() -> Bool {
     }
 }
 
-func reportResult(_ possibleResult: String?, message: String? = nil, file: StaticString = #file, line: UInt = #line)
+func reportResult(_ possibleResult: String?, message: String? = nil, fileID: String = #fileID, file: StaticString = #file, line: UInt = #line)
     -> String {
     if let possibleResult = possibleResult {
         let result: String
@@ -113,7 +123,7 @@ func reportResult(_ possibleResult: String?, message: String? = nil, file: Stati
         } else {
             result = possibleResult
         }
-        HamcrestReportFunction(result, file, line)
+        HamcrestReportFunction(result, fileID, file, line)
         return result
     } else {
         // The return value is just intended for Playgrounds.

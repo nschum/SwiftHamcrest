@@ -371,10 +371,11 @@ Select the 'Add Package Dependency' option in your Xcode project and copy this r
 
 ### Swift-Testing ###
 
-Hamcrest also works with the new Swift-Testing framework. Migration to Swift-Testing is quite easy, because there `#assertThat` macro.
-The macro is in the module `HamcrestSwiftTesting` so this needs to imported.
+Hamcrest also works with the new Swift-Testing framework. The assertThat also reports the error when used in a Swift-Testing unit test.
 
-e.g.
+#### Deprecated ####
+
+The `#assertThat` macro is not needed anymore and will be removed in an future version.
 
 ```
 

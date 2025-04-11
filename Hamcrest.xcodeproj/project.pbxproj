@@ -58,6 +58,7 @@
 		24D9341E19A23DC200A411BD /* SequenceMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D9341D19A23DC200A411BD /* SequenceMatcherTests.swift */; };
 		24E64D3B19A29E6100090B1D /* MatcherMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E64D3A19A29E6100090B1D /* MatcherMocks.swift */; };
 		24F95B241B80EBD0004A0F4C /* ErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F95B231B80EBD0004A0F4C /* ErrorTests.swift */; };
+		A75D7AC72DA90E94008F07E2 /* Hamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2494844819B60A56007EEA3D /* Hamcrest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,13 @@
 			remoteInfo = Hamcrest;
 		};
 		247C433B1B4DD0D700F357B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2496DAE819922407008C270E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2494844719B60A56007EEA3D;
+			remoteInfo = Hamcrest;
+		};
+		A75D7AC82DA90E94008F07E2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2496DAE819922407008C270E /* Project object */;
 			proxyType = 1;
@@ -114,7 +122,12 @@
 		24D9341D19A23DC200A411BD /* SequenceMatcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceMatcherTests.swift; sourceTree = "<group>"; };
 		24E64D3A19A29E6100090B1D /* MatcherMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatcherMocks.swift; sourceTree = "<group>"; };
 		24F95B231B80EBD0004A0F4C /* ErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorTests.swift; sourceTree = "<group>"; };
+		A75D7AC32DA90E94008F07E2 /* HamcrestSwiftTestingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamcrestSwiftTestingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		A75D7AC42DA90E94008F07E2 /* HamcrestSwiftTestingTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HamcrestSwiftTestingTests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		247C43311B4DD0D700F357B8 /* Frameworks */ = {
@@ -148,6 +161,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A75D7AC02DA90E94008F07E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A75D7AC72DA90E94008F07E2 /* Hamcrest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -166,6 +187,7 @@
 			children = (
 				2496DAF319922407008C270E /* Hamcrest */,
 				2496DAFD19922407008C270E /* HamcrestTests */,
+				A75D7AC42DA90E94008F07E2 /* HamcrestSwiftTestingTests */,
 				242D160019B7A3E30099EA62 /* Frameworks */,
 				2496DAF219922407008C270E /* Products */,
 			);
@@ -178,6 +200,7 @@
 				2496DAFC19922407008C270E /* HamcrestTests-macOS.xctest */,
 				2494844819B60A56007EEA3D /* Hamcrest.framework */,
 				247C43341B4DD0D700F357B8 /* HamcrestTests.xctest */,
+				A75D7AC32DA90E94008F07E2 /* HamcrestSwiftTestingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -335,13 +358,36 @@
 			productReference = 2496DAFC19922407008C270E /* HamcrestTests-macOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		A75D7AC22DA90E94008F07E2 /* HamcrestSwiftTestingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A75D7ACA2DA90E94008F07E2 /* Build configuration list for PBXNativeTarget "HamcrestSwiftTestingTests" */;
+			buildPhases = (
+				A75D7ABF2DA90E94008F07E2 /* Sources */,
+				A75D7AC02DA90E94008F07E2 /* Frameworks */,
+				A75D7AC12DA90E94008F07E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A75D7AC92DA90E94008F07E2 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A75D7AC42DA90E94008F07E2 /* HamcrestSwiftTestingTests */,
+			);
+			name = HamcrestSwiftTestingTests;
+			packageProductDependencies = (
+			);
+			productName = HamcrestSwiftTestingTests;
+			productReference = A75D7AC32DA90E94008F07E2 /* HamcrestSwiftTestingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		2496DAE819922407008C270E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 1630;
 				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "Nikolaj Schumacher";
 				TargetAttributes = {
@@ -360,6 +406,10 @@
 					2496DAFB19922407008C270E = {
 						CreatedOnToolsVersion = 6.0;
 						LastSwiftMigration = 1020;
+					};
+					A75D7AC22DA90E94008F07E2 = {
+						CreatedOnToolsVersion = 16.3;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -380,6 +430,7 @@
 				2494844719B60A56007EEA3D /* Hamcrest */,
 				2496DAFB19922407008C270E /* HamcrestTests-macOS */,
 				247C43331B4DD0D700F357B8 /* HamcrestTests */,
+				A75D7AC22DA90E94008F07E2 /* HamcrestSwiftTestingTests */,
 			);
 		};
 /* End PBXProject section */
@@ -407,6 +458,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2496DAFA19922407008C270E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A75D7AC12DA90E94008F07E2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -523,6 +581,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A75D7ABF2DA90E94008F07E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -535,6 +600,11 @@
 			isa = PBXTargetDependency;
 			target = 2494844719B60A56007EEA3D /* Hamcrest */;
 			targetProxy = 247C433B1B4DD0D700F357B8 /* PBXContainerItemProxy */;
+		};
+		A75D7AC92DA90E94008F07E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2494844719B60A56007EEA3D /* Hamcrest */;
+			targetProxy = A75D7AC82DA90E94008F07E2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -834,6 +904,68 @@
 			};
 			name = Release;
 		};
+		A75D7ACB2DA90E94008F07E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = de.nschum.Hamcrest.HamcrestSwiftTestingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A75D7ACC2DA90E94008F07E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = de.nschum.Hamcrest.HamcrestSwiftTestingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -878,6 +1010,15 @@
 			buildConfigurations = (
 				2496DB0819922407008C270E /* Debug */,
 				2496DB0919922407008C270E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A75D7ACA2DA90E94008F07E2 /* Build configuration list for PBXNativeTarget "HamcrestSwiftTestingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A75D7ACB2DA90E94008F07E2 /* Debug */,
+				A75D7ACC2DA90E94008F07E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
