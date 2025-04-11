@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -184,7 +184,7 @@
 				};
 			};
 			buildConfigurationList = 24003EB919C046BA000B9B0A /* Build configuration list for PBXProject "HamcrestDemo-macOS" */;
-			compatibilityVersion = "Xcode 8.0";
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
