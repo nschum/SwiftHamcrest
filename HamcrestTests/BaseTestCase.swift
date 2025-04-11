@@ -5,7 +5,7 @@ class BaseTestCase: XCTestCase {
     var reportedError: String?
 
     override func setUp() {
-        HamcrestReportFunction = {message, fileId, file, line in self.reportedError = message}
+        HamcrestReportFunction = {message, fileId, file, line, column in self.reportedError = message}
         super.setUp()
     }
 

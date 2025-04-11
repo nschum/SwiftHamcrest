@@ -8,15 +8,14 @@ import Testing
 /// Reporter function that is called whenever a Hamcrest assertion fails.
 /// By default this calls XCTFail, except in Playgrounds where it does nothing.
 /// This is intended for testing Hamcrest itself.
-nonisolated(unsafe) public var HamcrestReportFunction: (_: String, _ fileID: String, _ file: StaticString, _ line: UInt) -> () = HamcrestDefaultReportFunction
-nonisolated(unsafe) public let HamcrestDefaultReportFunction =
-    isPlayground() ? {message, fileID, file, line in} : {message, fileID, file, line in reporterFunction(message, fileID: fileID, file: file, line: line)}
+nonisolated(unsafe) public var HamcrestReportFunction: (_: String, _ fileID: String, _ file: StaticString, _ line: UInt, _ column: UInt) -> () = HamcrestDefaultReportFunction
+nonisolated(unsafe) public let HamcrestDefaultReportFunction = isPlayground() ? {message, fileID, file, line, column in} : {message, fileID, file, line, column in reporterFunction(message, fileID: fileID, file: file, line: line, column: column)}
 
 // MARK: helpers
 
-func reporterFunction(_ message: String = "", fileID: String, file: StaticString, line: UInt) {
+func reporterFunction(_ message: String = "", fileID: String, file: StaticString, line: UInt, column: UInt) {
 #if canImport(Testing)
-    let location = Testing.SourceLocation(fileID: fileID, filePath: "\(file)", line: Int(line), column: Int(1))
+    let location = Testing.SourceLocation(fileID: fileID, filePath: "\(file)", line: Int(line), column: Int(column))
     Issue.record(Testing.Comment(rawValue: message), sourceLocation: location)
 #else
     XCTFail(message, file: file, line: line)
@@ -114,7 +113,7 @@ func isPlayground() -> Bool {
     }
 }
 
-func reportResult(_ possibleResult: String?, message: String? = nil, fileID: String = #fileID, file: StaticString = #file, line: UInt = #line)
+func reportResult(_ possibleResult: String?, message: String? = nil, fileID: String = #fileID, file: StaticString = #file, line: UInt = #line, column: UInt = #column)
     -> String {
     if let possibleResult = possibleResult {
         let result: String
@@ -123,7 +122,7 @@ func reportResult(_ possibleResult: String?, message: String? = nil, fileID: Str
         } else {
             result = possibleResult
         }
-        HamcrestReportFunction(result, fileID, file, line)
+        HamcrestReportFunction(result, fileID, file, line, column)
         return result
     } else {
         // The return value is just intended for Playgrounds.

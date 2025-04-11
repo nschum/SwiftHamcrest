@@ -13,7 +13,7 @@ class HamcrestSwiftTestingTests {
     var reportedError: String?
 
     init() async throws {
-        Hamcrest.HamcrestReportFunction = {message, fileId, file, line in self.reportedError = message}
+        Hamcrest.HamcrestReportFunction = {message, fileId, file, line, column in self.reportedError = message}
     }
 
     @Test func assertThat() async throws {
