@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -126,7 +126,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A75D7AC42DA90E94008F07E2 /* HamcrestSwiftTestingTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HamcrestSwiftTestingTests; sourceTree = "<group>"; };
+		A75D7AC42DA90E94008F07E2 /* HamcrestSwiftTestingTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = HamcrestSwiftTestingTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -414,7 +418,6 @@
 				};
 			};
 			buildConfigurationList = 2496DAEB19922407008C270E /* Build configuration list for PBXProject "Hamcrest" */;
-			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -422,6 +425,7 @@
 				Base,
 			);
 			mainGroup = 2496DAE719922407008C270E;
+			preferredProjectObjectVersion = 77;
 			productRefGroup = 2496DAF219922407008C270E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
