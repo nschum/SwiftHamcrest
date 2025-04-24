@@ -1,3 +1,25 @@
+Version 2.3.3
+-----------
+
+_24. Apr Feb 2025_
+
+- Fixed that assertThat reports failures at XCTest and Swift Testing when both are used in a single project.
+
+Version 2.3.2
+-----------
+
+_11. Apr Feb 2025_
+
+- Added that the assertThat function works with Swift Testing. No need for the macro anymore.
+
+
+Version 2.3.1
+-----------
+
+_27. Feb 2025_
+
+- Merged issue #56.
+
 Version 2.3
 -----------
 
