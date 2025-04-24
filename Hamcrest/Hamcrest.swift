@@ -1,6 +1,8 @@
 import Foundation
 import Swift
+#if canImport(XCTest)
 import XCTest
+#endif
 #if canImport(Testing)
 import Testing
 #endif
@@ -17,7 +19,8 @@ func reporterFunction(_ message: String = "", fileID: String, file: StaticString
 #if canImport(Testing)
     let location = Testing.SourceLocation(fileID: fileID, filePath: "\(file)", line: Int(line), column: Int(column))
     Issue.record(Testing.Comment(rawValue: message), sourceLocation: location)
-#else
+#endif
+#if canImport(XCTest)
     XCTFail(message, file: file, line: line)
 #endif
 }
