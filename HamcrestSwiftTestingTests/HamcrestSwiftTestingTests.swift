@@ -3,10 +3,11 @@
 //  HamcrestSwiftTestingTests
 //
 //  Created by René Pirringer on 11.04.25.
-//  Copyright © 2025 Nikolaj Schumacher. All rights reserved.
+//  Copyright © 2025 All rights reserved.
 //
 
 import Hamcrest
+import HamcrestSwiftTesting
 import Testing
 
 class HamcrestSwiftTestingTests {
@@ -20,5 +21,13 @@ class HamcrestSwiftTestingTests {
         let value = "foo"
         Hamcrest.assertThat(value, equalTo("bar"))
         #expect(reportedError == "GOT: \"foo\", EXPECTED: equal to bar")
+    }
+
+    @Test func enable() {
+        HamcrestSwiftTesting.enable()
+
+        #expect(SwiftTestingHamcrestReportFunction != nil)
+
+        SwiftTestingHamcrestReportFunction = nil
     }
 }
