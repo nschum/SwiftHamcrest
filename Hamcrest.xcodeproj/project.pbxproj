@@ -61,6 +61,20 @@
 		A75D7AC72DA90E94008F07E2 /* Hamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2494844819B60A56007EEA3D /* Hamcrest.framework */; };
 		A782D1D42DBB8B4D0032D058 /* Testing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A782D1D32DBB8B4D0032D058 /* Testing.framework */; platformFilter = ios; };
 		A782D1D52DBB8B520032D058 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242D15FD19B7A3B60099EA62 /* XCTest.framework */; platformFilter = ios; };
+		A782D1FA2DBB915A0032D058 /* OperatorMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428C4C519A3EAC700475822 /* OperatorMatchers.swift */; };
+		A782D1FB2DBB915A0032D058 /* MetaMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428C4C119A3E79400475822 /* MetaMatchers.swift */; };
+		A782D1FC2DBB915A0032D058 /* StringMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428C4B919A3E1F300475822 /* StringMatchers.swift */; };
+		A782D1FD2DBB915A0032D058 /* ReflectionMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428C4BB19A3E32D00475822 /* ReflectionMatchers.swift */; };
+		A782D1FE2DBB915A0032D058 /* ArithmeticMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428C4BD19A3E3E100475822 /* ArithmeticMatchers.swift */; };
+		A782D1FF2DBB915A0032D058 /* Descriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428C4B319A3DE2600475822 /* Descriptions.swift */; };
+		A782D2002DBB915A0032D058 /* DictionaryMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241CE3B719AD28570070D245 /* DictionaryMatchers.swift */; };
+		A782D2012DBB915A0032D058 /* SequenceMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428C4BF19A3E58100475822 /* SequenceMatchers.swift */; };
+		A782D2022DBB915A0032D058 /* MatchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428C4B719A3E0B400475822 /* MatchResult.swift */; };
+		A782D2032DBB915A0032D058 /* BasicMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428C4C319A3EA5600475822 /* BasicMatchers.swift */; };
+		A782D2042DBB915A0032D058 /* Matcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428C4B519A3E09800475822 /* Matcher.swift */; };
+		A782D2062DBB91F90032D058 /* HamcrestReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A782D2052DBB91EE0032D058 /* HamcrestReporter.swift */; };
+		A782D2072DBB91F90032D058 /* HamcrestReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A782D2052DBB91EE0032D058 /* HamcrestReporter.swift */; };
+		A782D2092DBB92430032D058 /* Hamcrest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2496DB0A19922429008C270E /* Hamcrest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +162,7 @@
 		A75D7AC32DA90E94008F07E2 /* HamcrestSwiftTestingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamcrestSwiftTestingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A782D1B62DBB89A10032D058 /* HamcrestSwiftTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HamcrestSwiftTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A782D1D32DBB8B4D0032D058 /* Testing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Testing.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/Testing.framework; sourceTree = DEVELOPER_DIR; };
+		A782D2052DBB91EE0032D058 /* HamcrestReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamcrestReporter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -221,10 +236,10 @@
 		2496DAE719922407008C270E = {
 			isa = PBXGroup;
 			children = (
+				A782D1B72DBB89A10032D058 /* HamcrestSwiftTesting */,
 				2496DAF319922407008C270E /* Hamcrest */,
 				2496DAFD19922407008C270E /* HamcrestTests */,
 				A75D7AC42DA90E94008F07E2 /* HamcrestSwiftTestingTests */,
-				A782D1B72DBB89A10032D058 /* HamcrestSwiftTesting */,
 				242D160019B7A3E30099EA62 /* Frameworks */,
 				2496DAF219922407008C270E /* Products */,
 			);
@@ -249,6 +264,7 @@
 				2484A1611AD6897F00076A3F /* README.playground */,
 				2496DB0C1992246B008C270E /* Playground.playground */,
 				2496DB0A19922429008C270E /* Hamcrest.swift */,
+				A782D2052DBB91EE0032D058 /* HamcrestReporter.swift */,
 				2428C4B519A3E09800475822 /* Matcher.swift */,
 				2428C4B719A3E0B400475822 /* MatchResult.swift */,
 				2428C4B319A3DE2600475822 /* Descriptions.swift */,
@@ -621,6 +637,7 @@
 				2494846719B60BC7007EEA3D /* ReflectionMatchers.swift in Sources */,
 				2494846819B60BC7007EEA3D /* StringMatchers.swift in Sources */,
 				2494846919B60BC7007EEA3D /* OperatorMatchers.swift in Sources */,
+				A782D2072DBB91F90032D058 /* HamcrestReporter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +657,7 @@
 				2496DB0B19922429008C270E /* Hamcrest.swift in Sources */,
 				2428C4BE19A3E3E100475822 /* ArithmeticMatchers.swift in Sources */,
 				2428C4BA19A3E1F300475822 /* StringMatchers.swift in Sources */,
+				A782D2062DBB91F90032D058 /* HamcrestReporter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,6 +692,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A782D1FA2DBB915A0032D058 /* OperatorMatchers.swift in Sources */,
+				A782D1FB2DBB915A0032D058 /* MetaMatchers.swift in Sources */,
+				A782D1FC2DBB915A0032D058 /* StringMatchers.swift in Sources */,
+				A782D1FD2DBB915A0032D058 /* ReflectionMatchers.swift in Sources */,
+				A782D1FE2DBB915A0032D058 /* ArithmeticMatchers.swift in Sources */,
+				A782D1FF2DBB915A0032D058 /* Descriptions.swift in Sources */,
+				A782D2002DBB915A0032D058 /* DictionaryMatchers.swift in Sources */,
+				A782D2012DBB915A0032D058 /* SequenceMatchers.swift in Sources */,
+				A782D2092DBB92430032D058 /* Hamcrest.swift in Sources */,
+				A782D2022DBB915A0032D058 /* MatchResult.swift in Sources */,
+				A782D2032DBB915A0032D058 /* BasicMatchers.swift in Sources */,
+				A782D2042DBB915A0032D058 /* Matcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
