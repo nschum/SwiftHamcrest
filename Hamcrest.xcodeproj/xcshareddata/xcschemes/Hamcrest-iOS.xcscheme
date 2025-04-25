@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2494844719B60A56007EEA3D"
-               BuildableName = "Hamcrest.framework"
-               BlueprintName = "Hamcrest"
+               BuildableName = "HamcrestXCTest.framework"
+               BlueprintName = "HamcrestXCTest"
                ReferencedContainer = "container:Hamcrest.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -69,8 +69,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2494844719B60A56007EEA3D"
-            BuildableName = "Hamcrest.framework"
-            BlueprintName = "Hamcrest"
+            BuildableName = "HamcrestXCTest.framework"
+            BlueprintName = "HamcrestXCTest"
             ReferencedContainer = "container:Hamcrest.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -85,8 +85,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2494844719B60A56007EEA3D"
-            BuildableName = "Hamcrest.framework"
-            BlueprintName = "Hamcrest"
+            BuildableName = "HamcrestXCTest.framework"
+            BlueprintName = "HamcrestXCTest"
             ReferencedContainer = "container:Hamcrest.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

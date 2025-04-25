@@ -1,11 +1,6 @@
-//
-//  HamcrestReporter.swift
-//  Hamcrest
-//
-//  Created by René Pirringer on 25.04.25.
-//  Copyright © 2025. All rights reserved.
-//
-
+import Foundation
+import Swift
+import Testing
 import XCTest
 
 /// Reporter function that is called whenever a Hamcrest assertion fails.
@@ -19,5 +14,7 @@ nonisolated(unsafe) public let HamcrestDefaultReportFunction = isPlayground() ? 
 // MARK: helpers
 
 func reporterFunction(_ message: String = "", fileID: String, file: StaticString, line: UInt, column: UInt) {
+    let location = Testing.SourceLocation(fileID: fileID, filePath: "\(file)", line: Int(line), column: Int(column))
+    Issue.record(Testing.Comment(rawValue: message), sourceLocation: location)
     XCTFail(message, file: file, line: line)
 }

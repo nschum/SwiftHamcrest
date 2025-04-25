@@ -21,7 +21,7 @@
 		242D15FF19B7A3BC0099EA62 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242D15FB19B7A39B0099EA62 /* XCTest.framework */; };
 		244ABFEA1B812A44007E8578 /* OperatorMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244ABFE91B812A44007E8578 /* OperatorMatcherTests.swift */; };
 		245174F61B8139DF0031BDE1 /* MatchResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245174F51B8139DF0031BDE1 /* MatchResultTests.swift */; };
-		247C433A1B4DD0D700F357B8 /* Hamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2494844819B60A56007EEA3D /* Hamcrest.framework */; };
+		247C433A1B4DD0D700F357B8 /* HamcrestXCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2494844819B60A56007EEA3D /* HamcrestXCTest.framework */; };
 		247C43401B4DD0F000F357B8 /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24918C0019A2134E00F1AE4A /* BaseTestCase.swift */; };
 		247C43411B4DD0F000F357B8 /* MatcherMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E64D3A19A29E6100090B1D /* MatcherMocks.swift */; };
 		247C43421B4DD0F000F357B8 /* AssertThatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24918C0219A213CC00F1AE4A /* AssertThatTests.swift */; };
@@ -58,7 +58,7 @@
 		24D9341E19A23DC200A411BD /* SequenceMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D9341D19A23DC200A411BD /* SequenceMatcherTests.swift */; };
 		24E64D3B19A29E6100090B1D /* MatcherMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E64D3A19A29E6100090B1D /* MatcherMocks.swift */; };
 		24F95B241B80EBD0004A0F4C /* ErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F95B231B80EBD0004A0F4C /* ErrorTests.swift */; };
-		A75D7AC72DA90E94008F07E2 /* Hamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2494844819B60A56007EEA3D /* Hamcrest.framework */; };
+		A75D7AC72DA90E94008F07E2 /* HamcrestXCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2494844819B60A56007EEA3D /* HamcrestXCTest.framework */; };
 		A782D1D42DBB8B4D0032D058 /* Testing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A782D1D32DBB8B4D0032D058 /* Testing.framework */; platformFilter = ios; };
 		A782D1D52DBB8B520032D058 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242D15FD19B7A3B60099EA62 /* XCTest.framework */; platformFilter = ios; };
 		A782D1FA2DBB915A0032D058 /* OperatorMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428C4C519A3EAC700475822 /* OperatorMatchers.swift */; };
@@ -72,9 +72,8 @@
 		A782D2022DBB915A0032D058 /* MatchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428C4B719A3E0B400475822 /* MatchResult.swift */; };
 		A782D2032DBB915A0032D058 /* BasicMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428C4C319A3EA5600475822 /* BasicMatchers.swift */; };
 		A782D2042DBB915A0032D058 /* Matcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428C4B519A3E09800475822 /* Matcher.swift */; };
-		A782D2062DBB91F90032D058 /* HamcrestReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A782D2052DBB91EE0032D058 /* HamcrestReporter.swift */; };
-		A782D2072DBB91F90032D058 /* HamcrestReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A782D2052DBB91EE0032D058 /* HamcrestReporter.swift */; };
 		A782D2092DBB92430032D058 /* Hamcrest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2496DB0A19922429008C270E /* Hamcrest.swift */; };
+		A782F02E2DBB94140032D058 /* HamcrestReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A782F02D2DBB94140032D058 /* HamcrestReporter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,7 +145,7 @@
 		24918C0019A2134E00F1AE4A /* BaseTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
 		24918C0219A213CC00F1AE4A /* AssertThatTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssertThatTests.swift; sourceTree = "<group>"; };
 		24918C0419A2145F00F1AE4A /* BasicMatcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicMatcherTests.swift; sourceTree = "<group>"; };
-		2494844819B60A56007EEA3D /* Hamcrest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hamcrest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2494844819B60A56007EEA3D /* HamcrestXCTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HamcrestXCTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2496DAF119922407008C270E /* Hamcrest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hamcrest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2496DAF519922407008C270E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2496DAFC19922407008C270E /* HamcrestTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HamcrestTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,14 +159,38 @@
 		24E64D3A19A29E6100090B1D /* MatcherMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatcherMocks.swift; sourceTree = "<group>"; };
 		24F95B231B80EBD0004A0F4C /* ErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorTests.swift; sourceTree = "<group>"; };
 		A75D7AC32DA90E94008F07E2 /* HamcrestSwiftTestingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamcrestSwiftTestingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A782D1B62DBB89A10032D058 /* HamcrestSwiftTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HamcrestSwiftTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A782D1B62DBB89A10032D058 /* Hamcrest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hamcrest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A782D1D32DBB8B4D0032D058 /* Testing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Testing.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/Testing.framework; sourceTree = DEVELOPER_DIR; };
-		A782D2052DBB91EE0032D058 /* HamcrestReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamcrestReporter.swift; sourceTree = "<group>"; };
+		A782F02D2DBB94140032D058 /* HamcrestReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamcrestReporter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A782F0312DBB94520032D058 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				HamcrestReporter.swift,
+			);
+			target = 2496DAF019922407008C270E /* Hamcrest-macOS */;
+		};
+		A782F0322DBB94520032D058 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				HamcrestReporter.swift,
+			);
+			target = 2494844719B60A56007EEA3D /* HamcrestXCTest */;
+		};
+		A782F0332DBB94520032D058 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				HamcrestReporter.swift,
+			);
+			target = A782D1B52DBB89A10032D058 /* Hamcrest */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A75D7AC42DA90E94008F07E2 /* HamcrestSwiftTestingTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HamcrestSwiftTestingTests; sourceTree = "<group>"; };
-		A782D1B72DBB89A10032D058 /* HamcrestSwiftTesting */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HamcrestSwiftTesting; sourceTree = "<group>"; };
+		A782D1B72DBB89A10032D058 /* HamcrestXCTest */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (A782F0312DBB94520032D058 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, A782F0322DBB94520032D058 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, A782F0332DBB94520032D058 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = HamcrestXCTest; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				247C433A1B4DD0D700F357B8 /* Hamcrest.framework in Frameworks */,
+				247C433A1B4DD0D700F357B8 /* HamcrestXCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,7 +229,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A75D7AC72DA90E94008F07E2 /* Hamcrest.framework in Frameworks */,
+				A75D7AC72DA90E94008F07E2 /* HamcrestXCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,7 +259,7 @@
 		2496DAE719922407008C270E = {
 			isa = PBXGroup;
 			children = (
-				A782D1B72DBB89A10032D058 /* HamcrestSwiftTesting */,
+				A782D1B72DBB89A10032D058 /* HamcrestXCTest */,
 				2496DAF319922407008C270E /* Hamcrest */,
 				2496DAFD19922407008C270E /* HamcrestTests */,
 				A75D7AC42DA90E94008F07E2 /* HamcrestSwiftTestingTests */,
@@ -250,10 +273,10 @@
 			children = (
 				2496DAF119922407008C270E /* Hamcrest.framework */,
 				2496DAFC19922407008C270E /* HamcrestTests-macOS.xctest */,
-				2494844819B60A56007EEA3D /* Hamcrest.framework */,
+				2494844819B60A56007EEA3D /* HamcrestXCTest.framework */,
 				247C43341B4DD0D700F357B8 /* HamcrestTests.xctest */,
 				A75D7AC32DA90E94008F07E2 /* HamcrestSwiftTestingTests.xctest */,
-				A782D1B62DBB89A10032D058 /* HamcrestSwiftTesting.framework */,
+				A782D1B62DBB89A10032D058 /* Hamcrest.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -261,10 +284,10 @@
 		2496DAF319922407008C270E /* Hamcrest */ = {
 			isa = PBXGroup;
 			children = (
+				A782F02D2DBB94140032D058 /* HamcrestReporter.swift */,
 				2484A1611AD6897F00076A3F /* README.playground */,
 				2496DB0C1992246B008C270E /* Playground.playground */,
 				2496DB0A19922429008C270E /* Hamcrest.swift */,
-				A782D2052DBB91EE0032D058 /* HamcrestReporter.swift */,
 				2428C4B519A3E09800475822 /* Matcher.swift */,
 				2428C4B719A3E0B400475822 /* MatchResult.swift */,
 				2428C4B319A3DE2600475822 /* Descriptions.swift */,
@@ -364,9 +387,9 @@
 			productReference = 247C43341B4DD0D700F357B8 /* HamcrestTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2494844719B60A56007EEA3D /* Hamcrest */ = {
+		2494844719B60A56007EEA3D /* HamcrestXCTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2494845819B60A57007EEA3D /* Build configuration list for PBXNativeTarget "Hamcrest" */;
+			buildConfigurationList = 2494845819B60A57007EEA3D /* Build configuration list for PBXNativeTarget "HamcrestXCTest" */;
 			buildPhases = (
 				481906251ED69B6500E47930 /* Swift Format */,
 				2494844319B60A56007EEA3D /* Sources */,
@@ -378,9 +401,9 @@
 			);
 			dependencies = (
 			);
-			name = Hamcrest;
+			name = HamcrestXCTest;
 			productName = Hamcrest;
-			productReference = 2494844819B60A56007EEA3D /* Hamcrest.framework */;
+			productReference = 2494844819B60A56007EEA3D /* HamcrestXCTest.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		2496DAF019922407008C270E /* Hamcrest-macOS */ = {
@@ -444,9 +467,9 @@
 			productReference = A75D7AC32DA90E94008F07E2 /* HamcrestSwiftTestingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A782D1B52DBB89A10032D058 /* HamcrestSwiftTesting */ = {
+		A782D1B52DBB89A10032D058 /* Hamcrest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A782D1C92DBB89A10032D058 /* Build configuration list for PBXNativeTarget "HamcrestSwiftTesting" */;
+			buildConfigurationList = A782D1C92DBB89A10032D058 /* Build configuration list for PBXNativeTarget "Hamcrest" */;
 			buildPhases = (
 				A782D1B12DBB89A10032D058 /* Headers */,
 				A782D1B22DBB89A10032D058 /* Sources */,
@@ -459,13 +482,13 @@
 				A782D1D72DBB8C040032D058 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				A782D1B72DBB89A10032D058 /* HamcrestSwiftTesting */,
+				A782D1B72DBB89A10032D058 /* HamcrestXCTest */,
 			);
-			name = HamcrestSwiftTesting;
+			name = Hamcrest;
 			packageProductDependencies = (
 			);
 			productName = HamcrestSwiftTesting;
-			productReference = A782D1B62DBB89A10032D058 /* HamcrestSwiftTesting.framework */;
+			productReference = A782D1B62DBB89A10032D058 /* Hamcrest.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -517,8 +540,8 @@
 			projectRoot = "";
 			targets = (
 				2496DAF019922407008C270E /* Hamcrest-macOS */,
-				2494844719B60A56007EEA3D /* Hamcrest */,
-				A782D1B52DBB89A10032D058 /* HamcrestSwiftTesting */,
+				2494844719B60A56007EEA3D /* HamcrestXCTest */,
+				A782D1B52DBB89A10032D058 /* Hamcrest */,
 				2496DAFB19922407008C270E /* HamcrestTests-macOS */,
 				247C43331B4DD0D700F357B8 /* HamcrestTests */,
 				A75D7AC22DA90E94008F07E2 /* HamcrestSwiftTestingTests */,
@@ -637,7 +660,6 @@
 				2494846719B60BC7007EEA3D /* ReflectionMatchers.swift in Sources */,
 				2494846819B60BC7007EEA3D /* StringMatchers.swift in Sources */,
 				2494846919B60BC7007EEA3D /* OperatorMatchers.swift in Sources */,
-				A782D2072DBB91F90032D058 /* HamcrestReporter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,7 +679,6 @@
 				2496DB0B19922429008C270E /* Hamcrest.swift in Sources */,
 				2428C4BE19A3E3E100475822 /* ArithmeticMatchers.swift in Sources */,
 				2428C4BA19A3E1F300475822 /* StringMatchers.swift in Sources */,
-				A782D2062DBB91F90032D058 /* HamcrestReporter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,6 +725,7 @@
 				A782D2022DBB915A0032D058 /* MatchResult.swift in Sources */,
 				A782D2032DBB915A0032D058 /* BasicMatchers.swift in Sources */,
 				A782D2042DBB915A0032D058 /* Matcher.swift in Sources */,
+				A782F02E2DBB94140032D058 /* HamcrestReporter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,27 +739,27 @@
 		};
 		247C433C1B4DD0D700F357B8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2494844719B60A56007EEA3D /* Hamcrest */;
+			target = 2494844719B60A56007EEA3D /* HamcrestXCTest */;
 			targetProxy = 247C433B1B4DD0D700F357B8 /* PBXContainerItemProxy */;
 		};
 		A75D7AC92DA90E94008F07E2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2494844719B60A56007EEA3D /* Hamcrest */;
+			target = 2494844719B60A56007EEA3D /* HamcrestXCTest */;
 			targetProxy = A75D7AC82DA90E94008F07E2 /* PBXContainerItemProxy */;
 		};
 		A782D1CE2DBB8AB50032D058 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A782D1B52DBB89A10032D058 /* HamcrestSwiftTesting */;
+			target = A782D1B52DBB89A10032D058 /* Hamcrest */;
 			targetProxy = A782D1CD2DBB8AB50032D058 /* PBXContainerItemProxy */;
 		};
 		A782D1D72DBB8C040032D058 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2494844719B60A56007EEA3D /* Hamcrest */;
+			target = 2494844719B60A56007EEA3D /* HamcrestXCTest */;
 			targetProxy = A782D1D62DBB8C040032D058 /* PBXContainerItemProxy */;
 		};
 		A782D1D92DBB8C5B0032D058 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A782D1B52DBB89A10032D058 /* HamcrestSwiftTesting */;
+			target = A782D1B52DBB89A10032D058 /* Hamcrest */;
 			targetProxy = A782D1D82DBB8C5B0032D058 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1252,7 +1274,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2494845819B60A57007EEA3D /* Build configuration list for PBXNativeTarget "Hamcrest" */ = {
+		2494845819B60A57007EEA3D /* Build configuration list for PBXNativeTarget "HamcrestXCTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2494845919B60A57007EEA3D /* Debug */,
@@ -1297,7 +1319,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A782D1C92DBB89A10032D058 /* Build configuration list for PBXNativeTarget "HamcrestSwiftTesting" */ = {
+		A782D1C92DBB89A10032D058 /* Build configuration list for PBXNativeTarget "Hamcrest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A782D1C52DBB89A10032D058 /* Debug */,
