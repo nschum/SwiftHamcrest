@@ -10,9 +10,9 @@ import HamcrestSwiftTesting
 import Testing
 
 struct SwiftTestIntegrationTests {
-    @Test func test_checkMatcher() async throws {
-        checkMatcher("foo", equalTo("foo"), comments: [], isRequired: false, sourceLocation: Testing.SourceLocation.__here()).__expected()
-        checkMatcher("foo", not(equalTo("bar")), comments: [], isRequired: false, sourceLocation: Testing.SourceLocation.__here()).__expected()
+    @Test func test_assertThat() async throws {
+        __assertThat("foo", equalTo("foo"), sourceLocation: Testing.SourceLocation.__here())
+        __assertThat("foo", not(equalTo("bar")), sourceLocation: Testing.SourceLocation.__here())
     }
 
     @Test func test_assertThat_macro() async throws {
@@ -22,5 +22,11 @@ struct SwiftTestIntegrationTests {
         #else
             throw XCTSkip("macros are only supported when running tests for the host platform")
         #endif
+    }
+
+    @Test func test_enable() async throws {
+        HamcrestSwiftTesting.enable()
+
+        #expect(Hamcrest.SwiftTestingHamcrestReportFunction != nil)
     }
 }

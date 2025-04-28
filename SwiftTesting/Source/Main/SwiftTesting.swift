@@ -20,8 +20,6 @@ public func enable() {
 @_disfavoredOverload public func __assertThat<T>(
     _ value: @autoclosure () throws -> T,
     _ matcher: Matcher<T>,
-    comments: @autoclosure () -> [Comment],
-    isRequired: Bool,
     sourceLocation: Testing.SourceLocation
 ) {
     if let message = applyMatcher(matcher, toValue: value) {

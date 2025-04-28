@@ -29,7 +29,7 @@ final class AssertThatMacroTests: XCTestCase {
                               #assertThat(1, equalTo(1))
                               """, expandedSource:
                              """
-                              __assertThat(1, equalTo(1), comments: [], isRequired: false, sourceLocation: Testing.SourceLocation.__here())
+                              __assertThat(1, equalTo(1), sourceLocation: Testing.SourceLocation.__here())
                               """,
                              macros: testMacros)
         #else
@@ -45,7 +45,7 @@ final class AssertThatMacroTests: XCTestCase {
                               #assertThat("1", equalTo("1"))
                               """, expandedSource:
                              """
-                              __assertThat("1", equalTo("1"), comments: [], isRequired: false, sourceLocation: Testing.SourceLocation.__here())
+                              __assertThat("1", equalTo("1"), sourceLocation: Testing.SourceLocation.__here())
                               """,
                              macros: testMacros)
         #else
