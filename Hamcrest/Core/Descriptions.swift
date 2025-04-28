@@ -1,4 +1,5 @@
 import Foundation
+import HamcrestMatcher
 
 func describe<T>(_ value: T) -> String {
     if let stringArray = value as? [String] {

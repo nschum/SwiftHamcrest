@@ -1,3 +1,5 @@
+import HamcrestMatcher
+
 public func equalTo<T: Equatable>(_ expectedValue: T) -> Matcher<T> {
     return Matcher("equal to \(expectedValue)") {$0 == expectedValue}
 }

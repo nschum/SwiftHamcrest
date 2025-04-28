@@ -1,3 +1,5 @@
+import HamcrestMatcher
+
 public func anything<T>() -> Matcher<T> {
     return Matcher("anything") {value in true}
 }

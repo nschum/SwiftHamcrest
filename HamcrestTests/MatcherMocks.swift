@@ -1,4 +1,5 @@
 import Hamcrest
+import HamcrestMatcher
 import XCTest
 
 func succeedingMatcher<T: Equatable>(_ expectingValue: T, description: String = "description",

@@ -1,3 +1,5 @@
+import HamcrestMatcher
+
 public func empty<T: Collection>() -> Matcher<T> {
     return describedAs("empty", hasCount(0))
 }

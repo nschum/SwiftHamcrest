@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2494844719B60A56007EEA3D"
-               BuildableName = "Hamcrest.framework"
-               BlueprintName = "Hamcrest"
+               BuildableName = "HamcrestSwiftTesting.framework"
+               BlueprintName = "HamcrestSwiftTesting"
                ReferencedContainer = "container:Hamcrest.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

@@ -1,3 +1,5 @@
+import HamcrestMatcher
+
 public func not<T>(_ matcher: Matcher<T>) -> Matcher<T> {
     return Matcher("not \(matcher.description)") {value in !matcher.matches(value).boolValue }
 }

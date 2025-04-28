@@ -6,6 +6,7 @@
 //  Copyright © 2025 Nikolaj Schumacher. All rights reserved.
 //
 import HamcrestCore
+import HamcrestMatcher
 import Testing
 
 @discardableResult public func assertThat<T>(_ value: @autoclosure () throws -> T, _ matcher: Matcher<T>, message: String? = nil, fileID: String = #fileID, file: StaticString = #file, line: UInt = #line) -> String {

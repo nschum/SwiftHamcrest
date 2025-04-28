@@ -1,4 +1,5 @@
 import Hamcrest
+import HamcrestMatcher
 import XCTest
 
 class BaseTestCase: XCTestCase {

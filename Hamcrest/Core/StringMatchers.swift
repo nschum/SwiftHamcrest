@@ -1,4 +1,5 @@
 import Foundation
+import HamcrestMatcher
 
 public func containsString(_ string: String) -> Matcher<String> {
     return Matcher("contains \"\(string)\"") {$0.range(of: string) != nil}

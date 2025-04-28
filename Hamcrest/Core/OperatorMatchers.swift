@@ -1,3 +1,4 @@
+import HamcrestMatcher
 
 public struct MatchResultDescription {
     let result: String?

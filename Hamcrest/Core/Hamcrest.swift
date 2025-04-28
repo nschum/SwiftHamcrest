@@ -1,4 +1,5 @@
 import Foundation
+import HamcrestMatcher
 import Swift
 import XCTest
 
