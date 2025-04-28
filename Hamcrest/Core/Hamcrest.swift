@@ -2,6 +2,23 @@ import Foundation
 import Swift
 import XCTest
 
+/// Reporter function that is called whenever a Hamcrest assertion fails.
+/// By default this calls XCTFail, except in Playgrounds where it does nothing.
+/// This is intended for testing Hamcrest itself.
+public typealias HamcrestReporterFunctionClosure = (_: String, _ fileID: String, _ file: StaticString, _ line: UInt, _ column: UInt) -> ()
+nonisolated(unsafe) public var HamcrestReportFunction: HamcrestReporterFunctionClosure = HamcrestDefaultReportFunction
+nonisolated(unsafe) public let HamcrestDefaultReportFunction = isPlayground() ? {message, fileID, file, line, column in} : {message, fileID, file, line, column in reporterFunction(message, fileID: fileID, file: file, line: line, column: column)}
+nonisolated(unsafe) public var SwiftTestingHamcrestReportFunction: HamcrestReporterFunctionClosure?
+
+/// Reporter function that is called whenever a Hamcrest assertion fails.
+/// By default this calls XCTFail, except in Playgrounds where it does nothing.
+/// This is intended for testing Hamcrest itself.
+///
+func reporterFunction(_ message: String = "", fileID: String, file: StaticString, line: UInt, column: UInt) {
+    XCTFail(message, file: file, line: line)
+   SwiftTestingHamcrestReportFunction?(message, fileID, file, line, column)
+}
+
 func filterNotNil<T>(_ array: [T?]) -> [T] {
     return array.filter({$0 != nil}).map({$0!})
 }
@@ -19,7 +36,7 @@ func equalToWithoutDescription<T: Equatable>(_ expectedValue: T) -> Matcher<T> {
     return describedAs(describe(expectedValue), equalTo(expectedValue))
 }
 
-func isPlayground() -> Bool {
+public func isPlayground() -> Bool {
     let infoDictionary = Bundle.main.infoDictionary
     let bundleIdentifier = infoDictionary?["CFBundleIdentifier"]
     return (bundleIdentifier as? String)?.hasPrefix("com.apple.dt.Xcode") ?? false
@@ -72,12 +89,6 @@ func isPlayground() -> Bool {
     }
 }
 
-// MARK: assertThat
-
-@discardableResult public func assertThat<T>(_ value: @autoclosure () throws -> T, _ matcher: Matcher<T>, message: String? = nil, fileID: String = #fileID, file: StaticString = #file, line: UInt = #line) -> String {
-    return reportResult(applyMatcher(matcher, toValue: value), message: message, fileID: fileID, file: file, line: line)
-}
-
 @discardableResult public func applyMatcher<T>(_ matcher: Matcher<T>, toValue: () throws -> T) -> String? {
     do {
         let value = try toValue()
@@ -93,7 +104,7 @@ func isPlayground() -> Bool {
     }
 }
 
-func reportResult(_ possibleResult: String?, message: String? = nil, fileID: String = #fileID, file: StaticString = #file, line: UInt = #line, column: UInt = #column)
+public func reportResult(_ possibleResult: String?, message: String? = nil, fileID: String = #fileID, file: StaticString = #file, line: UInt = #line, column: UInt = #column)
     -> String {
     if let possibleResult = possibleResult {
         let result: String

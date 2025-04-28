@@ -1,7 +1,3 @@
-@discardableResult public func assertThat(_ resultDescription: MatchResultDescription,
-                       file: StaticString = #file, line: UInt = #line) -> String {
-    return reportResult(resultDescription.result, file: file, line: line)
-}
 
 public struct MatchResultDescription {
     let result: String?

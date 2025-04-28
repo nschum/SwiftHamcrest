@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "6D4EEC74-595B-4AC1-8DD4-063F3D1344D8",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Hamcrest.xcodeproj",
+        "identifier" : "247C43331B4DD0D700F357B8",
+        "name" : "HamcrestTests"
+      }
+    }
+  ],
+  "version" : 1
+}
