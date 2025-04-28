@@ -24,7 +24,7 @@ public struct AssertThatMacro: ExpressionMacro, Sendable {
         guard let secondArgument = iterator.next()?.expression else {
             fatalError("the argument expression is missing")
         }
-         return "checkMatcher(\(firstArgument), \(secondArgument), comments: [], isRequired: false, sourceLocation: Testing.SourceLocation.__here()).__expected()"
+         return "__assertThat(\(firstArgument), \(secondArgument), comments: [], isRequired: false, sourceLocation: Testing.SourceLocation.__here())"
     }
 }
 
