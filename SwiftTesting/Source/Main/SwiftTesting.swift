@@ -10,12 +10,7 @@ import SwiftSyntax
 import SwiftSyntaxMacros
 import Testing
 
-public func enable() {
-    Hamcrest.SwiftTestingHamcrestReportFunction = { message, fileID, file, line, column in
-        let location = Testing.SourceLocation(fileID: fileID, filePath: "\(file)", line: Int(line), column: Int(column))
-        Issue.record(Testing.Comment(rawValue: message), sourceLocation: location)
-    }
-}
+
 
 @_disfavoredOverload public func __assertThat<T>(
     _ value: @autoclosure () throws -> T,
