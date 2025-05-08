@@ -371,14 +371,34 @@ Select the 'Add Package Dependency' option in your Xcode project and copy this r
 
 ### Swift-Testing ###
 
-Hamcrest also works with the new Swift-Testing framework. The assertThat also reports the error when used in a Swift-Testing unit test.
+When using Swift-Testing you have to import the `HamcrestSwiftTesting` module. You can either use the `#assertThat` macro use
+enable the reporting by `HamcrestSwiftTesting.enable()`.
 
-#### Deprecated ####
+The problem here is that Hamcrest can be used at UITest, and this should remain. But the UITest cannot import the `Testing` framework, so 
+the Hamcrest framework itself cannot have a depencency to the `Testing` framework.
 
-The `#assertThat` macro is not needed anymore and will be removed in an future version.
 
 ```
+import Hamcrest
+import HamcrestSwiftTesting
+import Testing
 
+struct ExampleTest {
+
+    init() async throws {
+        HamcrestSwiftTesting.enable()
+    }
+
+    @Test func test_assertThat() async throws {
+        assertThat("foo", equalTo("foo"))
+        assertThat("foo", not(equalTo("bar")))
+    }
+}
+```
+
+or
+
+```
 import Hamcrest
 import HamcrestSwiftTesting
 import Testing
@@ -390,7 +410,6 @@ struct ExampleTest {
         #assertThat("foo", not(equalTo("bar")))
     }
 }
-
 ```
 
 
