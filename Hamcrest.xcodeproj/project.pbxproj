@@ -289,7 +289,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2494845819B60A57007EEA3D /* Build configuration list for PBXNativeTarget "Hamcrest" */;
 			buildPhases = (
-				481906251ED69B6500E47930 /* Swift Format */,
 				2494844319B60A56007EEA3D /* Sources */,
 				2494844419B60A56007EEA3D /* Frameworks */,
 				2494844619B60A56007EEA3D /* Resources */,
@@ -307,7 +306,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2496DB0419922407008C270E /* Build configuration list for PBXNativeTarget "Hamcrest-macOS" */;
 			buildPhases = (
-				481906241ED69B1E00E47930 /* Swift Format */,
 				2496DAEC19922407008C270E /* Sources */,
 				2496DAED19922407008C270E /* Frameworks */,
 				2496DAEF19922407008C270E /* Resources */,
@@ -454,37 +452,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		481906241ED69B1E00E47930 /* Swift Format */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Swift Format";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/bin/swiftformat\" --disable indent,numberFormatting,ranges,redundantReturn,spaceAroundOperators,spaceInsideBraces,strongOutlets,trailingCommas,unusedArguments,void \"${SRCROOT}\"\n";
-		};
-		481906251ED69B6500E47930 /* Swift Format */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Swift Format";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/bin/swiftformat\" --disable indent,numberFormatting,ranges,redundantReturn,spaceAroundOperators,spaceInsideBraces,strongOutlets,trailingCommas,unusedArguments,void \"${SRCROOT}\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		247C43301B4DD0D700F357B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -609,6 +576,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -628,6 +596,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
@@ -663,7 +632,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "de.nschum.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -694,7 +662,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "de.nschum.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
@@ -851,7 +818,6 @@
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.nschum.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Hamcrest;
-				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -884,7 +850,6 @@
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.nschum.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Hamcrest;
-				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
@@ -908,6 +873,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.nschum.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -925,6 +891,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.nschum.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
@@ -955,6 +922,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.nschum.Hamcrest.HamcrestSwiftTestingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -984,6 +952,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.nschum.Hamcrest.HamcrestSwiftTestingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
