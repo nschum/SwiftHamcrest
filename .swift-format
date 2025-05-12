@@ -1,0 +1,17 @@
+{
+	"version": 1,
+		"lineLength": 200,
+		"indentation": {
+			"spaces": 4
+		},
+		"tabWidth": 4,
+		"maximumBlankLines": 3,
+		"respectsExistingLineBreaks": true,
+		"lineBreakBeforeControlFlowKeywords": false,
+		"lineBreakBeforeEachArgument": false,
+		"multiElementCollectionTrailingCommas": false,
+		"indentBlankLines": false,
+		"indentSwitchCaseLabels": true,
+		"rules" : {
+		}
+}
