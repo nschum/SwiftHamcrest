@@ -44,4 +44,4 @@ xcodebuild -create-xcframework \
 cp LICENSE build/archive
 cd build/archive
 
-zip -r Hamcrest-$VERSION.zip Hamcrest.xcframework LICENSE
+zip -r Hamcrest-$VERSION.xcframework.zip Hamcrest.xcframework LICENSE
