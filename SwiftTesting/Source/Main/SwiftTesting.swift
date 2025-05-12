@@ -10,8 +10,6 @@ import SwiftSyntax
 import SwiftSyntaxMacros
 import Testing
 
-
-
 @_disfavoredOverload public func __assertThat<T>(
     _ value: @autoclosure () throws -> T,
     _ matcher: Matcher<T>,
@@ -28,4 +26,3 @@ import Testing
   _ comment: @autoclosure () -> Comment? = nil,
     sourceLocation: Testing.SourceLocation = #_sourceLocation
 ) = #externalMacro(module: "HamcrestSwiftTestingMacros", type: "AssertThatMacro")
-
