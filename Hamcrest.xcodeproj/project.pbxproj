@@ -59,6 +59,7 @@
 		24E64D3B19A29E6100090B1D /* MatcherMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E64D3A19A29E6100090B1D /* MatcherMocks.swift */; };
 		24F95B241B80EBD0004A0F4C /* ErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F95B231B80EBD0004A0F4C /* ErrorTests.swift */; };
 		A75D7AC72DA90E94008F07E2 /* Hamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2494844819B60A56007EEA3D /* Hamcrest.framework */; };
+		A7FAFFE82DD313B20057EE7C /* Build.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A7FAFFE72DD313B20057EE7C /* Build.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		24E64D3A19A29E6100090B1D /* MatcherMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatcherMocks.swift; sourceTree = "<group>"; };
 		24F95B231B80EBD0004A0F4C /* ErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorTests.swift; sourceTree = "<group>"; };
 		A75D7AC32DA90E94008F07E2 /* HamcrestSwiftTestingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamcrestSwiftTestingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7FAFFE72DD313B20057EE7C /* Build.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Build.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -185,6 +187,7 @@
 		2496DAE719922407008C270E = {
 			isa = PBXGroup;
 			children = (
+				A7FAFFE72DD313B20057EE7C /* Build.xcconfig */,
 				2496DAF319922407008C270E /* Hamcrest */,
 				2496DAFD19922407008C270E /* HamcrestTests */,
 				A75D7AC42DA90E94008F07E2 /* HamcrestSwiftTestingTests */,
@@ -447,6 +450,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7FAFFE82DD313B20057EE7C /* Build.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +610,7 @@
 		};
 		2494845919B60A57007EEA3D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7FAFFE72DD313B20057EE7C /* Build.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -639,6 +644,7 @@
 		};
 		2494845A19B60A57007EEA3D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7FAFFE72DD313B20057EE7C /* Build.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
@@ -794,6 +800,7 @@
 		};
 		2496DB0519922407008C270E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7FAFFE72DD313B20057EE7C /* Build.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -825,6 +832,7 @@
 		};
 		2496DB0619922407008C270E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7FAFFE72DD313B20057EE7C /* Build.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
