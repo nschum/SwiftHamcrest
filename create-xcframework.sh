@@ -9,6 +9,8 @@ fi
 ARCHIVE_DIRECTORY=build/archive
 VERSION=$1
 
+/usr/libexec/PlistBuddy Hamcrest/Info.plist -c "Set CFBundleShortVersionString $VERSION"
+
 
 xcodebuild archive \
     -project Hamcrest.xcodeproj \
