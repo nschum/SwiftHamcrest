@@ -1,3 +1,18 @@
+Version 2.3.5
+-----------
+
+_23. Mai Feb 2025_
+
+- Removed that swift-format binary so that the project builds on arm only machines.
+
+
+Version 2.3.4
+-----------
+
+_8. Mai Feb 2025_
+
+- Made compatible with UITests. The Swift-Testing code remains the the HamcrestSwiftTesting framework.
+
 Version 2.3.3
 -----------
 
