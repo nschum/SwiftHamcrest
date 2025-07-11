@@ -11,7 +11,7 @@ let package = Package(
         .library(name: "HamcrestSwiftTesting", targets: ["HamcrestSwiftTesting"])
     ],
     dependencies: [
-        .package(url: "https://github.com/swiftlang/swift-syntax.git", from: "600.0.0-latest")
+        .package(url: "https://github.com/swiftlang/swift-syntax.git", from: "601.0.1")
     ],
     targets: [
         .target(
