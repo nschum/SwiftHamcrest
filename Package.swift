@@ -25,6 +25,9 @@ let package = Package(
 
         .target(
             name: "HamcrestSwiftTesting",
+            dependencies: [
+                "Hamcrest"
+            ],
             path: "SwiftTesting",
             sources: [
                 "Source/Main"
