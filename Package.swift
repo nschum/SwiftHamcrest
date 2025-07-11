@@ -10,9 +10,6 @@ let package = Package(
         .library(name: "Hamcrest", targets: ["Hamcrest"]),
         .library(name: "HamcrestSwiftTesting", targets: ["HamcrestSwiftTesting"])
     ],
-    dependencies: [
-        .package(url: "https://github.com/swiftlang/swift-syntax.git", from: "601.0.1")
-    ],
     targets: [
         .target(
             name: "Hamcrest",
@@ -26,25 +23,8 @@ let package = Package(
             ],
             path: "HamcrestTests"),
 
-        .macro(
-            name: "HamcrestSwiftTestingMacros",
-            dependencies: [
-                .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
-                .product(name: "SwiftCompilerPlugin", package: "swift-syntax")
-            ],
-            path: "SwiftTesting",
-            sources: [
-                "Source/Macros"
-            ]
-        ),
-
         .target(
             name: "HamcrestSwiftTesting",
-            dependencies: [
-                "HamcrestSwiftTestingMacros",
-                .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
-                .product(name: "SwiftCompilerPlugin", package: "swift-syntax")
-            ],
             path: "SwiftTesting",
             sources: [
                 "Source/Main"
@@ -55,9 +35,7 @@ let package = Package(
             name: "HamcrestSwiftTestingTests",
             dependencies: [
                 "Hamcrest",
-                "HamcrestSwiftTesting",
-                "HamcrestSwiftTestingMacros",
-                .product(name: "SwiftSyntaxMacrosTestSupport", package: "swift-syntax")
+                "HamcrestSwiftTesting"
             ],
             path: "SwiftTesting",
             sources: [
