@@ -131,8 +131,8 @@ assertThat(array, containsInAnyOrder(equalTo("bar"), equalTo("foo")))
 assertThat(array, hasItem(equalTo("foo")))
 assertThat(array, hasItem(equalTo("baz"))) // mismatch
 
-assertThat(array, hasItem(equalTo("foo", atIndex: 0)))
-assertThat(array, hasItem(equalTo("foo", atIndex: 1))) // mismatch
+assertThat(array, hasItem(equalTo("foo"), atIndex: 0))
+assertThat(array, hasItem(equalTo("foo"), atIndex: 1)) // mismatch
 
 assertThat(array, hasItems("foo", "bar"))
 assertThat(array, hasItems(equalTo("foo"), equalTo("baz"))) // mismatch
