@@ -51,7 +51,7 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A75D7AC42DA90E94008F07E2 /* HamcrestSwiftTestingTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HamcrestSwiftTestingTests; sourceTree = "<group>"; };
-		A76DCB6D2E224F830027C008 /* Main */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Main; sourceTree = "<group>"; };
+		A76DCB6D2E224F830027C008 /* Source */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Source; sourceTree = "<group>"; };
 		A76DCB872E2251BA0027C008 /* Test */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Test; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -134,18 +134,18 @@
 		2496DAF319922407008C270E /* Hamcrest */ = {
 			isa = PBXGroup;
 			children = (
-				A76DCB4A2E224F7C0027C008 /* Source */,
+				A76DCB4A2E224F7C0027C008 /* Main */,
 			);
 			path = Hamcrest;
 			sourceTree = "<group>";
 		};
-		A76DCB4A2E224F7C0027C008 /* Source */ = {
+		A76DCB4A2E224F7C0027C008 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				A76DCB6D2E224F830027C008 /* Main */,
+				A76DCB6D2E224F830027C008 /* Source */,
 				A76DCB872E2251BA0027C008 /* Test */,
 			);
-			path = Source;
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,7 +185,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				A76DCB6D2E224F830027C008 /* Main */,
+				A76DCB6D2E224F830027C008 /* Source */,
 			);
 			name = Hamcrest;
 			productName = Hamcrest;
@@ -205,7 +205,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				A76DCB6D2E224F830027C008 /* Main */,
+				A76DCB6D2E224F830027C008 /* Source */,
 			);
 			name = "Hamcrest-macOS";
 			productName = Hamcrest;
