@@ -7,8 +7,8 @@ let package = Package(
     name: "Hamcrest",
     platforms: [.macOS(.v10_15), .iOS(.v13), .tvOS(.v13), .watchOS(.v6), .macCatalyst(.v13)],
     products: [
-        .library(name: "Hamcrest", targets: ["Hamcrest"])
-        // .library(name: "HamcrestSwiftTesting", targets: ["HamcrestSwiftTesting"])
+        .library(name: "Hamcrest", targets: ["Hamcrest"]),
+        .library(name: "HamcrestSwiftTesting", targets: ["HamcrestSwiftTesting"])
     ],
     targets: [
         .target(
@@ -16,10 +16,9 @@ let package = Package(
             dependencies: [],
             path: "Hamcrest",
             sources: [
-                "Source/Main"
+                "Main/Source"
             ],
         ),
-
         .testTarget(
             name: "HamcrestTests",
             dependencies: [
@@ -27,32 +26,30 @@ let package = Package(
             ],
             path: "Hamcrest",
             sources: [
-                "Source/Test"
-            ])
-        /*
-                .target(
-                    name: "HamcrestSwiftTesting",
-                    dependencies: [
-                        "Hamcrest"
-                    ],
-                    path: "SwiftTesting",
-                    sources: [
-                        "Source/Main"
-                    ]
-                ),
-        
-                .testTarget(
-                    name: "HamcrestSwiftTestingTests",
-                    dependencies: [
-                        "Hamcrest",
-                        "HamcrestSwiftTesting"
-                    ],
-                    path: "SwiftTesting",
-                    sources: [
-                        "Source/Test"
-                    ]
-                )
-                */
+                "Main/Test"
+            ]
+        ),
+        .target(
+            name: "HamcrestSwiftTesting",
+            dependencies: [
+                "Hamcrest"
+            ],
+            path: "Hamcrest",
+            sources: [
+                "SwiftTesting/Source"
+            ]
+        ),
+        .testTarget(
+            name: "HamcrestSwiftTestingTests",
+            dependencies: [
+                "Hamcrest",
+                "HamcrestSwiftTesting"
+            ],
+            path: "Hamcrest",
+            sources: [
+                "SwiftTesting/Test"
+            ]
+        )
 
     ]
 )
