@@ -7,37 +7,28 @@ let package = Package(
     name: "Hamcrest",
     platforms: [.macOS(.v10_15), .iOS(.v13), .tvOS(.v13), .watchOS(.v6), .macCatalyst(.v13)],
     products: [
-        .library(name: "Hamcrest", targets: ["Hamcrest"]),
-        .library(name: "HamcrestSwiftTesting", targets: ["HamcrestSwiftTesting"])
+        .library(name: "Hamcrest", targets: ["Hamcrest"])
+        // .library(name: "HamcrestSwiftTesting", targets: ["HamcrestSwiftTesting"])
     ],
     targets: [
         .target(
             name: "Hamcrest",
             dependencies: [],
-            path: "Hamcrest",
-            sources: [
-                "Main/Source"
-            ],
+            path: "Hamcrest/Main/Sources",
         ),
         .testTarget(
             name: "HamcrestTests",
             dependencies: [
                 "Hamcrest"
             ],
-            path: "Hamcrest",
-            sources: [
-                "Main/Test"
-            ]
+            path: "Hamcrest/Main/Tests",
         ),
         .target(
             name: "HamcrestSwiftTesting",
             dependencies: [
                 "Hamcrest"
             ],
-            path: "Hamcrest",
-            sources: [
-                "SwiftTesting/Source"
-            ]
+            path: "Hamcrest/SwiftTesting/Sources",
         ),
         .testTarget(
             name: "HamcrestSwiftTestingTests",
@@ -45,10 +36,7 @@ let package = Package(
                 "Hamcrest",
                 "HamcrestSwiftTesting"
             ],
-            path: "Hamcrest",
-            sources: [
-                "SwiftTesting/Test"
-            ]
+            path: "Hamcrest/SwiftTesting/Tests",
         )
 
     ]
