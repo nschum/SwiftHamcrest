@@ -7,8 +7,8 @@ let package = Package(
     name: "Hamcrest",
     platforms: [.macOS(.v10_15), .iOS(.v13), .tvOS(.v13), .watchOS(.v6), .macCatalyst(.v13)],
     products: [
-        .library(name: "Hamcrest", targets: ["Hamcrest"])
-        // .library(name: "HamcrestSwiftTesting", targets: ["HamcrestSwiftTesting"])
+        .library(name: "Hamcrest", targets: ["Hamcrest"]),
+        .library(name: "HamcrestSwiftTesting", targets: ["HamcrestSwiftTesting"])
     ],
     targets: [
         .target(
