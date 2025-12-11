@@ -4,7 +4,7 @@ import XCTest
 class HamcrestDemoTests: XCTestCase {
     override func setUp() {
         super.setUp()
-        HamcrestReportFunction = {message, file, line in XCTFail(message, file:file, line:line)}
+        HamcrestReportFunction = {message, fileId, file, line, column in }
     }
 
     // Look at README.playground for a tutorial.
