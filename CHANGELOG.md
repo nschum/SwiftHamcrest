@@ -1,7 +1,14 @@
+Version 2.3.6
+-----------
+
+_11. Dec  2025_
+
+- Removed the macro because it uses internal swift API.
+
 Version 2.3.5
 -----------
 
-_23. Mai Feb 2025_
+_23. Mai 2025_
 
 - Removed that swift-format binary so that the project builds on arm only machines.
 
@@ -9,21 +16,21 @@ _23. Mai Feb 2025_
 Version 2.3.4
 -----------
 
-_8. Mai Feb 2025_
+_8. Mai 2025_
 
 - Made compatible with UITests. The Swift-Testing code remains the the HamcrestSwiftTesting framework.
 
 Version 2.3.3
 -----------
 
-_24. Apr Feb 2025_
+_24. Apr 2025_
 
 - Fixed that assertThat reports failures at XCTest and Swift Testing when both are used in a single project.
 
 Version 2.3.2
 -----------
 
-_11. Apr Feb 2025_
+_11. Apr 2025_
 
 - Added that the assertThat function works with Swift Testing. No need for the macro anymore.
 
