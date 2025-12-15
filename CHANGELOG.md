@@ -1,3 +1,10 @@
+Version 2.3.7
+-----------
+
+_15. Dec  2025_
+
+- Fixed dependencies for the HamcrestSwiftTesting
+
 Version 2.3.6
 -----------
 
