@@ -58,6 +58,10 @@
 		24D9341E19A23DC200A411BD /* SequenceMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D9341D19A23DC200A411BD /* SequenceMatcherTests.swift */; };
 		24E64D3B19A29E6100090B1D /* MatcherMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E64D3A19A29E6100090B1D /* MatcherMocks.swift */; };
 		24F95B241B80EBD0004A0F4C /* ErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F95B231B80EBD0004A0F4C /* ErrorTests.swift */; };
+		A73C448E3000EB90007A19F2 /* SwiftTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73C448D3000EB86007A19F2 /* SwiftTesting.swift */; };
+		A73C448F3000EB90007A19F2 /* SwiftTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73C448D3000EB86007A19F2 /* SwiftTesting.swift */; };
+		A73C44BC3000F019007A19F2 /* Testing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A73C44BB3000F019007A19F2 /* Testing.framework */; platformFilter = ios; };
+		A73C44BD3000F019007A19F2 /* Testing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A73C44BB3000F019007A19F2 /* Testing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A75D7AC72DA90E94008F07E2 /* Hamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2494844819B60A56007EEA3D /* Hamcrest.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +80,20 @@
 			remoteGlobalIDString = 2494844719B60A56007EEA3D;
 			remoteInfo = Hamcrest;
 		};
+		A73C44B93000EF36007A19F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2496DAE819922407008C270E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A73C44A13000EEF9007A19F2;
+			remoteInfo = HamcrestSwiftTesting;
+		};
+		A73C44BF3000F0E8007A19F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2496DAE819922407008C270E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2494844719B60A56007EEA3D;
+			remoteInfo = Hamcrest;
+		};
 		A75D7AC82DA90E94008F07E2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2496DAE819922407008C270E /* Project object */;
@@ -84,6 +102,20 @@
 			remoteInfo = Hamcrest;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A73C44BE3000F019007A19F2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A73C44BD3000F019007A19F2 /* Testing.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		241CE3B719AD28570070D245 /* DictionaryMatchers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryMatchers.swift; sourceTree = "<group>"; };
@@ -122,11 +154,15 @@
 		24D9341D19A23DC200A411BD /* SequenceMatcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceMatcherTests.swift; sourceTree = "<group>"; };
 		24E64D3A19A29E6100090B1D /* MatcherMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatcherMocks.swift; sourceTree = "<group>"; };
 		24F95B231B80EBD0004A0F4C /* ErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorTests.swift; sourceTree = "<group>"; };
+		A73C448D3000EB86007A19F2 /* SwiftTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTesting.swift; sourceTree = "<group>"; };
+		A73C44A23000EEF9007A19F2 /* HamcrestSwiftTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HamcrestSwiftTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A73C44BB3000F019007A19F2 /* Testing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Testing.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/Testing.framework; sourceTree = DEVELOPER_DIR; };
 		A75D7AC32DA90E94008F07E2 /* HamcrestSwiftTestingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamcrestSwiftTestingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A75D7AC42DA90E94008F07E2 /* HamcrestSwiftTestingTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HamcrestSwiftTestingTests; sourceTree = "<group>"; };
+		A73C449A3000EE12007A19F2 /* HamcrestSwiftTesting */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HamcrestSwiftTesting; sourceTree = "<group>"; };
+		A73C44A33000EEF9007A19F2 /* HamcrestSwiftTesting */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HamcrestSwiftTesting; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +197,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A73C449F3000EEF9007A19F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A73C44BC3000F019007A19F2 /* Testing.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A75D7AC02DA90E94008F07E2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -175,6 +219,7 @@
 		242D160019B7A3E30099EA62 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A73C44BB3000F019007A19F2 /* Testing.framework */,
 				24C73EBA19B7AA280096DCB7 /* XCTest.framework */,
 				242D15FB19B7A39B0099EA62 /* XCTest.framework */,
 				242D15FD19B7A3B60099EA62 /* XCTest.framework */,
@@ -187,7 +232,8 @@
 			children = (
 				2496DAF319922407008C270E /* Hamcrest */,
 				2496DAFD19922407008C270E /* HamcrestTests */,
-				A75D7AC42DA90E94008F07E2 /* HamcrestSwiftTestingTests */,
+				A73C449A3000EE12007A19F2 /* HamcrestSwiftTesting */,
+				A73C44A33000EEF9007A19F2 /* HamcrestSwiftTesting */,
 				242D160019B7A3E30099EA62 /* Frameworks */,
 				2496DAF219922407008C270E /* Products */,
 			);
@@ -201,6 +247,7 @@
 				2494844819B60A56007EEA3D /* Hamcrest.framework */,
 				247C43341B4DD0D700F357B8 /* HamcrestTests.xctest */,
 				A75D7AC32DA90E94008F07E2 /* HamcrestSwiftTestingTests.xctest */,
+				A73C44A23000EEF9007A19F2 /* HamcrestSwiftTesting.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,6 +285,7 @@
 		2496DAFD19922407008C270E /* HamcrestTests */ = {
 			isa = PBXGroup;
 			children = (
+				A73C448D3000EB86007A19F2 /* SwiftTesting.swift */,
 				24918C0019A2134E00F1AE4A /* BaseTestCase.swift */,
 				24E64D3A19A29E6100090B1D /* MatcherMocks.swift */,
 				24918C0219A213CC00F1AE4A /* AssertThatTests.swift */,
@@ -265,6 +313,16 @@
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A73C449D3000EEF9007A19F2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		247C43331B4DD0D700F357B8 /* HamcrestTests */ = {
@@ -337,6 +395,31 @@
 			productReference = 2496DAFC19922407008C270E /* HamcrestTests-macOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		A73C44A13000EEF9007A19F2 /* HamcrestSwiftTesting */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A73C44A83000EEF9007A19F2 /* Build configuration list for PBXNativeTarget "HamcrestSwiftTesting" */;
+			buildPhases = (
+				A73C449D3000EEF9007A19F2 /* Headers */,
+				A73C449E3000EEF9007A19F2 /* Sources */,
+				A73C449F3000EEF9007A19F2 /* Frameworks */,
+				A73C44A03000EEF9007A19F2 /* Resources */,
+				A73C44BE3000F019007A19F2 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A73C44C03000F0E8007A19F2 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A73C44A33000EEF9007A19F2 /* HamcrestSwiftTesting */,
+			);
+			name = HamcrestSwiftTesting;
+			packageProductDependencies = (
+			);
+			productName = HamcrestSwiftTesting;
+			productReference = A73C44A23000EEF9007A19F2 /* HamcrestSwiftTesting.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		A75D7AC22DA90E94008F07E2 /* HamcrestSwiftTestingTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A75D7ACA2DA90E94008F07E2 /* Build configuration list for PBXNativeTarget "HamcrestSwiftTestingTests" */;
@@ -348,10 +431,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				A73C44BA3000EF36007A19F2 /* PBXTargetDependency */,
 				A75D7AC92DA90E94008F07E2 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				A75D7AC42DA90E94008F07E2 /* HamcrestSwiftTestingTests */,
 			);
 			name = HamcrestSwiftTestingTests;
 			packageProductDependencies = (
@@ -367,7 +448,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1630;
+				LastSwiftUpdateCheck = 2660;
 				LastUpgradeCheck = 1630;
 				ORGANIZATIONNAME = "Nikolaj Schumacher";
 				TargetAttributes = {
@@ -386,6 +467,9 @@
 					2496DAFB19922407008C270E = {
 						CreatedOnToolsVersion = 6.0;
 						LastSwiftMigration = 1020;
+					};
+					A73C44A13000EEF9007A19F2 = {
+						CreatedOnToolsVersion = 26.6;
 					};
 					A75D7AC22DA90E94008F07E2 = {
 						CreatedOnToolsVersion = 16.3;
@@ -407,6 +491,7 @@
 			targets = (
 				2496DAF019922407008C270E /* Hamcrest-macOS */,
 				2494844719B60A56007EEA3D /* Hamcrest */,
+				A73C44A13000EEF9007A19F2 /* HamcrestSwiftTesting */,
 				2496DAFB19922407008C270E /* HamcrestTests-macOS */,
 				247C43331B4DD0D700F357B8 /* HamcrestTests */,
 				A75D7AC22DA90E94008F07E2 /* HamcrestSwiftTestingTests */,
@@ -443,6 +528,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A73C44A03000EEF9007A19F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A75D7AC12DA90E94008F07E2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -461,6 +553,7 @@
 				247C43441B4DD0F000F357B8 /* ArithmeticMatcherTests.swift in Sources */,
 				247C43451B4DD0F000F357B8 /* DictionaryMatcherTests.swift in Sources */,
 				247C43411B4DD0F000F357B8 /* MatcherMocks.swift in Sources */,
+				A73C448E3000EB90007A19F2 /* SwiftTesting.swift in Sources */,
 				247C43401B4DD0F000F357B8 /* BaseTestCase.swift in Sources */,
 				247C43431B4DD0F000F357B8 /* BasicMatcherTests.swift in Sources */,
 				24C3A0841B83C50300371999 /* ErrorTests.swift in Sources */,
@@ -513,6 +606,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A73C448F3000EB90007A19F2 /* SwiftTesting.swift in Sources */,
 				24E64D3B19A29E6100090B1D /* MatcherMocks.swift in Sources */,
 				248CDCB519A2540200743F70 /* ArithmeticMatcherTests.swift in Sources */,
 				24D9341C19A23BED00A411BD /* DictionaryMatcherTests.swift in Sources */,
@@ -526,6 +620,13 @@
 				24D9341E19A23DC200A411BD /* SequenceMatcherTests.swift in Sources */,
 				248CDCB319A2531500743F70 /* StringMatcherTests.swift in Sources */,
 				248CDCB119A24B3500743F70 /* ReflectionMatcherTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A73C449E3000EEF9007A19F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +650,16 @@
 			target = 2494844719B60A56007EEA3D /* Hamcrest */;
 			targetProxy = 247C433B1B4DD0D700F357B8 /* PBXContainerItemProxy */;
 		};
+		A73C44BA3000EF36007A19F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A73C44A13000EEF9007A19F2 /* HamcrestSwiftTesting */;
+			targetProxy = A73C44B93000EF36007A19F2 /* PBXContainerItemProxy */;
+		};
+		A73C44C03000F0E8007A19F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2494844719B60A56007EEA3D /* Hamcrest */;
+			targetProxy = A73C44BF3000F0E8007A19F2 /* PBXContainerItemProxy */;
+		};
 		A75D7AC92DA90E94008F07E2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2494844719B60A56007EEA3D /* Hamcrest */;
@@ -568,6 +679,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = HamcrestTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -587,6 +699,7 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = HamcrestTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -894,6 +1007,108 @@
 			};
 			name = Release;
 		};
+		A73C44A93000EEF9007A19F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = ED5DV56QPQ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Nikolaj Schumacher. All rights reserved.";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.openbakery.test.HamcrestSwiftTesting;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A73C44AA3000EEF9007A19F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ED5DV56QPQ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Nikolaj Schumacher. All rights reserved.";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.openbakery.test.HamcrestSwiftTesting;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		A75D7ACB2DA90E94008F07E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -910,7 +1125,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -941,7 +1156,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
@@ -1000,6 +1215,15 @@
 			buildConfigurations = (
 				2496DB0819922407008C270E /* Debug */,
 				2496DB0919922407008C270E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A73C44A83000EEF9007A19F2 /* Build configuration list for PBXNativeTarget "HamcrestSwiftTesting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A73C44A93000EEF9007A19F2 /* Debug */,
+				A73C44AA3000EEF9007A19F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -11,12 +11,12 @@ import XCTest
 public typealias HamcrestReportFunctionClosure = (_: String, _ fileID: String, _ file: StaticString, _ line: UInt, _ column: UInt) -> ()
 nonisolated(unsafe) public var HamcrestReportFunction: HamcrestReportFunctionClosure = HamcrestDefaultReportFunction
 nonisolated(unsafe) public let HamcrestDefaultReportFunction = isPlayground() ? { message, fileID, file, line, column in} : {message, fileID, file, line, column in reporterFunction(message, fileID: fileID, file: file, line: line, column: column)}
-nonisolated(unsafe) public var SwiftTestingHamcrestReportFunction: HamcrestReportFunctionClosure?
 
 // MARK: helpers
 
+
+
 func reporterFunction(_ message: String = "", fileID: String, file: StaticString, line: UInt, column: UInt) {
-    SwiftTestingHamcrestReportFunction?(message, fileID, file, line, column)
     XCTFail(message, file: file, line: line)
 }
 
@@ -91,6 +91,8 @@ func isPlayground() -> Bool {
 }
 
 // MARK: assertThat
+
+
 
 @discardableResult public func assertThat<T>(_ value: @autoclosure () throws -> T, _ matcher: Matcher<T>, message: String? = nil, fileID: String = #fileID, file: StaticString = #file, line: UInt = #line) -> String {
     return reportResult(applyMatcher(matcher, toValue: value), message: message, fileID: fileID, file: file, line: line)

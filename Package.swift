@@ -28,7 +28,7 @@ let package = Package(
             dependencies: [
                 "Hamcrest"
             ],
-            path: "SwiftTesting",
+            path: "HamcrestSwiftTesting",
             sources: [
                 "Source/Main"
             ]
@@ -40,7 +40,7 @@ let package = Package(
                 "Hamcrest",
                 "HamcrestSwiftTesting"
             ],
-            path: "SwiftTesting",
+            path: "HamcrestSwiftTesting",
             sources: [
                 "Source/Test"
             ]

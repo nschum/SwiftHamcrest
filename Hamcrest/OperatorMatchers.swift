@@ -4,7 +4,7 @@
 }
 
 public struct MatchResultDescription {
-    let result: String?
+    public let result: String?
 
     init(result: String?) {
         self.result = result

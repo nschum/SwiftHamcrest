@@ -371,31 +371,7 @@ Select the 'Add Package Dependency' option in your Xcode project and copy this r
 
 ### Swift-Testing ###
 
-When using Swift-Testing you have to import the `HamcrestSwiftTesting` module. You have to 
-enable the reporting by `HamcrestSwiftTesting.enable()`.
-
-The problem here is that Hamcrest can be used at UITest, and this should remain. But the UITest cannot import the `Testing` framework, so 
-the Hamcrest framework itself cannot have a depencency to the `Testing` framework.
-
-
-```
-import Hamcrest
-import HamcrestSwiftTesting
-import Testing
-
-struct ExampleTest {
-
-    init() async throws {
-        HamcrestSwiftTesting.enable()
-    }
-
-    @Test func test_assertThat() async throws {
-        assertThat("foo", equalTo("foo"))
-        assertThat("foo", not(equalTo("bar")))
-    }
-}
-```
-
+When using Swift-Testing you have to import the `HamcrestSwiftTesting` module.
 
 
 ### CocoaPods ###
