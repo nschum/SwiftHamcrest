@@ -1,5 +1,8 @@
 import Hamcrest
 import XCTest
+#if canImport(Testing)
+import Testing
+#endif
 
 class DictionaryMatcherTests: BaseTestCase {
     let dictionary = [

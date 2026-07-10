@@ -40,7 +40,7 @@ let package = Package(
                 "Hamcrest",
                 "HamcrestSwiftTesting"
             ],
-            path: "SwiftTesting",
+            path: "HamcrestSwiftTesting",
             sources: [
                 "Source/Test"
             ]
