@@ -383,7 +383,7 @@ use_frameworks!
 
 target 'HamcrestDemoTests' do
   inherit! :search_paths
-  pod 'SwiftHamcrest', '~> 2.3.7'
+  pod 'SwiftHamcrest', '~> 2.4'
 end
 ```
 

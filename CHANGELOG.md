@@ -1,3 +1,10 @@
+Version 2.4
+-----------
+
+_10. Jul 2026_
+
+- Better Swift Testing support
+
 Version 2.3.7
 -----------
 
