@@ -160,20 +160,9 @@
 		A75D7AC32DA90E94008F07E2 /* HamcrestSwiftTestingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamcrestSwiftTestingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		A73C44B83000EF2A007A19F2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				HamcrestSwiftTesting.swift,
-			);
-			target = A73C44A13000EEF9007A19F2 /* HamcrestSwiftTesting */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A73C449A3000EE12007A19F2 /* HamcrestSwiftTesting */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HamcrestSwiftTesting; sourceTree = "<group>"; };
-		A73C44A33000EEF9007A19F2 /* HamcrestSwiftTesting */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (A73C44B83000EF2A007A19F2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = HamcrestSwiftTesting; sourceTree = "<group>"; };
-		A75D7AC42DA90E94008F07E2 /* HamcrestSwiftTestingTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HamcrestSwiftTestingTests; sourceTree = "<group>"; };
+		A73C44A33000EEF9007A19F2 /* HamcrestSwiftTesting */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HamcrestSwiftTesting; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,7 +233,6 @@
 				2496DAF319922407008C270E /* Hamcrest */,
 				2496DAFD19922407008C270E /* HamcrestTests */,
 				A73C449A3000EE12007A19F2 /* HamcrestSwiftTesting */,
-				A75D7AC42DA90E94008F07E2 /* HamcrestSwiftTestingTests */,
 				A73C44A33000EEF9007A19F2 /* HamcrestSwiftTesting */,
 				242D160019B7A3E30099EA62 /* Frameworks */,
 				2496DAF219922407008C270E /* Products */,
@@ -445,9 +433,6 @@
 			dependencies = (
 				A73C44BA3000EF36007A19F2 /* PBXTargetDependency */,
 				A75D7AC92DA90E94008F07E2 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				A75D7AC42DA90E94008F07E2 /* HamcrestSwiftTestingTests */,
 			);
 			name = HamcrestSwiftTestingTests;
 			packageProductDependencies = (
