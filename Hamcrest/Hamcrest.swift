@@ -23,7 +23,7 @@ nonisolated(unsafe) public let HamcrestDefaultReportFunction =
 func reporterFunction(_ message: String = "", fileID: String, file: StaticString, line: UInt, column: UInt) {
     #if canImport(Testing)
         Issue.record("add 'import HamcrestSwiftTesting'", severity: .warning)
-        Issue.record(Testing.Comment(rawValue: message))
+        Issue.record(Testing.Comment(rawValue: message), sourceLocation: Testing.SourceLocation(fileID: fileID, filePath: String(describing: file), line: Int(line), column: 0))
     #endif
     XCTFail(message, file: file, line: line)
 }
