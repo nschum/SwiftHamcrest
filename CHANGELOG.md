@@ -1,3 +1,19 @@
+
+Version 2.4.1
+-----------
+
+_15. Juni 2026_
+
+- Failure message when test has error using Swift Testing, but the import HamcrestSwiftTesting is not present
+
+
+Version 2.4
+-----------
+
+_10. Juni 2026_
+
+- Better Swift Testing support
+
 Version 2.3.7
 -----------
 
