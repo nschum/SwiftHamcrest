@@ -24,7 +24,7 @@ func reporterFunction(_ message: String = "", fileID: String, file: StaticString
     if #available(macOS 26, iOS 26, tvOS 26, watchOS 26, *) {
 #if canImport(Testing)
         Issue.record("add 'import HamcrestSwiftTesting'", severity: .warning)
-        Issue.record(Testing.Comment(rawValue: message), sourceLocation: Testing.SourceLocation(fileID: fileID, filePath: String(describing: file), line: Int(line), column: 0))
+        Issue.record(Testing.Comment(rawValue: message), sourceLocation: Testing.SourceLocation(fileID: fileID, filePath: file.description, line: Int(line), column: Int(column)))
 #endif
     }
     XCTFail(message, file: file, line: line)
