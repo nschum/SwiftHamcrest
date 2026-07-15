@@ -15,6 +15,7 @@ class HamcrestSwiftTestingTests {
 
     init() async throws {
          HamcrestSwiftTesting.SwiftTestingHamcrestReportFunction = {message, _ in self.reportedError = message}
+        Hamcrest.HamcrestReportFunction = {message, _, _, _, _ in  }
     }
 
     @Test func assertThat() async throws {

@@ -1,6 +1,9 @@
 import Foundation
 import Swift
 import XCTest
+#if canImport(Testing)
+import Testing
+#endif
 
 /// Reporter function that is called whenever a Hamcrest assertion fails.
 /// By default this calls XCTFail, except in Playgrounds where it does nothing.
@@ -8,28 +11,33 @@ import XCTest
 ///
 ///
 ///
-public typealias HamcrestReportFunctionClosure = (_: String, _ fileID: String, _ file: StaticString, _ line: UInt, _ column: UInt) -> ()
+public typealias HamcrestReportFunctionClosure = (_: String, _ fileID: String, _ file: StaticString, _ line: UInt, _ column: UInt) -> Void
 nonisolated(unsafe) public var HamcrestReportFunction: HamcrestReportFunctionClosure = HamcrestDefaultReportFunction
-nonisolated(unsafe) public let HamcrestDefaultReportFunction = isPlayground() ? { message, fileID, file, line, column in} : {message, fileID, file, line, column in reporterFunction(message, fileID: fileID, file: file, line: line, column: column)}
+nonisolated(unsafe) public let HamcrestDefaultReportFunction =
+    isPlayground() ? { message, fileID, file, line, column in } : { message, fileID, file, line, column in reporterFunction(message, fileID: fileID, file: file, line: line, column: column) }
 
 // MARK: helpers
 
 
 
 func reporterFunction(_ message: String = "", fileID: String, file: StaticString, line: UInt, column: UInt) {
+    #if canImport(Testing)
+    Issue.record("add 'import HamcrestSwiftTesting'", severity: .warning)
+    Issue.record(Testing.Comment(rawValue: message))
+    #endif
     XCTFail(message, file: file, line: line)
 }
 
 func filterNotNil<T>(_ array: [T?]) -> [T] {
-    return array.filter({$0 != nil}).map({$0!})
+    return array.filter({ $0 != nil }).map({ $0! })
 }
 
 func delegateMatching<T>(_ value: T, _ matcher: Matcher<T>, _ mismatchDescriber: (String?) -> String?) -> MatchResult {
     switch matcher.matches(value) {
-    case .match:
-        return .match
-    case let .mismatch(mismatchDescription):
-        return .mismatch(mismatchDescriber(mismatchDescription))
+        case .match:
+            return .match
+        case let .mismatch(mismatchDescription):
+            return .mismatch(mismatchDescriber(mismatchDescription))
     }
 }
 
@@ -55,7 +63,7 @@ func isPlayground() -> Bool {
 }
 
 @discardableResult public func assertThrows<S, T: Error>(_ value: @autoclosure () throws -> S, _ error: T, file: String = #file, line: UInt = #line) -> String where T: Equatable {
-	return assertThrows(try value(), equalToWithoutDescription(error), file: file, line: line)
+    return assertThrows(try value(), equalToWithoutDescription(error), file: file, line: line)
 }
 
 @discardableResult public func assertThrows<S, T: Error>(_ value: @autoclosure () throws -> S, _ matcher: Matcher<T>, file: String = #file, line: UInt = #line) -> String {
@@ -69,10 +77,10 @@ func isPlayground() -> Bool {
     } catch let error as T {
         let match = matcher.matches(error)
         switch match {
-        case .match:
-            return nil
-        case let .mismatch(mismatchDescription):
-            return describeErrorMismatch(error, matcher.description, mismatchDescription)
+            case .match:
+                return nil
+            case let .mismatch(mismatchDescription):
+                return describeErrorMismatch(error, matcher.description, mismatchDescription)
         }
     } catch let error {
         return describeErrorMismatch(error, matcher.description, nil)
@@ -94,7 +102,9 @@ func isPlayground() -> Bool {
 
 
 
-@discardableResult public func assertThat<T>(_ value: @autoclosure () throws -> T, _ matcher: Matcher<T>, message: String? = nil, fileID: String = #fileID, file: StaticString = #file, line: UInt = #line) -> String {
+@discardableResult public func assertThat<T>(
+    _ value: @autoclosure () throws -> T, _ matcher: Matcher<T>, message: String? = nil, fileID: String = #fileID, file: StaticString = #file, line: UInt = #line
+) -> String {
     return reportResult(applyMatcher(matcher, toValue: value), message: message, fileID: fileID, file: file, line: line)
 }
 
@@ -103,10 +113,10 @@ func isPlayground() -> Bool {
         let value = try toValue()
         let match = matcher.matches(value)
         switch match {
-        case .match:
-            return nil
-        case let .mismatch(mismatchDescription):
-            return describeMismatch(value, matcher.description, mismatchDescription)
+            case .match:
+                return nil
+            case let .mismatch(mismatchDescription):
+                return describeMismatch(value, matcher.description, mismatchDescription)
         }
     } catch let error {
         return describeError(error)
@@ -114,7 +124,8 @@ func isPlayground() -> Bool {
 }
 
 func reportResult(_ possibleResult: String?, message: String? = nil, fileID: String = #fileID, file: StaticString = #file, line: UInt = #line, column: UInt = #column)
-    -> String {
+    -> String
+{
     if let possibleResult = possibleResult {
         let result: String
         if let message = message {
