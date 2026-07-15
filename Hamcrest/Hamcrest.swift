@@ -21,7 +21,7 @@ nonisolated(unsafe) public let HamcrestDefaultReportFunction =
 
 
 func reporterFunction(_ message: String = "", fileID: String, file: StaticString, line: UInt, column: UInt) {
-    if #available(macOS 26, iOS 26, tvOS 26, watchOS 26, *) {
+    if #available(macOS 26.5, iOS 26, tvOS 26, watchOS 26, *) {
 #if canImport(Testing)
         Issue.record("add 'import HamcrestSwiftTesting'", severity: .warning)
         Issue.record(Testing.Comment(rawValue: message), sourceLocation: Testing.SourceLocation(fileID: fileID, filePath: file.description, line: Int(line), column: Int(column)))
