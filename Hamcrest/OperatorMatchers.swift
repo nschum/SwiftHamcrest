@@ -6,7 +6,7 @@
     line: UInt = #line,
     column: UInt = 0
 ) -> String {
-    return reportResult(resultDescription.result, message: "", fileID: fileID, file: file, filePath: filePath, line: line, column: column)
+    return reportResult(resultDescription.result, message: nil, fileID: fileID, file: file, filePath: filePath, line: line, column: column)
 }
 
 public struct MatchResultDescription {
