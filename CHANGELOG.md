@@ -1,4 +1,12 @@
 
+Version 2.4.2
+-----------
+
+_4. Aug 2026_
+
+- Updated that the test errors for XCTest should now show inline in XCode again.
+
+
 Version 2.4.1
 -----------
 
