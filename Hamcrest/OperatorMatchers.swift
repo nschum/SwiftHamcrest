@@ -1,6 +1,12 @@
-@discardableResult public func assertThat(_ resultDescription: MatchResultDescription,
-                       file: StaticString = #file, line: UInt = #line) -> String {
-    return reportResult(resultDescription.result, file: file, line: line)
+@discardableResult public func assertThat(
+    _ resultDescription: MatchResultDescription,
+    fileID: String = #fileID,
+    file: StaticString = #file,
+    filePath: StaticString = #filePath,
+    line: UInt = #line,
+    column: UInt = 0
+) -> String {
+    return reportResult(resultDescription.result, message: nil, fileID: fileID, file: file, filePath: filePath, line: line, column: column)
 }
 
 public struct MatchResultDescription {
@@ -41,14 +47,14 @@ public func <= <T: Comparable>(value: T, expectedValue: T) -> MatchResultDescrip
 
 public func && (lhs: MatchResultDescription, rhs: MatchResultDescription) -> MatchResultDescription {
     switch (lhs.result, rhs.result) {
-    case (nil, nil):
-        return MatchResultDescription(result: .none)
-    case let (result?, nil):
-        return MatchResultDescription(result: result)
-    case let (nil, result?):
-        return MatchResultDescription(result: result)
-    case let (lhsResult?, rhsResult?):
-        let result = "\(lhsResult) and \(rhsResult)"
-        return MatchResultDescription(result: result)
+        case (nil, nil):
+            return MatchResultDescription(result: .none)
+        case let (result?, nil):
+            return MatchResultDescription(result: result)
+        case let (nil, result?):
+            return MatchResultDescription(result: result)
+        case let (lhsResult?, rhsResult?):
+            let result = "\(lhsResult) and \(rhsResult)"
+            return MatchResultDescription(result: result)
     }
 }
