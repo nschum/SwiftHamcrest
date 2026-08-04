@@ -5,25 +5,27 @@ class BaseTestCase: XCTestCase {
     var reportedError: String?
 
     override func setUp() {
-        HamcrestReportFunction = {message, fileId, file, line, column in self.reportedError = message}
+        hamcrestReportFunction = { message, _, _, _, _, _ in self.reportedError = message }
         super.setUp()
     }
 
-	func assertMatch<T>(_ value: [T], _ matcher: Matcher<[T]>, file: StaticString = #filePath, line: UInt = #line) {
+    func assertMatch<T>(_ value: [T], _ matcher: Matcher<[T]>, file: StaticString = #filePath, line: UInt = #line) {
         reportedError = nil
         assertThat(value, matcher)
         assertReportsNoError(file, line: line)
     }
 
-	func assertMatch<T>(_ value: T, _ matcher: Matcher<T>, file: StaticString = #filePath, line: UInt = #line) {
+    func assertMatch<T>(_ value: T, _ matcher: Matcher<T>, file: StaticString = #filePath, line: UInt = #line) {
         reportedError = nil
         assertThat(value, matcher)
         assertReportsNoError(file, line: line)
     }
 
-    func assertMismatch<T>(_ value: T, _ matcher: Matcher<T>, _ description: String,
-                           mismatchDescription: String? = nil,
-													 file: StaticString = #filePath, line: UInt = #line) {
+    func assertMismatch<T>(
+        _ value: T, _ matcher: Matcher<T>, _ description: String,
+        mismatchDescription: String? = nil,
+        file: StaticString = #filePath, line: UInt = #line
+    ) {
         reportedError = nil
         assertThat(value, matcher)
         if let mismatchDescription = mismatchDescription {
@@ -33,9 +35,11 @@ class BaseTestCase: XCTestCase {
         }
     }
 
-    func assertMismatch<T>(_ value: [T], _ matcher: Matcher<[T]>, _ description: String,
-                           mismatchDescription: String? = nil,
-													 file: StaticString = #filePath, line: UInt = #line) {
+    func assertMismatch<T>(
+        _ value: [T], _ matcher: Matcher<[T]>, _ description: String,
+        mismatchDescription: String? = nil,
+        file: StaticString = #filePath, line: UInt = #line
+    ) {
         reportedError = nil
         assertThat(value, matcher)
         if let mismatchDescription = mismatchDescription {
@@ -45,30 +49,31 @@ class BaseTestCase: XCTestCase {
         }
     }
 
-	func assertReportsNoError(_ file: StaticString = #filePath, line: UInt = #line) {
+    func assertReportsNoError(_ file: StaticString = #filePath, line: UInt = #line) {
         XCTAssertNil(reportedError, file: file, line: line)
     }
 
-	func assertReportsError(_ message: String, file: StaticString = #filePath, line: UInt = #line) {
+    func assertReportsError(_ message: String, file: StaticString = #filePath, line: UInt = #line) {
         XCTAssertNotNil(reportedError, file: file, line: line)
         XCTAssertEqual((reportedError ?? ""), message, file: file, line: line)
     }
 
-	func assertReportsMismatch<T>(_ value: T, _ description: String, mismatchDescription: String? = nil, file: StaticString = #filePath, line: UInt = #line) {
+    func assertReportsMismatch<T>(_ value: T, _ description: String, mismatchDescription: String? = nil, file: StaticString = #filePath, line: UInt = #line) {
         let message = expectedMessage(value, description, mismatchDescription: mismatchDescription)
         assertReportsError(message, file: file, line: line)
     }
 }
 
 private func expectedMessage(_ value: Any, _ description: String, mismatchDescription: String?)
-    -> String {
-    let inset = (mismatchDescription.map {" (\($0))"} ?? "")
+    -> String
+{
+    let inset = (mismatchDescription.map { " (\($0))" } ?? "")
     return "GOT: \(valueDescription(value))\(inset), EXPECTED: \(description)"
 }
 
 private func valueDescription(_ value: Any) -> String {
     if let stringArray = value as? [String] {
-        return joinStrings(stringArray.map {valueDescription($0)})
+        return joinStrings(stringArray.map { valueDescription($0) })
     } else if let string = value as? String {
         return "\"\(string)\""
     } else {
@@ -78,11 +83,11 @@ private func valueDescription(_ value: Any) -> String {
 
 private func joinStrings(_ strings: [String]) -> String {
     switch strings.count {
-    case 0:
-        return "none"
-    case 1:
-        return strings[0]
-    default:
-        return "[" + strings.joined(separator: ", ") + "]"
+        case 0:
+            return "none"
+        case 1:
+            return strings[0]
+        default:
+            return "[" + strings.joined(separator: ", ") + "]"
     }
 }

@@ -11,23 +11,27 @@ import XCTest
 ///
 ///
 ///
-public typealias HamcrestReportFunctionClosure = (_: String, _ fileID: String, _ file: StaticString, _ line: UInt, _ column: UInt) -> ()
-nonisolated(unsafe) public var HamcrestReportFunction: HamcrestReportFunctionClosure = HamcrestDefaultReportFunction
-nonisolated(unsafe) public let HamcrestDefaultReportFunction =
-    isPlayground() ? { message, fileID, file, line, column in } : { message, fileID, file, line, column in reporterFunction(message, fileID: fileID, file: file, line: line, column: column) }
+public typealias HamcrestReportFunctionClosure = (_: String, _ fileID: String, _ file: StaticString, _ filePath: StaticString, _ line: UInt, _ column: UInt) -> Void
+nonisolated(unsafe) public var hamcrestReportFunction: HamcrestReportFunctionClosure = hamcrestDefaultReportFunction
+nonisolated(unsafe) public let hamcrestDefaultReportFunction =
+    isPlayground()
+    ? { _, _, _, _, _, _ in }
+    : { message, fileID, file, filePath, line, column in
+        reporterFunction(message, fileID: fileID, file: file, filePath: filePath, line: line, column: column)
+    }
 
 // MARK: helpers
 
 
 
-func reporterFunction(_ message: String = "", fileID: String, file: StaticString, line: UInt, column: UInt) {
+func reporterFunction(_ message: String = "", fileID: String, file: StaticString, filePath: StaticString, line: UInt, column: UInt) {
     if #available(macOS 26, iOS 26, tvOS 26, watchOS 26, *) {
-#if canImport(Testing)
-        Issue.record("add 'import HamcrestSwiftTesting'", severity: .warning)
-        Issue.record(Testing.Comment(rawValue: message), sourceLocation: Testing.SourceLocation(fileID: fileID, filePath: file.description, line: Int(line), column: Int(column)))
-#endif
+        #if canImport(Testing)
+            Issue.record("add 'import HamcrestSwiftTesting'", severity: .warning)
+            Issue.record(Testing.Comment(rawValue: message), sourceLocation: Testing.SourceLocation(fileID: fileID, filePath: file.description, line: Int(line), column: Int(column)))
+        #endif
     }
-    XCTFail(message, file: file, line: line)
+    XCTFail(message, file: filePath, line: line)
 }
 
 func filterNotNil<T>(_ array: [T?]) -> [T] {
@@ -55,21 +59,44 @@ func isPlayground() -> Bool {
 
 // MARK: assertThrows
 
-@discardableResult public func assertThrows<T>(_ value: @autoclosure () throws -> T, file: StaticString = #file, line: UInt = #line) -> String {
+@discardableResult public func assertThrows<T>(
+    _ value: @autoclosure () throws -> T,
+    fileID: String = #fileID,
+    file: StaticString = #file,
+    filePath: StaticString = #filePath,
+    line: UInt = #line,
+    column: UInt = #column
+) -> String {
     do {
         _ = try value()
-        return reportResult(describeExpectedError(), file: file, line: line)
+        return reportResult(describeExpectedError(), message: nil, fileID: fileID, file: file, filePath: filePath, line: line, column: column)
     } catch {
-        return reportResult(nil, file: file, line: line)
+        return reportResult(nil, message: nil, fileID: fileID, file: file, filePath: filePath, line: line, column: column)
     }
 }
 
-@discardableResult public func assertThrows<S, T: Error>(_ value: @autoclosure () throws -> S, _ error: T, file: String = #file, line: UInt = #line) -> String where T: Equatable {
-    return assertThrows(try value(), equalToWithoutDescription(error), file: file, line: line)
+@discardableResult public func assertThrows<S, T: Error>(
+    _ value: @autoclosure () throws -> S,
+    _ error: T,
+    fileID: String = #fileID,
+    file: StaticString = #file,
+    filePath: StaticString = #filePath,
+    line: UInt = #line,
+    column: UInt = #column
+) -> String where T: Equatable {
+    return assertThrows(try value(), equalToWithoutDescription(error), fileID: fileID, file: file, filePath: filePath, line: line, column: column)
 }
 
-@discardableResult public func assertThrows<S, T: Error>(_ value: @autoclosure () throws -> S, _ matcher: Matcher<T>, file: String = #file, line: UInt = #line) -> String {
-    return reportResult(applyErrorMatcher(matcher, toBlock: value))
+@discardableResult public func assertThrows<S, T: Error>(
+    _ value: @autoclosure () throws -> S,
+    _ matcher: Matcher<T>,
+    fileID: String = #fileID,
+    file: StaticString = #file,
+    filePath: StaticString = #filePath,
+    line: UInt = #line,
+    column: UInt = #column
+) -> String {
+    return reportResult(applyErrorMatcher(matcher, toBlock: value), message: nil, fileID: fileID, file: file, filePath: filePath, line: line, column: column)
 }
 
 @discardableResult private func applyErrorMatcher<S, T: Error>(_ matcher: Matcher<T>, toBlock: () throws -> S) -> String? {
@@ -91,23 +118,36 @@ func isPlayground() -> Bool {
 
 // MARK: assertNotThrows
 
-@discardableResult public func assertNotThrows<T>(_ value: @autoclosure () throws -> T, file: StaticString = #file, line: UInt = #line) -> String {
+@discardableResult public func assertNotThrows<T>(
+    _ value: @autoclosure () throws -> T,
+    fileID: String = #fileID,
+    file: StaticString = #file,
+    filePath: StaticString = #filePath,
+    line: UInt = #line,
+    column: UInt = #column
+) -> String {
     do {
         _ = try value()
-        return reportResult(nil, file: file, line: line)
+        return reportResult(nil, message: nil, fileID: fileID, file: file, filePath: filePath, line: line, column: column)
     } catch {
-        return reportResult(describeUnexpectedError(), file: file, line: line)
+        return reportResult(describeUnexpectedError(), message: nil, fileID: fileID, file: file, filePath: filePath, line: line, column: column)
     }
 }
 
 // MARK: assertThat
 
 
-
 @discardableResult public func assertThat<T>(
-    _ value: @autoclosure () throws -> T, _ matcher: Matcher<T>, message: String? = nil, fileID: String = #fileID, file: StaticString = #file, line: UInt = #line
+    _ value: @autoclosure () throws -> T,
+    _ matcher: Matcher<T>,
+    message: String? = nil,
+    fileID: String = #fileID,
+    file: StaticString = #file,
+    filePath: StaticString = #filePath,
+    line: UInt = #line,
+    column: UInt = #column
 ) -> String {
-    return reportResult(applyMatcher(matcher, toValue: value), message: message, fileID: fileID, file: file, line: line)
+    return reportResult(applyMatcher(matcher, toValue: value), message: message, fileID: fileID, file: file, filePath: filePath, line: line, column: column)
 }
 
 @discardableResult public func applyMatcher<T>(_ matcher: Matcher<T>, toValue: () throws -> T) -> String? {
@@ -125,9 +165,15 @@ func isPlayground() -> Bool {
     }
 }
 
-func reportResult(_ possibleResult: String?, message: String? = nil, fileID: String = #fileID, file: StaticString = #file, line: UInt = #line, column: UInt = #column)
-    -> String
-{
+func reportResult(
+    _ possibleResult: String?,
+    message: String?,
+    fileID: String,
+    file: StaticString,
+    filePath: StaticString,
+    line: UInt,
+    column: UInt
+) -> String {
     if let possibleResult = possibleResult {
         let result: String
         if let message = message {
@@ -135,7 +181,7 @@ func reportResult(_ possibleResult: String?, message: String? = nil, fileID: Str
         } else {
             result = possibleResult
         }
-        HamcrestReportFunction(result, fileID, file, line, column)
+        hamcrestReportFunction(result, fileID, file, filePath, line, column)
         return result
     } else {
         // The return value is just intended for Playgrounds.
